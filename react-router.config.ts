@@ -15,5 +15,6 @@ export default {
     "/agendar",
     "/agendar/confirmado",
     "/seguridad",
+    "/_sistema",
   ],
 } satisfies Config;

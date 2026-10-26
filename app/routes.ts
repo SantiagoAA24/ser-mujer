@@ -17,6 +17,7 @@ export default [
     route("eventos", "routes/eventos.tsx"),
     route("eventos/:slug", "routes/eventos.$slug.tsx"),
     route("seguridad", "routes/seguridad.tsx"),
+    route("_sistema", "routes/sistema.tsx"),
   ]),
   layout("routes/layout-formulario.tsx", [
     route("contacto", "routes/contacto.tsx"),
