@@ -8,7 +8,63 @@
       "titulo": "Volver a confiar en ti",
       "duracion": "28 min",
       "fecha": "2026-09-28",
-      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]"
+      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]",
+      "notas": [
+        {
+          "tiempo": "00:00",
+          "texto": "[Momento 1: bienvenida y tema del día.]"
+        },
+        {
+          "tiempo": "04:30",
+          "texto": "[Momento 2: idea o pregunta principal.]"
+        },
+        {
+          "tiempo": "12:15",
+          "texto": "[Momento 3: ejercicio o reflexión guiada.]"
+        },
+        {
+          "tiempo": "23:40",
+          "texto": "[Momento 4: cierre y lo que queda para la semana.]"
+        }
+      ],
+      "recursos": [
+        {
+          "tipo": "Ejercicio",
+          "titulo": "[Nombre del recurso 1]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 1]"
+        },
+        {
+          "tipo": "Lectura",
+          "titulo": "[Nombre del recurso 2]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 2]"
+        },
+        {
+          "tipo": "Acompañamiento",
+          "titulo": "Sesiones individuales",
+          "descripcion": "Si quieres conversar sobre lo que te movió este episodio.",
+          "href": "/agendar"
+        }
+      ],
+      "transcripcion": [
+        {
+          "tiempo": "00:00",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción. Cada intervención va en un párrafo, con la marca de tiempo y quién habla.]"
+        },
+        {
+          "tiempo": "00:42",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción.]"
+        },
+        {
+          "tiempo": "01:30",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción.]"
+        }
+      ],
+      "transcripcionHref": "[URL DE TRANSCRIPCIÓN]"
     },
     {
       "slug": "el-amor-propio-no-es-egoismo",
@@ -17,7 +73,58 @@
       "titulo": "El amor propio no es egoísmo",
       "duracion": "24 min",
       "fecha": "2026-09-14",
-      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]"
+      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]",
+      "notas": [
+        {
+          "tiempo": "00:00",
+          "texto": "[Momento 1: bienvenida y tema del día.]"
+        },
+        {
+          "tiempo": "04:30",
+          "texto": "[Momento 2: idea o pregunta principal.]"
+        },
+        {
+          "tiempo": "12:15",
+          "texto": "[Momento 3: ejercicio o reflexión guiada.]"
+        },
+        {
+          "tiempo": "23:40",
+          "texto": "[Momento 4: cierre y lo que queda para la semana.]"
+        }
+      ],
+      "recursos": [
+        {
+          "tipo": "Ejercicio",
+          "titulo": "[Nombre del recurso 1]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 1]"
+        },
+        {
+          "tipo": "Lectura",
+          "titulo": "[Nombre del recurso 2]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 2]"
+        },
+        {
+          "tipo": "Acompañamiento",
+          "titulo": "Sesiones individuales",
+          "descripcion": "Si quieres conversar sobre lo que te movió este episodio.",
+          "href": "/agendar"
+        }
+      ],
+      "transcripcion": [
+        {
+          "tiempo": "00:00",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción, un párrafo por intervención.]"
+        },
+        {
+          "tiempo": "00:42",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción.]"
+        }
+      ],
+      "transcripcionHref": "[URL DE TRANSCRIPCIÓN]"
     },
     {
       "slug": "perdonar-sin-olvidar-quien-eres",
@@ -26,7 +133,58 @@
       "titulo": "Perdonar sin olvidar quién eres",
       "duracion": "31 min",
       "fecha": "2026-08-31",
-      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]"
+      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]",
+      "notas": [
+        {
+          "tiempo": "00:00",
+          "texto": "[Momento 1: bienvenida y tema del día.]"
+        },
+        {
+          "tiempo": "04:30",
+          "texto": "[Momento 2: idea o pregunta principal.]"
+        },
+        {
+          "tiempo": "12:15",
+          "texto": "[Momento 3: ejercicio o reflexión guiada.]"
+        },
+        {
+          "tiempo": "23:40",
+          "texto": "[Momento 4: cierre y lo que queda para la semana.]"
+        }
+      ],
+      "recursos": [
+        {
+          "tipo": "Ejercicio",
+          "titulo": "[Nombre del recurso 1]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 1]"
+        },
+        {
+          "tipo": "Lectura",
+          "titulo": "[Nombre del recurso 2]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 2]"
+        },
+        {
+          "tipo": "Acompañamiento",
+          "titulo": "Sesiones individuales",
+          "descripcion": "Si quieres conversar sobre lo que te movió este episodio.",
+          "href": "/agendar"
+        }
+      ],
+      "transcripcion": [
+        {
+          "tiempo": "00:00",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción, un párrafo por intervención.]"
+        },
+        {
+          "tiempo": "00:42",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción.]"
+        }
+      ],
+      "transcripcionHref": "[URL DE TRANSCRIPCIÓN]"
     },
     {
       "slug": "lo-que-sana-cuando-nos-escuchamos",
@@ -35,7 +193,58 @@
       "titulo": "Lo que sana cuando nos escuchamos",
       "duracion": "26 min",
       "fecha": "2026-08-17",
-      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]"
+      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]",
+      "notas": [
+        {
+          "tiempo": "00:00",
+          "texto": "[Momento 1: bienvenida y tema del día.]"
+        },
+        {
+          "tiempo": "04:30",
+          "texto": "[Momento 2: idea o pregunta principal.]"
+        },
+        {
+          "tiempo": "12:15",
+          "texto": "[Momento 3: ejercicio o reflexión guiada.]"
+        },
+        {
+          "tiempo": "23:40",
+          "texto": "[Momento 4: cierre y lo que queda para la semana.]"
+        }
+      ],
+      "recursos": [
+        {
+          "tipo": "Ejercicio",
+          "titulo": "[Nombre del recurso 1]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 1]"
+        },
+        {
+          "tipo": "Lectura",
+          "titulo": "[Nombre del recurso 2]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 2]"
+        },
+        {
+          "tipo": "Acompañamiento",
+          "titulo": "Sesiones individuales",
+          "descripcion": "Si quieres conversar sobre lo que te movió este episodio.",
+          "href": "/agendar"
+        }
+      ],
+      "transcripcion": [
+        {
+          "tiempo": "00:00",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción, un párrafo por intervención.]"
+        },
+        {
+          "tiempo": "00:42",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción.]"
+        }
+      ],
+      "transcripcionHref": "[URL DE TRANSCRIPCIÓN]"
     },
     {
       "slug": "poner-limites-con-ternura",
@@ -44,7 +253,58 @@
       "titulo": "Poner límites con ternura",
       "duracion": "22 min",
       "fecha": "2026-08-03",
-      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]"
+      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]",
+      "notas": [
+        {
+          "tiempo": "00:00",
+          "texto": "[Momento 1: bienvenida y tema del día.]"
+        },
+        {
+          "tiempo": "04:30",
+          "texto": "[Momento 2: idea o pregunta principal.]"
+        },
+        {
+          "tiempo": "12:15",
+          "texto": "[Momento 3: ejercicio o reflexión guiada.]"
+        },
+        {
+          "tiempo": "23:40",
+          "texto": "[Momento 4: cierre y lo que queda para la semana.]"
+        }
+      ],
+      "recursos": [
+        {
+          "tipo": "Ejercicio",
+          "titulo": "[Nombre del recurso 1]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 1]"
+        },
+        {
+          "tipo": "Lectura",
+          "titulo": "[Nombre del recurso 2]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 2]"
+        },
+        {
+          "tipo": "Acompañamiento",
+          "titulo": "Sesiones individuales",
+          "descripcion": "Si quieres conversar sobre lo que te movió este episodio.",
+          "href": "/agendar"
+        }
+      ],
+      "transcripcion": [
+        {
+          "tiempo": "00:00",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción, un párrafo por intervención.]"
+        },
+        {
+          "tiempo": "00:42",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción.]"
+        }
+      ],
+      "transcripcionHref": "[URL DE TRANSCRIPCIÓN]"
     },
     {
       "slug": "empezar-de-nuevo-despacio",
@@ -53,7 +313,58 @@
       "titulo": "Empezar de nuevo, despacio",
       "duracion": "29 min",
       "fecha": "2026-07-20",
-      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]"
+      "descripcion": "[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]",
+      "notas": [
+        {
+          "tiempo": "00:00",
+          "texto": "[Momento 1: bienvenida y tema del día.]"
+        },
+        {
+          "tiempo": "04:30",
+          "texto": "[Momento 2: idea o pregunta principal.]"
+        },
+        {
+          "tiempo": "12:15",
+          "texto": "[Momento 3: ejercicio o reflexión guiada.]"
+        },
+        {
+          "tiempo": "23:40",
+          "texto": "[Momento 4: cierre y lo que queda para la semana.]"
+        }
+      ],
+      "recursos": [
+        {
+          "tipo": "Ejercicio",
+          "titulo": "[Nombre del recurso 1]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 1]"
+        },
+        {
+          "tipo": "Lectura",
+          "titulo": "[Nombre del recurso 2]",
+          "descripcion": "[Una línea sobre para qué sirve.]",
+          "href": "[URL DEL RECURSO 2]"
+        },
+        {
+          "tipo": "Acompañamiento",
+          "titulo": "Sesiones individuales",
+          "descripcion": "Si quieres conversar sobre lo que te movió este episodio.",
+          "href": "/agendar"
+        }
+      ],
+      "transcripcion": [
+        {
+          "tiempo": "00:00",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción, un párrafo por intervención.]"
+        },
+        {
+          "tiempo": "00:42",
+          "quien": "[Nombre]",
+          "texto": "[Texto de la transcripción.]"
+        }
+      ],
+      "transcripcionHref": "[URL DE TRANSCRIPCIÓN]"
     }
   ]
 }

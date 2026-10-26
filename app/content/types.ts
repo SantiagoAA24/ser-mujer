@@ -56,6 +56,25 @@ export type Sitio = {
   };
 };
 
+export type NotaEpisodio = {
+  /** Marca de tiempo en formato mm:ss. */
+  tiempo: string;
+  texto: string;
+};
+
+export type RecursoEpisodio = {
+  tipo: string;
+  titulo: string;
+  descripcion: string;
+  href: string;
+};
+
+export type LineaTranscripcion = {
+  tiempo: string;
+  quien: string;
+  texto: string;
+};
+
 export type Episodio = {
   slug: string;
   numero: number;
@@ -64,6 +83,11 @@ export type Episodio = {
   duracion: string;
   fecha: string;
   descripcion: string;
+  notas: NotaEpisodio[];
+  recursos: RecursoEpisodio[];
+  transcripcion: LineaTranscripcion[];
+  /** Enlace para descargar la transcripción completa. */
+  transcripcionHref?: string;
   /** Audio propio (MP3, etc.). Si está, tiene prioridad sobre Spotify. */
   audioUrl?: string;
   /** URL del episodio en Spotify (open.spotify.com/episode/…). */

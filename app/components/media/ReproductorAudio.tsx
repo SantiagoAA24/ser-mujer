@@ -16,6 +16,7 @@ import {
   episodioReproducible,
   formatearTiempo,
   idEpisodioSpotify,
+  VELOCIDADES_AUDIO,
 } from "~/lib/podcast";
 
 type Modo = "audio" | "spotify" | null;
@@ -26,11 +27,23 @@ type ReproductorContexto = {
   currentTime: number;
   duration: number;
   modo: Modo;
+  velocidad: number;
+  silenciado: boolean;
   esActual: (episodio: Episodio) => boolean;
   puedeReproducir: (episodio: Episodio) => boolean;
+  tieneAudioNativo: (episodio: Episodio) => boolean;
   reproducir: (episodio: Episodio) => void;
+  /** Pausa sin limpiar el episodio (permite reanudar y hacer seek). */
   pausar: () => void;
+  /** Detiene y limpia el reproductor (cierra la barra fija). */
+  detener: () => void;
   alternar: (episodio: Episodio) => void;
+  seek: (segundos: number) => void;
+  saltar: (delta: number) => void;
+  /** Carga el episodio (si hace falta), salta al momento y reproduce. */
+  irA: (episodio: Episodio, segundos: number) => void;
+  cicloVelocidad: () => void;
+  alternarSilencio: () => void;
 };
 
 const Contexto = createContext<ReproductorContexto | null>(null);
@@ -49,14 +62,28 @@ function modoDe(episodio: Episodio): Modo {
   return null;
 }
 
-export function ReproductorProvider({ children }: { children: ReactNode }) {
+function tieneAudioNativo(episodio: Episodio): boolean {
+  return Boolean(episodio.audioUrl && !episodio.audioUrl.includes("["));
+}
+
+export function ReproductorProvider({
+  children,
+  barraFija = true,
+}: {
+  children: ReactNode;
+  /** Si es false, no muestra la barra fija inferior (página de episodio). */
+  barraFija?: boolean;
+}) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const slugActualRef = useRef<string | null>(null);
+  const pendienteSeekRef = useRef<number | null>(null);
   const [episodio, setEpisodio] = useState<Episodio | null>(null);
   const [reproduciendo, setReproduciendo] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [spotifyActivo, setSpotifyActivo] = useState(false);
+  const [velocidad, setVelocidad] = useState(1);
+  const [silenciado, setSilenciado] = useState(false);
 
   const modo = episodio ? modoDe(episodio) : null;
   const spotifyId =
@@ -68,13 +95,26 @@ export function ReproductorProvider({ children }: { children: ReactNode }) {
     slugActualRef.current = episodio?.slug ?? null;
   }, [episodio]);
 
-  const pausar = useCallback(() => {
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el) return;
+    el.playbackRate = velocidad;
+  }, [velocidad, episodio]);
+
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el) return;
+    el.muted = silenciado;
+  }, [silenciado, episodio]);
+
+  const detener = useCallback(() => {
     const el = audioRef.current;
     if (el) {
       el.pause();
       el.removeAttribute("src");
       el.load();
     }
+    pendienteSeekRef.current = null;
     setReproduciendo(false);
     setSpotifyActivo(false);
     setEpisodio(null);
@@ -82,58 +122,105 @@ export function ReproductorProvider({ children }: { children: ReactNode }) {
     setDuration(0);
   }, []);
 
-  const reproducir = useCallback((siguiente: Episodio) => {
-    if (!episodioReproducible(siguiente)) return;
-
-    const siguienteModo = modoDe(siguiente);
+  const pausar = useCallback(() => {
     const el = audioRef.current;
+    if (el && !el.paused) {
+      el.pause();
+    }
+    setReproduciendo(false);
+    if (modo === "spotify") {
+      setSpotifyActivo(false);
+    }
+  }, [modo]);
 
-    if (siguienteModo === "audio" && siguiente.audioUrl) {
+  const reproducirAudio = useCallback(
+    (siguiente: Episodio, seekA?: number) => {
+      const el = audioRef.current;
+      if (!el || !siguiente.audioUrl) return;
+
       setSpotifyActivo(false);
       setEpisodio(siguiente);
-      if (el) {
-        const mismo =
-          slugActualRef.current === siguiente.slug && el.currentSrc !== "";
-        if (!mismo) {
-          el.src = siguiente.audioUrl;
+
+      const mismo =
+        slugActualRef.current === siguiente.slug && el.currentSrc !== "";
+      if (!mismo) {
+        el.src = siguiente.audioUrl;
+        el.load();
+        el.playbackRate = velocidad;
+        el.muted = silenciado;
+      }
+
+      if (seekA != null && Number.isFinite(seekA)) {
+        pendienteSeekRef.current = Math.max(0, seekA);
+        const aplicar = () => {
+          const dest = pendienteSeekRef.current;
+          if (dest == null) return;
+          if (Number.isFinite(el.duration)) {
+            el.currentTime = Math.min(dest, el.duration);
+            pendienteSeekRef.current = null;
+            setCurrentTime(el.currentTime);
+          }
+        };
+        if (el.readyState >= 1) aplicar();
+        else el.addEventListener("loadedmetadata", aplicar, { once: true });
+      }
+
+      void el.play().then(
+        () => setReproduciendo(true),
+        () => {
+          setEpisodio(null);
+          setReproduciendo(false);
+        },
+      );
+    },
+    [silenciado, velocidad],
+  );
+
+  const reproducir = useCallback(
+    (siguiente: Episodio) => {
+      if (!episodioReproducible(siguiente)) return;
+
+      const siguienteModo = modoDe(siguiente);
+
+      if (siguienteModo === "audio" && siguiente.audioUrl) {
+        reproducirAudio(siguiente);
+        return;
+      }
+
+      if (siguienteModo === "spotify") {
+        const el = audioRef.current;
+        if (el) {
+          el.pause();
+          el.removeAttribute("src");
           el.load();
         }
-        void el.play().then(
-          () => setReproduciendo(true),
-          () => {
-            setEpisodio(null);
-            setReproduciendo(false);
-          },
-        );
-      } else {
+        pendienteSeekRef.current = null;
+        setCurrentTime(0);
+        setDuration(0);
+        setEpisodio(siguiente);
         setReproduciendo(true);
+        setSpotifyActivo(true);
       }
-      return;
-    }
-
-    if (siguienteModo === "spotify") {
-      if (el) {
-        el.pause();
-        el.removeAttribute("src");
-        el.load();
-      }
-      setCurrentTime(0);
-      setDuration(0);
-      setEpisodio(siguiente);
-      setReproduciendo(true);
-      setSpotifyActivo(true);
-    }
-  }, []);
+    },
+    [reproducirAudio],
+  );
 
   const alternar = useCallback(
     (candidato: Episodio) => {
       if (episodio && episodio.slug === candidato.slug && reproduciendo) {
-        if (modo === "audio") {
-          audioRef.current?.pause();
-          setReproduciendo(false);
-          return;
-        }
         pausar();
+        return;
+      }
+      if (
+        episodio &&
+        episodio.slug === candidato.slug &&
+        !reproduciendo &&
+        modo === "audio"
+      ) {
+        void audioRef.current?.play().then(
+          () => setReproduciendo(true),
+          () => undefined,
+        );
         return;
       }
       reproducir(candidato);
@@ -141,16 +228,69 @@ export function ReproductorProvider({ children }: { children: ReactNode }) {
     [episodio, modo, pausar, reproduciendo, reproducir],
   );
 
+  const seek = useCallback(
+    (segundos: number) => {
+      const el = audioRef.current;
+      if (!el || modo !== "audio") return;
+      const dest = Math.max(0, segundos);
+      if (Number.isFinite(el.duration) && el.duration > 0) {
+        el.currentTime = Math.min(dest, el.duration);
+      } else {
+        el.currentTime = dest;
+      }
+      setCurrentTime(el.currentTime);
+    },
+    [modo],
+  );
+
+  const saltar = useCallback(
+    (delta: number) => {
+      const el = audioRef.current;
+      if (!el || modo !== "audio") return;
+      seek(el.currentTime + delta);
+    },
+    [modo, seek],
+  );
+
+  const irA = useCallback(
+    (candidato: Episodio, segundos: number) => {
+      if (!tieneAudioNativo(candidato)) return;
+      reproducirAudio(candidato, segundos);
+    },
+    [reproducirAudio],
+  );
+
+  const cicloVelocidad = useCallback(() => {
+    setVelocidad((actual) => {
+      const idx = VELOCIDADES_AUDIO.indexOf(
+        actual as (typeof VELOCIDADES_AUDIO)[number],
+      );
+      const siguiente =
+        VELOCIDADES_AUDIO[(idx + 1) % VELOCIDADES_AUDIO.length] ?? 1;
+      return siguiente;
+    });
+  }, []);
+
+  const alternarSilencio = useCallback(() => {
+    setSilenciado((v) => !v);
+  }, []);
+
   useEffect(() => {
     const el = audioRef.current;
     if (!el) return;
 
     const onTime = () => setCurrentTime(el.currentTime);
-    const onMeta = () =>
+    const onMeta = () => {
       setDuration(Number.isFinite(el.duration) ? el.duration : 0);
+      const pendiente = pendienteSeekRef.current;
+      if (pendiente != null && Number.isFinite(el.duration)) {
+        el.currentTime = Math.min(pendiente, el.duration);
+        pendienteSeekRef.current = null;
+        setCurrentTime(el.currentTime);
+      }
+    };
     const onEnded = () => {
       setReproduciendo(false);
-      setEpisodio(null);
       setCurrentTime(0);
     };
     const onPlay = () => setReproduciendo(true);
@@ -182,11 +322,20 @@ export function ReproductorProvider({ children }: { children: ReactNode }) {
       currentTime,
       duration,
       modo,
+      velocidad,
+      silenciado,
       esActual: (e) => episodio?.slug === e.slug && reproduciendo,
       puedeReproducir: episodioReproducible,
+      tieneAudioNativo,
       reproducir,
       pausar,
+      detener,
       alternar,
+      seek,
+      saltar,
+      irA,
+      cicloVelocidad,
+      alternarSilencio,
     }),
     [
       episodio,
@@ -194,9 +343,17 @@ export function ReproductorProvider({ children }: { children: ReactNode }) {
       currentTime,
       duration,
       modo,
+      velocidad,
+      silenciado,
       reproducir,
       pausar,
+      detener,
       alternar,
+      seek,
+      saltar,
+      irA,
+      cicloVelocidad,
+      alternarSilencio,
     ],
   );
 
@@ -205,7 +362,7 @@ export function ReproductorProvider({ children }: { children: ReactNode }) {
       ? Math.min(100, (currentTime / duration) * 100)
       : 0;
 
-  const mostrarBarra = episodio != null && reproduciendo;
+  const mostrarBarra = barraFija && episodio != null && reproduciendo;
 
   return (
     <Contexto.Provider value={valor}>
@@ -239,8 +396,8 @@ export function ReproductorProvider({ children }: { children: ReactNode }) {
         >
           <button
             type="button"
-            aria-label="Pausar"
-            onClick={pausar}
+            aria-label="Detener"
+            onClick={detener}
             className="inline-flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-naranja text-bahia-profundo lg:size-[52px]"
           >
             <svg
