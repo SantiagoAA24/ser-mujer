@@ -1,6 +1,8 @@
 import episodiosJson from "./episodios.json";
 import eventosJson from "./eventos.json";
+import perfilJson from "./perfil.json";
 import preguntasJson from "./preguntas.json";
+import profesionalesJson from "./profesionales.json";
 import recursosJson from "./recursos.json";
 import serviciosJson from "./servicios.json";
 import testimoniosJson from "./testimonios.json";
@@ -8,13 +10,16 @@ import type {
   Coleccion,
   Episodio,
   Evento,
+  Perfil,
   Pregunta,
+  Profesional,
   Recurso,
   Servicio,
   Testimonio,
 } from "./types";
 
 export type {
+  Certificacion,
   Coleccion,
   CtaServicio,
   EnlaceSitio,
@@ -22,10 +27,13 @@ export type {
   Evento,
   FondoServicio,
   FormatoRecurso,
+  HitoTrayectoria,
   IdServicio,
   ModalidadEvento,
+  Perfil,
   PortadaTestimonio,
   Pregunta,
+  Profesional,
   Recurso,
   Servicio,
   Sitio,
@@ -39,7 +47,9 @@ export { sitio } from "./sitio";
 
 const episodios = episodiosJson as Coleccion<Episodio>;
 const eventos = eventosJson as Coleccion<Evento>;
+const perfil = perfilJson as Perfil;
 const preguntas = preguntasJson as Coleccion<Pregunta>;
+const profesionales = profesionalesJson as Coleccion<Profesional>;
 const recursos = recursosJson as Coleccion<Recurso>;
 const testimonios = testimoniosJson as Coleccion<Testimonio>;
 const servicios = serviciosJson as Coleccion<Servicio>;
@@ -105,4 +115,12 @@ export function obtenerServicio(slug: string): Servicio | undefined {
 
 export function listarPreguntas(): Pregunta[] {
   return preguntas.items;
+}
+
+export function obtenerPerfil(): Perfil {
+  return perfil;
+}
+
+export function listarProfesionales(): Profesional[] {
+  return profesionales.items;
 }

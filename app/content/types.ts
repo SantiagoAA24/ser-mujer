@@ -135,3 +135,38 @@ export type Pregunta = {
   pregunta: string;
   respuesta: string;
 };
+
+export type HitoTrayectoria = {
+  periodo: string;
+  titulo: string;
+  detalle: string;
+};
+
+export type Certificacion = {
+  nombre: string;
+  entidad: string;
+  anio: string;
+};
+
+export type Perfil = {
+  nombre: string;
+  profesion: string;
+  presentacion: string[];
+  frase: string;
+  trayectoria: HitoTrayectoria[];
+  enfoque: string;
+  certificaciones: Certificacion[];
+  registro: string;
+  /** Ruta o URL de la foto; vacío = placeholder. */
+  imagen: string;
+};
+
+export type Profesional = {
+  slug: string;
+  nombre: string;
+  rol: string;
+  servicios: string[];
+  imagen?: string;
+  /** Si es true, muestra «Estás viendo este perfil» en lugar del enlace. */
+  actual?: boolean;
+};
