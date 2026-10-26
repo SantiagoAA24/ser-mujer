@@ -12,6 +12,11 @@ export type ReproductorFachadaProps = {
   fondo?: ReactNode;
   ariaLabel?: string;
   className?: string;
+  /**
+   * Si es true y el id es válido, monta el iframe de inmediato.
+   * Usar solo tras un clic explícito de la usuaria (p. ej. play en la lista).
+   */
+  iniciarActivo?: boolean;
 };
 
 function idListo(id: string | undefined): id is string {
@@ -42,9 +47,10 @@ export function ReproductorFachada({
   fondo,
   ariaLabel = "Reproducir",
   className,
+  iniciarActivo = false,
 }: ReproductorFachadaProps) {
-  const [activo, setActivo] = useState(false);
   const puedeCargar = idListo(id);
+  const [activo, setActivo] = useState(iniciarActivo && puedeCargar);
 
   return (
     <div

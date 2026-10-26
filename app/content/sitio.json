@@ -40,5 +40,10 @@
     "label": "Cómo navegar con seguridad",
     "href": "/seguridad"
   },
-  "mostrarRecursosPago": false
+  "mostrarRecursosPago": false,
+  "podcast": {
+    "spotify": { "label": "Spotify", "href": "[URL_SPOTIFY]" },
+    "apple": { "label": "Apple Podcasts", "href": "[URL_APPLE_PODCASTS]" },
+    "youtube": { "label": "YouTube", "href": "[URL_YOUTUBE]" }
+  }
 }

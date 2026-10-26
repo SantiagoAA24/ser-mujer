@@ -48,6 +48,12 @@ export type Sitio = {
   enlaceSeguridad: EnlaceSitio;
   /** Cuando sea true, SeccionRecursosPago mostrará programas de pago. */
   mostrarRecursosPago: boolean;
+  /** Enlaces al show en plataformas externas (solo texto, sin logos). */
+  podcast: {
+    spotify: EnlaceSitio;
+    apple: EnlaceSitio;
+    youtube: EnlaceSitio;
+  };
 };
 
 export type Episodio = {
@@ -58,6 +64,10 @@ export type Episodio = {
   duracion: string;
   fecha: string;
   descripcion: string;
+  /** Audio propio (MP3, etc.). Si está, tiene prioridad sobre Spotify. */
+  audioUrl?: string;
+  /** URL del episodio en Spotify (open.spotify.com/episode/…). */
+  spotifyUrl?: string;
 };
 
 export type Evento = {

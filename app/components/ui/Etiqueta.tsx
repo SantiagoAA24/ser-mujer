@@ -6,6 +6,7 @@ export type EtiquetaVariante =
   | "niebla"
   | "primavera"
   | "durazno"
+  | "crema"
   | "contorno"
   | "oscura";
 
@@ -19,6 +20,7 @@ const variantes: Record<EtiquetaVariante, string> = {
   niebla: "bg-niebla text-bahia",
   primavera: "bg-primavera text-bahia-profundo",
   durazno: "bg-durazno text-bahia",
+  crema: "bg-crema text-bahia",
   contorno: "border-[1.5px] border-bahia bg-transparent text-bahia",
   oscura: "bg-bahia text-crema",
 };
