@@ -131,6 +131,37 @@ export type Evento = {
   calSlug?: string;
 };
 
+/** Tipo de sesión agendable (mapea a un event-type de Cal.com en fase 7). */
+export type Sesion = {
+  slug: string;
+  nombre: string;
+  descripcion: string;
+  /** Texto de duración para la UI, p. ej. `[DURACIÓN]`. */
+  duracion: string;
+  /** Minutos reales para el archivo .ics. */
+  duracionMin: number;
+  /** Slug del event-type en Cal.com. */
+  calSlug: string;
+};
+
+export type CitaEjemplo = {
+  tipoSlug: string;
+  /** ISO 8601 con offset. */
+  inicio: string;
+};
+
+/** Contenido de la página Agendar y su confirmación. */
+export type Agenda = {
+  ejemplo: boolean;
+  proveedorAgenda: string;
+  acompanante: string;
+  plazoCancelacion: string;
+  codigoEjemplo: string;
+  modalidadEjemplo: string;
+  citaEjemplo: CitaEjemplo;
+  items: Sesion[];
+};
+
 export type Recurso = {
   slug: string;
   tipo: TipoRecurso;

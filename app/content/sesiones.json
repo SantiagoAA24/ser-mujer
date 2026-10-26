@@ -1,0 +1,38 @@
+{
+  "ejemplo": true,
+  "proveedorAgenda": "[PROVEEDOR DE AGENDA]",
+  "acompanante": "[NOMBRE DE LA ACOMPAÑANTE]",
+  "plazoCancelacion": "[PLAZO]",
+  "codigoEjemplo": "[CÓDIGO]",
+  "modalidadEjemplo": "Virtual (videollamada)",
+  "citaEjemplo": {
+    "tipoSlug": "primer-encuentro",
+    "inicio": "2026-10-14T10:30:00-05:00"
+  },
+  "items": [
+    {
+      "slug": "primer-encuentro",
+      "nombre": "Primer encuentro",
+      "descripcion": "Para conocernos y resolver tus dudas.",
+      "duracion": "[DURACIÓN]",
+      "duracionMin": 60,
+      "calSlug": "primer-encuentro"
+    },
+    {
+      "slug": "sesion-individual",
+      "nombre": "Sesión individual",
+      "descripcion": "Acompañamiento uno a uno.",
+      "duracion": "[DURACIÓN]",
+      "duracionMin": 60,
+      "calSlug": "sesion-individual"
+    },
+    {
+      "slug": "sesion-seguimiento",
+      "nombre": "Sesión de seguimiento",
+      "descripcion": "Si ya iniciaste tu proceso con nosotras.",
+      "duracion": "[DURACIÓN]",
+      "duracionMin": 60,
+      "calSlug": "sesion-seguimiento"
+    }
+  ]
+}

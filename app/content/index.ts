@@ -5,8 +5,10 @@ import preguntasJson from "./preguntas.json";
 import profesionalesJson from "./profesionales.json";
 import recursosJson from "./recursos.json";
 import serviciosJson from "./servicios.json";
+import sesionesJson from "./sesiones.json";
 import testimoniosJson from "./testimonios.json";
 import type {
+  Agenda,
   Coleccion,
   Episodio,
   Evento,
@@ -15,11 +17,14 @@ import type {
   Profesional,
   Recurso,
   Servicio,
+  Sesion,
   Testimonio,
 } from "./types";
 
 export type {
+  Agenda,
   Certificacion,
+  CitaEjemplo,
   Coleccion,
   CtaServicio,
   CuposEvento,
@@ -39,6 +44,7 @@ export type {
   Recurso,
   RecursoEpisodio,
   Servicio,
+  Sesion,
   Sitio,
   Tema,
   Testimonio,
@@ -57,6 +63,7 @@ const profesionales = profesionalesJson as Coleccion<Profesional>;
 const recursos = recursosJson as Coleccion<Recurso>;
 const testimonios = testimoniosJson as Coleccion<Testimonio>;
 const servicios = serviciosJson as Coleccion<Servicio>;
+const agenda = sesionesJson as Agenda;
 
 function porSlug<T extends { slug: string }>(
   items: T[],
@@ -136,4 +143,16 @@ export function listarProfesionales(): Profesional[] {
 
 export function obtenerProfesional(slug: string): Profesional | undefined {
   return porSlug(profesionales.items, slug);
+}
+
+export function obtenerAgenda(): Agenda {
+  return agenda;
+}
+
+export function listarSesiones(): Sesion[] {
+  return agenda.items;
+}
+
+export function obtenerSesion(slug: string): Sesion | undefined {
+  return porSlug(agenda.items, slug);
 }
