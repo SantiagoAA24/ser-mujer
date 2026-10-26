@@ -1,0 +1,95 @@
+{
+  "ejemplo": true,
+  "items": [
+    {
+      "slug": "volver-a-sentirme-en-casa-conmigo",
+      "tema": "sanacion",
+      "titulo": "Volver a sentirme en casa conmigo",
+      "duracion": "4:12",
+      "portada": {
+        "fondo": "margarita",
+        "forma1": "durazno",
+        "forma2": "naranja",
+        "x1": "-6%",
+        "y1": "48%",
+        "x2": "78%",
+        "y2": "12%"
+      }
+    },
+    {
+      "slug": "aprendi-a-hablarme-con-carino",
+      "tema": "amor",
+      "titulo": "Aprendí a hablarme con cariño",
+      "duracion": "3:05",
+      "portada": {
+        "fondo": "niebla",
+        "forma1": "margarita",
+        "forma2": "crema",
+        "x1": "58%",
+        "y1": "-22%",
+        "x2": "10%",
+        "y2": "62%"
+      }
+    },
+    {
+      "slug": "perdonarme-fue-el-primer-paso",
+      "tema": "perdon",
+      "titulo": "Perdonarme fue el primer paso",
+      "duracion": "5:20",
+      "portada": {
+        "fondo": "durazno",
+        "forma1": "primavera",
+        "forma2": "naranja",
+        "x1": "-12%",
+        "y1": "6%",
+        "x2": "74%",
+        "y2": "58%"
+      }
+    },
+    {
+      "slug": "no-era-la-unica",
+      "tema": "comunidad",
+      "titulo": "No era la única",
+      "duracion": "2:48",
+      "portada": {
+        "fondo": "bahia",
+        "forma1": "niebla",
+        "forma2": "primavera",
+        "x1": "60%",
+        "y1": "40%",
+        "x2": "12%",
+        "y2": "14%"
+      }
+    },
+    {
+      "slug": "un-dia-a-la-vez",
+      "tema": "sanacion",
+      "titulo": "Un día a la vez",
+      "duracion": "3:36",
+      "portada": {
+        "fondo": "primavera",
+        "forma1": "crema",
+        "forma2": "margarita",
+        "x1": "30%",
+        "y1": "52%",
+        "x2": "76%",
+        "y2": "10%"
+      }
+    },
+    {
+      "slug": "lo-que-encontre-en-el-grupo",
+      "tema": "comunidad",
+      "titulo": "Lo que encontré en el grupo",
+      "duracion": "4:01",
+      "portada": {
+        "fondo": "naranja",
+        "forma1": "crema",
+        "forma2": "margarita",
+        "x1": "-8%",
+        "y1": "-24%",
+        "x2": "70%",
+        "y2": "56%"
+      }
+    }
+  ]
+}
