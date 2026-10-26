@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { type ReactNode, useState } from "react";
 
 import { cn } from "~/components/ui/cn";
 
 export type PreguntaFrecuenteProps = {
   pregunta: string;
-  respuesta: string;
+  respuesta: ReactNode;
   /** Si es true, el acordeón inicia abierto. */
   abierta?: boolean;
   className?: string;
@@ -58,9 +58,13 @@ export function PreguntaFrecuente({
           </svg>
         </span>
       </summary>
-      <p className="m-0 max-w-[640px] pb-4 text-base leading-7 text-bahia lg:pb-5">
-        {respuesta}
-      </p>
+      <div className="max-w-[640px] pb-4 text-base leading-7 text-bahia lg:pb-5 [&_ol]:m-0 [&_ol]:list-decimal [&_ol]:ps-5 [&_ol]:leading-7 [&_p]:m-0 [&_p+p]:mt-3 [&_li+li]:mt-1.5">
+        {typeof respuesta === "string" || typeof respuesta === "number" ? (
+          <p className="m-0">{respuesta}</p>
+        ) : (
+          respuesta
+        )}
+      </div>
     </details>
   );
 }

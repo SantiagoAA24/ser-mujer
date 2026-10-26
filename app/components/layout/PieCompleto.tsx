@@ -93,7 +93,13 @@ export function PieCompleto() {
             Si estás en peligro inmediato, llama a {sitio.lineaEmergencia}.
           </p>
           <p className="m-0">
-            © {sitio.copyrightAnio} {sitio.nombre}
+            <Link
+              to={sitio.enlaceSeguridad.href}
+              className="underline-offset-[6px]"
+            >
+              {sitio.enlaceSeguridad.label}
+            </Link>
+            {" · "}© {sitio.copyrightAnio} {sitio.nombre}
           </p>
         </div>
       </div>
