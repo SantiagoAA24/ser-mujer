@@ -22,6 +22,9 @@ export default {
   prerender: () => [
     ...rutasEstaticas,
     ...listarEpisodios().map((episodio) => `/podcast/${episodio.slug}`),
-    ...listarEventos().map((evento) => `/eventos/${evento.slug}`),
+    ...listarEventos().flatMap((evento) => [
+      `/eventos/${evento.slug}`,
+      `/eventos/${evento.slug}/confirmado`,
+    ]),
   ],
 } satisfies Config;

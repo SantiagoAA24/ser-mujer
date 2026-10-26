@@ -9,6 +9,14 @@
       "modalidad": "virtual",
       "lugar": "Transmisión por [PLATAFORMA]",
       "descripcion": "Una conversación abierta para escuchar desde donde estés. No necesitas inscribirte.",
+      "queEs": "[Uno o dos párrafos más sobre el conversatorio: qué se conversará y cómo puedes participar desde donde estés.]",
+      "comoSera": [
+        "Puedes entrar con la cámara apagada y con el nombre que elijas.",
+        "Hablar es opcional: escuchar también es participar.",
+        "No necesitas inscribirte para acompañar la transmisión.",
+        "Puedes salir en cualquier momento, sin dar explicaciones."
+      ],
+      "acompanante": "fundadora",
       "cupos": { "total": 0, "disponibles": 0 },
       "precio": null,
       "transmisionUrl": "https://[PLATAFORMA]/transmisiones"
@@ -21,6 +29,14 @@
       "modalidad": "virtual",
       "lugar": "Videollamada",
       "descripcion": "Un primer encuentro para conocer el espacio y a otras mujeres, sin tener que contar nada.",
+      "queEs": "[Uno o dos párrafos más sobre el evento: qué se hará y qué puede llevarse quien participa.]",
+      "comoSera": [
+        "Puedes entrar con la cámara apagada y con el nombre que elijas.",
+        "Hablar es opcional: escuchar también es participar.",
+        "Lo que se comparte en el círculo se queda en el círculo.",
+        "Puedes salir en cualquier momento, sin dar explicaciones."
+      ],
+      "acompanante": "fundadora",
       "cupos": { "total": 20, "disponibles": 8 },
       "precio": null
     },
@@ -32,6 +48,14 @@
       "modalidad": "presencial",
       "lugar": "[LUGAR, CIUDAD]",
       "descripcion": "Herramientas sencillas para decir que no cuidándote a ti y al vínculo.",
+      "queEs": "[Uno o dos párrafos más sobre el taller: qué se practicará y qué puede llevarse quien participa.]",
+      "comoSera": [
+        "Llegas cuando puedas; no hay que presentarse ante el grupo.",
+        "Participar en voz alta es opcional.",
+        "Lo que se comparte en el taller se queda en el taller.",
+        "Puedes salir en cualquier momento, sin dar explicaciones."
+      ],
+      "acompanante": "fundadora",
       "cupos": { "total": 15, "disponibles": 5 },
       "precio": null
     },
@@ -43,6 +67,14 @@
       "modalidad": "virtual",
       "lugar": "Videollamada",
       "descripcion": "Escribimos juntas, cada una a su ritmo. Compartir lo escrito es opcional.",
+      "queEs": "[Uno o dos párrafos más sobre el encuentro: cómo será la escritura y qué puede llevarse quien participa.]",
+      "comoSera": [
+        "Puedes entrar con la cámara apagada y con el nombre que elijas.",
+        "Escribes a tu ritmo; compartir lo escrito es opcional.",
+        "Lo que se comparte en el encuentro se queda en el encuentro.",
+        "Puedes salir en cualquier momento, sin dar explicaciones."
+      ],
+      "acompanante": "fundadora",
       "cupos": { "total": 25, "disponibles": 15 },
       "precio": null
     },
@@ -54,6 +86,14 @@
       "modalidad": "presencial",
       "lugar": "[LUGAR, CIUDAD]",
       "descripcion": "Ejercicios para volver al cuerpo cuando todo se siente demasiado.",
+      "queEs": "[Uno o dos párrafos más sobre el taller: qué ejercicios se harán y qué puede llevarse quien participa.]",
+      "comoSera": [
+        "Llegas cuando puedas; no hay que presentarse ante el grupo.",
+        "Puedes adaptar o saltarte cualquier ejercicio.",
+        "Lo que se comparte en el taller se queda en el taller.",
+        "Puedes salir en cualquier momento, sin dar explicaciones."
+      ],
+      "acompanante": "fundadora",
       "cupos": { "total": 15, "disponibles": 0 },
       "precio": null
     }

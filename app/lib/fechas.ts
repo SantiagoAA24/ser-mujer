@@ -223,6 +223,14 @@ export function formatoTituloDia(claveDia: string): string {
   return `${semana} ${dia} de ${mes}`;
 }
 
+/** «Jueves 8 de octubre de 2026». */
+export function formatoFechaEventoLarga(inicioIso: string): string {
+  const semana = formatoDiaSemanaLargo(inicioIso);
+  const { dia, anio } = partesEnBogota(new Date(inicioIso));
+  const mes = formatoMesLargo(inicioIso);
+  return `${semana} ${dia} de ${mes} de ${anio}`;
+}
+
 /** Aria-label de celda: «miércoles 8 de octubre: Título» o «…, sin eventos». */
 export function formatoAriaDia(
   claveDia: string,

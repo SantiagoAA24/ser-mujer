@@ -46,6 +46,11 @@ export type Sitio = {
     tooltipCuerpo: string;
   };
   enlaceSeguridad: EnlaceSitio;
+  /**
+   * Título neutro para archivos .ics (calendario).
+   * Sin el nombre del sitio ni el tema del encuentro.
+   */
+  tituloCalendario: string;
   /** Cuando sea true, SeccionRecursosPago mostrará programas de pago. */
   mostrarRecursosPago: boolean;
   /** Enlaces al show en plataformas externas (solo texto, sin logos). */
@@ -107,7 +112,14 @@ export type Evento = {
   duracionMin: number;
   modalidad: ModalidadEvento;
   lugar: string;
+  /** Resumen corto para tarjetas y listados. */
   descripcion: string;
+  /** Texto largo de «De qué se trata». */
+  queEs: string;
+  /** Bullets de «Cómo será». */
+  comoSera: string[];
+  /** Slug del profesional en profesionales.json. */
+  acompanante: string;
   cupos: CuposEvento;
   /** `null` = gratuito */
   precio: number | null;

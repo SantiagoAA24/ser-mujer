@@ -133,3 +133,7 @@ export function obtenerPerfil(): Perfil {
 export function listarProfesionales(): Profesional[] {
   return profesionales.items;
 }
+
+export function obtenerProfesional(slug: string): Profesional | undefined {
+  return porSlug(profesionales.items, slug);
+}

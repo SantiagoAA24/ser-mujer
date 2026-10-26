@@ -40,6 +40,7 @@
     "label": "Cómo navegar con seguridad",
     "href": "/seguridad"
   },
+  "tituloCalendario": "Cita",
   "mostrarRecursosPago": false,
   "podcast": {
     "spotify": { "label": "Spotify", "href": "[URL_SPOTIFY]" },

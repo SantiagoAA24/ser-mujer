@@ -24,5 +24,6 @@ export default [
     route("contacto/enviado", "routes/contacto.enviado.tsx"),
     route("agendar", "routes/agendar.tsx"),
     route("agendar/confirmado", "routes/agendar.confirmado.tsx"),
+    route("eventos/:slug/confirmado", "routes/eventos.$slug.confirmado.tsx"),
   ]),
 ] satisfies RouteConfig;

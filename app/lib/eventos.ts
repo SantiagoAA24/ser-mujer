@@ -30,6 +30,23 @@ export function textoCupos(cupos: CuposEvento): string {
   return `${cupos.disponibles} cupos disponibles de ${cupos.total}`;
 }
 
+/** Copy del detalle de evento: «8 disponibles de 20». */
+export function textoCuposDetalle(cupos: CuposEvento): string {
+  if (cupos.total === 0) return "Sin límite de cupos";
+  if (cupos.disponibles === 0) return "Cupos completos";
+  return `${cupos.disponibles} disponibles de ${cupos.total}`;
+}
+
+/** «1 h 30 min», «2 h», «45 min». */
+export function formatoDuracion(duracionMin: number): string {
+  if (duracionMin <= 0) return "";
+  const horas = Math.floor(duracionMin / 60);
+  const minutos = duracionMin % 60;
+  if (horas === 0) return `${minutos} min`;
+  if (minutos === 0) return `${horas} h`;
+  return `${horas} h ${minutos} min`;
+}
+
 export function cuposCompletos(cupos: CuposEvento): boolean {
   return cupos.total > 0 && cupos.disponibles === 0;
 }
