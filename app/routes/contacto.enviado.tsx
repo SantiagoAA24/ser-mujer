@@ -7,7 +7,14 @@ import { sitio } from "~/content";
 import type { Route } from "./+types/contacto.enviado";
 
 export function meta(): ReturnType<Route.MetaFunction> {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Mensaje enviado · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Recibimos tu mensaje. Te responderemos con calma por el medio que elegiste.",
+    },
+  ];
 }
 
 function AvisoHistorial({ className }: { className?: string }) {

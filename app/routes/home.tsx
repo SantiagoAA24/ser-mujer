@@ -15,6 +15,7 @@ import {
 } from "~/content";
 import type { TarjetaVariante } from "~/components/ui/Tarjeta";
 import type { FondoServicio } from "~/content/types";
+import { enlaceUsable } from "~/lib/enlaces";
 
 const enlacesInicioServicio: Record<
   string,
@@ -37,7 +38,14 @@ function varianteTarjeta(fondo: FondoServicio): TarjetaVariante {
 }
 
 export function meta() {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Acompañamiento, sanación y transformación para mujeres, a tu ritmo.",
+    },
+  ];
 }
 
 export default function Home() {
@@ -212,10 +220,14 @@ export default function Home() {
             <Boton
               variante="secundario"
               sobreOscuro
-              href={sitio.whatsapp.href}
               className="w-full justify-center gap-3 lg:w-auto"
-              rel="noopener noreferrer"
-              target="_blank"
+              {...(enlaceUsable(sitio.whatsapp.href)
+                ? {
+                    href: sitio.whatsapp.href,
+                    rel: "noopener noreferrer",
+                    target: "_blank" as const,
+                  }
+                : { disabled: true })}
             >
               <svg
                 width="22"

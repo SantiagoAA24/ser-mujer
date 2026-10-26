@@ -1,4 +1,5 @@
 import type { CuposEvento, Evento, ModalidadEvento } from "~/content/types";
+import { enlaceUsable } from "~/lib/enlaces";
 import {
   claveDiaDeInicio,
   eventoEnVivo,
@@ -55,10 +56,9 @@ export function etiquetaModalidad(modalidad: ModalidadEvento): string {
   return modalidad === "virtual" ? "Virtual" : "Presencial";
 }
 
-/** URL usable (no vacía ni con marcadores entre corchetes). */
+/** URL usable (http/https, sin marcadores entre corchetes). */
 export function transmisionUsable(url: string | undefined): url is string {
-  if (!url || url.trim() === "") return false;
-  if (url.includes("[")) return false;
+  if (!enlaceUsable(url)) return false;
   try {
     const parsed = new URL(url);
     return parsed.protocol === "http:" || parsed.protocol === "https:";

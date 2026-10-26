@@ -5,6 +5,7 @@ import { Boton } from "~/components/ui/Boton";
 import { EtiquetaSeccion } from "~/components/ui/EtiquetaSeccion";
 import { Tarjeta } from "~/components/ui/Tarjeta";
 import { listarProfesionales, obtenerPerfil, sitio } from "~/content";
+import { enlaceUsable } from "~/lib/enlaces";
 
 const principiosEnfoque = [
   {
@@ -67,7 +68,14 @@ function IconoSello() {
 }
 
 export function meta() {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Quién soy · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Conoce a quien acompaña en Ser, Mujer: trayectoria, enfoque y valores del espacio.",
+    },
+  ];
 }
 
 export default function QuienSoy() {
@@ -324,10 +332,14 @@ export default function QuienSoy() {
             <Boton
               variante="secundario"
               sobreOscuro
-              href={sitio.whatsapp.href}
               className="w-full justify-center gap-3 lg:w-auto"
-              rel="noopener noreferrer"
-              target="_blank"
+              {...(enlaceUsable(sitio.whatsapp.href)
+                ? {
+                    href: sitio.whatsapp.href,
+                    rel: "noopener noreferrer",
+                    target: "_blank" as const,
+                  }
+                : { disabled: true })}
             >
               <svg
                 width="22"

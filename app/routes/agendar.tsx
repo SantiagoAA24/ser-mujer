@@ -10,7 +10,14 @@ import { listarSesiones, obtenerAgenda } from "~/content";
 import type { Route } from "./+types/agendar";
 
 export function meta(): ReturnType<Route.MetaFunction> {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Agendar · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Agenda una primera conversación confidencial, sin compromiso y a tu ritmo.",
+    },
+  ];
 }
 
 const MODALIDADES = [

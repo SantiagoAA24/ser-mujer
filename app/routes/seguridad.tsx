@@ -160,7 +160,14 @@ const consejosMedio = [
 ] as const;
 
 export function meta() {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Navegar con seguridad · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Ideas sencillas para cuidar tu privacidad mientras visitas este sitio, a tu ritmo.",
+    },
+  ];
 }
 
 export default function Seguridad() {

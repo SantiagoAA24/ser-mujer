@@ -26,11 +26,26 @@ import {
   obtenerEvento,
   obtenerProfesional,
 } from "~/content";
+import { metaDescripcion, tituloSeccion } from "~/lib/meta";
 
 import type { Route } from "./+types/eventos.$slug";
 
-export function meta(): ReturnType<Route.MetaFunction> {
-  return [{ title: "Ser, Mujer" }];
+export function meta({
+  loaderData,
+}: Route.MetaArgs): ReturnType<Route.MetaFunction> {
+  const titulo = loaderData?.evento?.titulo;
+  return [
+    {
+      title: titulo ? tituloSeccion(titulo) : tituloSeccion("Eventos"),
+    },
+    {
+      name: "description",
+      content: metaDescripcion(
+        loaderData?.evento?.descripcion,
+        "Detalles del evento e inscripción en Ser, Mujer.",
+      ),
+    },
+  ];
 }
 
 export function loader({ params }: Route.LoaderArgs) {

@@ -16,7 +16,14 @@ import {
 } from "~/lib/recursos";
 
 export function meta() {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Recursos · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Lecturas, audios y materiales para momentos en que necesitas una pausa o una herramienta sencilla.",
+    },
+  ];
 }
 
 function parseTipo(valor: string | null): FiltroTipo {

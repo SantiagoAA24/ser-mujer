@@ -5,6 +5,7 @@ import { LlamadoFinal } from "~/components/secciones/LlamadoFinal";
 import { Boton } from "~/components/ui/Boton";
 import { EtiquetaSeccion } from "~/components/ui/EtiquetaSeccion";
 import { listarPreguntas, listarServicios, sitio } from "~/content";
+import { enlaceUsable } from "~/lib/enlaces";
 
 const puntosRitmo = [
   {
@@ -22,7 +23,14 @@ const puntosRitmo = [
 ] as const;
 
 export function meta() {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Cómo te acompañamos · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Talleres, recursos, grupos y sesiones individuales. Cuatro formas de caminar juntas, sin prisa.",
+    },
+  ];
 }
 
 export default function ComoTeAcompanamos() {
@@ -143,10 +151,14 @@ export default function ComoTeAcompanamos() {
           <>
             <Boton
               sobreOscuro
-              href={sitio.whatsapp.href}
               className="w-full justify-center gap-3 lg:w-auto"
-              rel="noopener noreferrer"
-              target="_blank"
+              {...(enlaceUsable(sitio.whatsapp.href)
+                ? {
+                    href: sitio.whatsapp.href,
+                    rel: "noopener noreferrer",
+                    target: "_blank" as const,
+                  }
+                : { disabled: true })}
             >
               <svg
                 width="22"

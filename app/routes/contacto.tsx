@@ -8,11 +8,19 @@ import { EtiquetaSeccion } from "~/components/ui/EtiquetaSeccion";
 import { GrupoOpciones } from "~/components/ui/GrupoOpciones";
 import { cn } from "~/components/ui/cn";
 import { sitio } from "~/content";
+import { enlaceUsable } from "~/lib/enlaces";
 
 import type { Route } from "./+types/contacto";
 
 export function meta(): ReturnType<Route.MetaFunction> {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Contacto · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Escríbenos con calma y sin compromiso. Respondemos por el medio que prefieras.",
+    },
+  ];
 }
 
 type ViaContacto = "correo" | "whatsapp" | "ninguna";
@@ -33,15 +41,22 @@ const OPCIONES_VIA = [
 const CORREO_OK = /.+@.+\..+/;
 
 function EnlacesDirectos({ className }: { className?: string }) {
+  const whatsappOk = enlaceUsable(sitio.whatsapp.href);
   return (
     <p className={cn("m-0 text-base text-bahia", className)}>
       ¿Prefieres hablar directamente?{" "}
-      <a
-        href={sitio.whatsapp.href}
-        className="font-semibold underline-offset-[6px]"
-      >
-        Escríbenos por WhatsApp
-      </a>{" "}
+      {whatsappOk ? (
+        <a
+          href={sitio.whatsapp.href}
+          className="font-semibold underline-offset-[6px]"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Escríbenos por WhatsApp
+        </a>
+      ) : (
+        <span className="font-semibold">Escríbenos por WhatsApp</span>
+      )}{" "}
       o{" "}
       <Link
         to="/agendar"

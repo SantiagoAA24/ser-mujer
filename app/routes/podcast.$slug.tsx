@@ -19,6 +19,8 @@ import {
   sitio,
 } from "~/content";
 import type { Episodio, RecursoEpisodio } from "~/content/types";
+import { enlaceUsable } from "~/lib/enlaces";
+import { metaDescripcion, tituloSeccion } from "~/lib/meta";
 import {
   episodiosRelacionados,
   fondoPortadaTema,
@@ -31,8 +33,22 @@ import { ETIQUETA_TEMA } from "~/lib/recursos";
 
 import type { Route } from "./+types/podcast.$slug";
 
-export function meta(): ReturnType<Route.MetaFunction> {
-  return [{ title: "Podcast · Ser, Mujer" }];
+export function meta({
+  loaderData,
+}: Route.MetaArgs): ReturnType<Route.MetaFunction> {
+  const titulo = loaderData?.episodio?.titulo;
+  return [
+    {
+      title: titulo ? tituloSeccion(titulo) : tituloSeccion("Podcast"),
+    },
+    {
+      name: "description",
+      content: metaDescripcion(
+        loaderData?.episodio?.descripcion,
+        "Escucha este episodio del podcast de Ser, Mujer a tu ritmo.",
+      ),
+    },
+  ];
 }
 
 export function loader({ params }: Route.LoaderArgs) {
@@ -79,10 +95,6 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       </Link>
     </div>
   );
-}
-
-function hrefSeguro(href: string): string {
-  return href.includes("[") ? "#" : href;
 }
 
 function varianteRecurso(tipo: string): EtiquetaVariante {
@@ -163,15 +175,26 @@ function EnlacesPlataformas() {
   return (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-1 px-1 text-[15px] lg:gap-x-5 lg:px-0">
       <span className="font-semibold">También en</span>
-      {plataformas.map((p) => (
-        <a
-          key={p.label}
-          href={hrefSeguro(p.href)}
-          className="inline-flex min-h-11 items-center font-semibold underline-offset-[6px]"
-        >
-          {p.label}
-        </a>
-      ))}
+      {plataformas.map((p) =>
+        enlaceUsable(p.href) ? (
+          <a
+            key={p.label}
+            href={p.href}
+            className="inline-flex min-h-11 items-center font-semibold underline-offset-[6px]"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {p.label}
+          </a>
+        ) : (
+          <span
+            key={p.label}
+            className="inline-flex min-h-11 items-center font-semibold"
+          >
+            {p.label}
+          </span>
+        ),
+      )}
     </div>
   );
 }
@@ -220,10 +243,11 @@ function NotasEpisodio({ episodio }: { episodio: Episodio }) {
 }
 
 function TarjetaRecursoMencionado({ recurso }: { recurso: RecursoEpisodio }) {
-  const href = hrefSeguro(recurso.href);
-  const interno = href.startsWith("/");
+  const usable = enlaceUsable(recurso.href);
+  const interno = usable && recurso.href.startsWith("/");
   const clase = cn(
-    "flex flex-col gap-0.5 rounded-[20px] bg-blanco px-5 py-4 no-underline lg:gap-1 lg:px-6 lg:py-5",
+    "flex flex-col gap-0.5 rounded-[20px] bg-blanco px-5 py-4 lg:gap-1 lg:px-6 lg:py-5",
+    usable && "no-underline",
   );
   const cuerpo = (
     <>
@@ -240,16 +264,25 @@ function TarjetaRecursoMencionado({ recurso }: { recurso: RecursoEpisodio }) {
     </>
   );
 
+  if (!usable) {
+    return <div className={clase}>{cuerpo}</div>;
+  }
+
   if (interno) {
     return (
-      <Link to={href} className={clase}>
+      <Link to={recurso.href} className={clase}>
         {cuerpo}
       </Link>
     );
   }
 
   return (
-    <a href={href} className={clase}>
+    <a
+      href={recurso.href}
+      className={clase}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
       {cuerpo}
     </a>
   );
@@ -291,9 +324,9 @@ function ContenidoEpisodio({
   relacionados: Episodio[];
 }) {
   const temaLabel = ETIQUETA_TEMA[episodio.tema];
-  const transcripcionHref = episodio.transcripcionHref
-    ? hrefSeguro(episodio.transcripcionHref)
-    : "#";
+  const transcripcionHref = enlaceUsable(episodio.transcripcionHref)
+    ? episodio.transcripcionHref
+    : null;
 
   return (
     <>
@@ -422,12 +455,20 @@ function ContenidoEpisodio({
                     {linea.texto}
                   </p>
                 ))}
-                <a
-                  href={transcripcionHref}
-                  className="inline-flex min-h-11 items-center self-start font-semibold underline-offset-[6px]"
-                >
-                  Descargar la transcripción completa
-                </a>
+                {transcripcionHref ? (
+                  <a
+                    href={transcripcionHref}
+                    className="inline-flex min-h-11 items-center self-start font-semibold underline-offset-[6px]"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Descargar la transcripción completa
+                  </a>
+                ) : (
+                  <span className="inline-flex min-h-11 items-center self-start font-semibold">
+                    Descargar la transcripción completa
+                  </span>
+                )}
               </div>
             </details>
           </div>

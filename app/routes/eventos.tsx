@@ -24,7 +24,14 @@ import {
 } from "~/lib/fechas";
 
 export function meta() {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Eventos · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Talleres, círculos y encuentros próximos. Virtuales y presenciales, con cupos limitados.",
+    },
+  ];
 }
 
 function ChipFiltro({

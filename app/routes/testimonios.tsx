@@ -18,7 +18,14 @@ import {
 } from "~/lib/testimonios";
 
 export function meta() {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Testimonios · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Voces de mujeres que han pasado por este espacio. Relatos con cuidado y sin detalles que identifiquen.",
+    },
+  ];
 }
 
 function IconoConsentimiento({ className }: { className?: string }) {

@@ -11,6 +11,7 @@ import { EtiquetaSeccion } from "~/components/ui/EtiquetaSeccion";
 import { cn } from "~/components/ui/cn";
 import { listarEpisodios, sitio } from "~/content";
 import type { Episodio, Tema } from "~/content/types";
+import { enlaceUsable } from "~/lib/enlaces";
 import {
   EPISODIOS_POR_PAGINA,
   formatoFechaEpisodio,
@@ -25,7 +26,14 @@ import {
 } from "~/lib/recursos";
 
 export function meta() {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Podcast · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Episodios para acompañarte cuando prefieres estar a solas: con audífonos y sin prisa.",
+    },
+  ];
 }
 
 function IconoPlay({ className }: { className?: string }) {
@@ -80,10 +88,6 @@ function ChipFiltro({
       {label}
     </button>
   );
-}
-
-function hrefPlataforma(href: string): string {
-  return href.includes("[") ? "#" : href;
 }
 
 function EpisodioDestacado({ episodio }: { episodio: Episodio }) {
@@ -362,15 +366,25 @@ function PodcastContenido() {
               Escúchalo también en
             </span>
             <div className="flex flex-wrap gap-2 lg:gap-3">
-              {plataformas.map((p) => (
-                <a
-                  key={p.label}
-                  href={hrefPlataforma(p.href)}
-                  className="inline-flex min-h-11 items-center rounded-full bg-blanco px-[18px] py-1.5 text-[15px] font-semibold no-underline lg:px-[22px] lg:py-2"
-                >
-                  {p.label}
-                </a>
-              ))}
+              {plataformas.map((p) => {
+                const clase =
+                  "inline-flex min-h-11 items-center rounded-full bg-blanco px-[18px] py-1.5 text-[15px] font-semibold lg:px-[22px] lg:py-2";
+                return enlaceUsable(p.href) ? (
+                  <a
+                    key={p.label}
+                    href={p.href}
+                    className={`${clase} no-underline`}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    {p.label}
+                  </a>
+                ) : (
+                  <span key={p.label} className={clase}>
+                    {p.label}
+                  </span>
+                );
+              })}
             </div>
           </div>
         </div>

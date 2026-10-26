@@ -17,7 +17,11 @@ import type { Route } from "./+types/sistema";
 
 export function meta(): ReturnType<Route.MetaFunction> {
   return [
-    { title: "Ser, Mujer" },
+    { title: "Sistema · Ser, Mujer" },
+    {
+      name: "description",
+      content: "Catálogo interno de componentes del sistema de diseño.",
+    },
     { name: "robots", content: "noindex, nofollow" },
   ];
 }
@@ -99,7 +103,10 @@ export default function Sistema() {
             Deshabilitado
           </Boton>
         </Fila>
-        <div className="sobre-oscuro flex flex-col gap-6 rounded-tarjeta bg-bahia p-8 text-crema">
+        <div
+          id="como"
+          className="sobre-oscuro flex flex-col gap-6 rounded-tarjeta bg-bahia p-8 text-crema"
+        >
           <p className="text-pequeno font-semibold text-crema">
             Sobre fondo oscuro
           </p>
@@ -120,6 +127,9 @@ export default function Sistema() {
             </Boton>
           </div>
         </div>
+        <p id="saber" className="sr-only">
+          Ancla de demo para botón deshabilitado
+        </p>
       </Seccion>
 
       <Seccion titulo="Etiquetas">
@@ -136,7 +146,7 @@ export default function Sistema() {
       </Seccion>
 
       <Seccion titulo="Tarjetas">
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div id="conoce" className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           <Tarjeta variante="blanca">
             <Etiqueta variante="niebla">Taller</Etiqueta>
             <h3 className="font-serif text-[26px] leading-[1.25] font-normal">
@@ -196,7 +206,7 @@ export default function Sistema() {
       </Seccion>
 
       <Seccion titulo="Formularios">
-        <div className="grid max-w-xl gap-8">
+        <div id="saber-mas" className="grid max-w-xl gap-8">
           <CampoTexto
             etiqueta="¿Cómo quieres que te llamemos?"
             placeholder="Puede ser un apodo"

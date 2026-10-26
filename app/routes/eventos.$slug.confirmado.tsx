@@ -24,7 +24,14 @@ import { construirIcs, descargarIcs } from "~/lib/ics";
 import type { Route } from "./+types/eventos.$slug.confirmado";
 
 export function meta(): ReturnType<Route.MetaFunction> {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Inscripción · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Tu inscripción al evento quedó registrada. Revisa los detalles y, si lo deseas, añádelo a tu calendario.",
+    },
+  ];
 }
 
 export function loader({ params }: Route.LoaderArgs) {

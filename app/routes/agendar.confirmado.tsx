@@ -6,6 +6,7 @@ import {
   obtenerSesion,
   sitio,
 } from "~/content";
+import { enlaceUsable } from "~/lib/enlaces";
 import {
   finEvento,
   formatoFechaEventoLarga,
@@ -16,7 +17,14 @@ import { construirIcs, descargarIcs } from "~/lib/ics";
 import type { Route } from "./+types/agendar.confirmado";
 
 export function meta(): ReturnType<Route.MetaFunction> {
-  return [{ title: "Ser, Mujer" }];
+  return [
+    { title: "Cita confirmada · Ser, Mujer" },
+    {
+      name: "description",
+      content:
+        "Tu cita quedó registrada. Revisa los detalles y, si lo deseas, añádela a tu calendario.",
+    },
+  ];
 }
 
 function fechaValida(valor: string | null): string | null {
@@ -188,12 +196,18 @@ export default function AgendarConfirmado() {
               Escríbenos
             </Link>{" "}
             o usa{" "}
-            <a
-              href={sitio.whatsapp.href}
-              className="font-semibold underline-offset-4"
-            >
-              WhatsApp
-            </a>
+            {enlaceUsable(sitio.whatsapp.href) ? (
+              <a
+                href={sitio.whatsapp.href}
+                className="font-semibold underline-offset-4"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                WhatsApp
+              </a>
+            ) : (
+              <span className="font-semibold">WhatsApp</span>
+            )}
             .
           </div>
         </aside>
@@ -273,12 +287,18 @@ export default function AgendarConfirmado() {
           Escríbenos
         </Link>{" "}
         o usa{" "}
-        <a
-          href={sitio.whatsapp.href}
-          className="font-semibold underline-offset-4"
-        >
-          WhatsApp
-        </a>
+        {enlaceUsable(sitio.whatsapp.href) ? (
+          <a
+            href={sitio.whatsapp.href}
+            className="font-semibold underline-offset-4"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            WhatsApp
+          </a>
+        ) : (
+          <span className="font-semibold">WhatsApp</span>
+        )}
         .
       </p>
     </div>

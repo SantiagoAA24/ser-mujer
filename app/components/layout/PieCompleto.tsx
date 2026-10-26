@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 
 import { sitio } from "~/content/sitio";
+import { enlaceUsable } from "~/lib/enlaces";
 
 function IconoWhatsApp() {
   return (
@@ -71,20 +72,38 @@ export function PieCompleto() {
 
           <div className="order-2 flex flex-col gap-3 text-[15px] lg:order-none">
             <p className="m-0 font-semibold">Escríbenos</p>
-            <a
-              href={sitio.whatsapp.href}
-              className="inline-flex min-h-[52px] items-center gap-3 rounded-full bg-niebla px-[22px] py-2 font-semibold text-bahia no-underline lg:min-h-12"
-            >
-              <IconoWhatsApp />
-              {sitio.whatsapp.etiqueta}
-            </a>
-            <a
-              href={sitio.instagram.href}
-              className="inline-flex min-h-[52px] items-center gap-3 rounded-full bg-primavera px-[22px] py-2 font-semibold text-bahia-profundo no-underline lg:min-h-12"
-            >
-              <IconoInstagram />
-              {sitio.instagram.etiqueta}
-            </a>
+            {enlaceUsable(sitio.whatsapp.href) ? (
+              <a
+                href={sitio.whatsapp.href}
+                className="inline-flex min-h-[52px] items-center gap-3 rounded-full bg-niebla px-[22px] py-2 font-semibold text-bahia no-underline lg:min-h-12"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <IconoWhatsApp />
+                {sitio.whatsapp.etiqueta}
+              </a>
+            ) : (
+              <span className="inline-flex min-h-[52px] items-center gap-3 rounded-full bg-niebla px-[22px] py-2 font-semibold text-bahia lg:min-h-12">
+                <IconoWhatsApp />
+                {sitio.whatsapp.etiqueta}
+              </span>
+            )}
+            {enlaceUsable(sitio.instagram.href) ? (
+              <a
+                href={sitio.instagram.href}
+                className="inline-flex min-h-[52px] items-center gap-3 rounded-full bg-primavera px-[22px] py-2 font-semibold text-bahia-profundo no-underline lg:min-h-12"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <IconoInstagram />
+                {sitio.instagram.etiqueta}
+              </a>
+            ) : (
+              <span className="inline-flex min-h-[52px] items-center gap-3 rounded-full bg-primavera px-[22px] py-2 font-semibold text-bahia-profundo lg:min-h-12">
+                <IconoInstagram />
+                {sitio.instagram.etiqueta}
+              </span>
+            )}
           </div>
         </div>
 
