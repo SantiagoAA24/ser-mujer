@@ -39,5 +39,6 @@
   "enlaceSeguridad": {
     "label": "Cómo navegar con seguridad",
     "href": "/seguridad"
-  }
+  },
+  "mostrarRecursosPago": false
 }

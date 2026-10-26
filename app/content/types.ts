@@ -46,6 +46,8 @@ export type Sitio = {
     tooltipCuerpo: string;
   };
   enlaceSeguridad: EnlaceSitio;
+  /** Cuando sea true, SeccionRecursosPago mostrará programas de pago. */
+  mostrarRecursosPago: boolean;
 };
 
 export type Episodio = {
@@ -81,7 +83,8 @@ export type Recurso = {
   descripcion: string;
   formato: FormatoRecurso;
   detalle: string;
-  pideCorreo: boolean;
+  archivo: string;
+  correoOpcional: boolean;
 };
 
 export type PortadaTestimonio = {

@@ -9,7 +9,8 @@
       "descripcion": "Una primera orientación, sin prisa, para entender por dónde comenzar.",
       "formato": "PDF",
       "detalle": "12 páginas",
-      "pideCorreo": true
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": true
     },
     {
       "slug": "carta-a-mi-misma",
@@ -19,7 +20,8 @@
       "descripcion": "Un ejercicio de escritura para hablarte con el cariño que mereces.",
       "formato": "PDF",
       "detalle": "3 páginas",
-      "pideCorreo": false
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": false
     },
     {
       "slug": "respiracion-para-volver-a-la-calma",
@@ -29,7 +31,8 @@
       "descripcion": "Un audio guiado para los momentos en que todo se siente demasiado.",
       "formato": "Audio",
       "detalle": "8 min",
-      "pideCorreo": false
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": false
     },
     {
       "slug": "perdonar-a-tu-ritmo",
@@ -39,7 +42,8 @@
       "descripcion": "Qué es y qué no es el perdón, y por qué nadie puede apurarlo.",
       "formato": "PDF",
       "detalle": "10 páginas",
-      "pideCorreo": true
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": true
     },
     {
       "slug": "mi-red-de-apoyo",
@@ -49,7 +53,8 @@
       "descripcion": "Una hoja para reconocer a las personas y lugares que te sostienen.",
       "formato": "PDF",
       "detalle": "2 páginas",
-      "pideCorreo": false
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": false
     },
     {
       "slug": "meditacion-de-amor-propio",
@@ -59,7 +64,8 @@
       "descripcion": "Doce minutos para cerrar el día tratándote con amabilidad.",
       "formato": "Audio",
       "detalle": "12 min",
-      "pideCorreo": true
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": true
     },
     {
       "slug": "diario-de-siete-dias",
@@ -69,7 +75,8 @@
       "descripcion": "Una pregunta suave por día para escucharte un poco más.",
       "formato": "PDF",
       "detalle": "9 páginas",
-      "pideCorreo": false
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": false
     },
     {
       "slug": "soltar-sin-olvidar",
@@ -79,7 +86,8 @@
       "descripcion": "Una reflexión guiada para dejar ir el peso, no tu historia.",
       "formato": "Audio",
       "detalle": "10 min",
-      "pideCorreo": false
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": false
     }
   ]
 }
