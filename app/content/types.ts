@@ -109,12 +109,16 @@ export type Testimonio = {
   destacado?: boolean;
 };
 
+export type IdServicio = "talleres" | "recursos" | "grupos" | "sesiones";
+
 export type CtaServicio = {
-  label: string;
+  texto: string;
   href: string;
 };
 
 export type Servicio = {
+  /** Ancla en la página Cómo te acompañamos (`#talleres`, etc.). */
+  id: IdServicio;
   slug: string;
   numero: string;
   titulo: string;
@@ -122,7 +126,12 @@ export type Servicio = {
   resumen: string;
   queEs: string;
   paraQuien: string;
-  comoFunciona: string[];
+  pasos: string[];
   cta: CtaServicio;
   fondo: FondoServicio;
+};
+
+export type Pregunta = {
+  pregunta: string;
+  respuesta: string;
 };

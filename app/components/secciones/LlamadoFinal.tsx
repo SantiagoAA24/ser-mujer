@@ -7,6 +7,7 @@ export type LlamadoFinalProps = {
   texto: ReactNode;
   /** Hasta dos botones (primario / secundario sobre oscuro). */
   acciones: ReactNode;
+  id?: string;
   className?: string;
 };
 
@@ -14,10 +15,12 @@ export function LlamadoFinal({
   titulo,
   texto,
   acciones,
+  id,
   className,
 }: LlamadoFinalProps) {
   return (
     <section
+      id={id}
       className={cn(
         "sobre-oscuro relative overflow-hidden bg-bahia px-5 py-[72px] text-crema lg:px-14 lg:py-[120px]",
         className,

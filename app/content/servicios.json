@@ -2,73 +2,77 @@
   "ejemplo": true,
   "items": [
     {
+      "id": "talleres",
       "slug": "talleres",
       "numero": "01",
       "titulo": "Talleres",
       "resumen": "Encuentros guiados para aprender herramientas de cuidado propio, paso a paso.",
       "queEs": "Encuentros guiados alrededor de un tema —el amor propio, los límites, el perdón— donde aprendes herramientas prácticas para cuidarte.",
       "paraQuien": "Para ti si quieres empezar con algo concreto y acotado, y te sientes cómoda aprendiendo junto a otras mujeres.",
-      "comoFunciona": [
+      "pasos": [
         "Eliges un taller del calendario y reservas tu lugar.",
         "Participas en [MODALIDAD] durante [DURACIÓN].",
         "Te llevas ejercicios para seguir practicando a tu ritmo."
       ],
       "cta": {
-        "label": "Ver próximos talleres",
+        "texto": "Ver próximos talleres",
         "href": "/eventos"
       },
       "fondo": "niebla"
     },
     {
+      "id": "recursos",
       "slug": "recursos-emocionales",
       "numero": "02",
       "titulo": "Recursos emocionales",
       "resumen": "Lecturas, ejercicios y el podcast, para cuando prefieras empezar a solas.",
       "queEs": "Lecturas, ejercicios, audios y episodios del podcast que puedes usar por tu cuenta, en privado y cuando tú quieras.",
       "paraQuien": "Para ti si todavía no quieres hablar con nadie, o si prefieres ir entendiendo lo que sientes antes de dar otro paso.",
-      "comoFunciona": [
+      "pasos": [
         "Entras a la sección de Recursos; no hace falta registrarte.",
         "Eliges por tema o por cómo te sientes hoy.",
         "Lees, escuchas o practicas a solas. Puedes volver cuando quieras."
       ],
       "cta": {
-        "label": "Explorar recursos",
+        "texto": "Explorar recursos",
         "href": "/recursos"
       },
       "fondo": "durazno"
     },
     {
+      "id": "grupos",
       "slug": "dinamicas-grupales",
       "numero": "03",
       "titulo": "Dinámicas grupales",
       "resumen": "Una comunidad segura de mujeres que comparten y se sostienen entre sí.",
       "queEs": "Un círculo pequeño y confidencial de mujeres que se escuchan y se sostienen entre sí, acompañado por una facilitadora.",
       "paraQuien": "Para ti si te haría bien saber que no eres la única, y quieres compartir —o solo escuchar— en un espacio cuidado.",
-      "comoFunciona": [
+      "pasos": [
         "Nos escribes y conversamos para encontrar el grupo adecuado.",
         "El grupo se reúne [FRECUENCIA], en [MODALIDAD].",
         "Hablas solo si quieres: escuchar también es participar."
       ],
       "cta": {
-        "label": "Quiero conocer un grupo",
+        "texto": "Quiero conocer un grupo",
         "href": "/contacto"
       },
       "fondo": "primavera"
     },
     {
+      "id": "sesiones",
       "slug": "sesiones-individuales",
       "numero": "04",
-      "titulo": "Sesiones",
+      "titulo": "Sesiones individuales",
       "resumen": "Un espacio uno a uno y confidencial, con acompañamiento pensado para ti.",
       "queEs": "Un espacio uno a uno, privado y confidencial, con acompañamiento pensado para lo que tú necesitas.",
       "paraQuien": "Para ti si prefieres la intimidad de hablar con una sola persona y avanzar con atención dedicada.",
-      "comoFunciona": [
+      "pasos": [
         "Agendas un primer encuentro para conocernos, sin compromiso.",
         "Juntas definimos qué necesitas y cada cuánto vernos.",
         "Las sesiones duran [DURACIÓN] y son en [MODALIDAD]."
       ],
       "cta": {
-        "label": "Agendar una primera sesión",
+        "texto": "Agendar una primera sesión",
         "href": "/agendar"
       },
       "fondo": "blanco"

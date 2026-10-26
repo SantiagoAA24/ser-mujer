@@ -1,5 +1,6 @@
 import episodiosJson from "./episodios.json";
 import eventosJson from "./eventos.json";
+import preguntasJson from "./preguntas.json";
 import recursosJson from "./recursos.json";
 import serviciosJson from "./servicios.json";
 import testimoniosJson from "./testimonios.json";
@@ -7,6 +8,7 @@ import type {
   Coleccion,
   Episodio,
   Evento,
+  Pregunta,
   Recurso,
   Servicio,
   Testimonio,
@@ -20,8 +22,10 @@ export type {
   Evento,
   FondoServicio,
   FormatoRecurso,
+  IdServicio,
   ModalidadEvento,
   PortadaTestimonio,
+  Pregunta,
   Recurso,
   Servicio,
   Sitio,
@@ -35,6 +39,7 @@ export { sitio } from "./sitio";
 
 const episodios = episodiosJson as Coleccion<Episodio>;
 const eventos = eventosJson as Coleccion<Evento>;
+const preguntas = preguntasJson as Coleccion<Pregunta>;
 const recursos = recursosJson as Coleccion<Recurso>;
 const testimonios = testimoniosJson as Coleccion<Testimonio>;
 const servicios = serviciosJson as Coleccion<Servicio>;
@@ -96,4 +101,8 @@ export function listarServicios(): Servicio[] {
 
 export function obtenerServicio(slug: string): Servicio | undefined {
   return porSlug(servicios.items, slug);
+}
+
+export function listarPreguntas(): Pregunta[] {
+  return preguntas.items;
 }

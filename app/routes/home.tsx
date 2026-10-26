@@ -19,16 +19,16 @@ import type { FondoServicio } from "~/content/types";
 
 const enlacesInicioServicio: Record<
   string,
-  { label: string; href: string }
+  { texto: string; href: string }
 > = {
-  talleres: { label: "Ver talleres", href: "/eventos" },
-  "recursos-emocionales": { label: "Explorar recursos", href: "/recursos" },
+  talleres: { texto: "Ver talleres", href: "/eventos" },
+  "recursos-emocionales": { texto: "Explorar recursos", href: "/recursos" },
   "dinamicas-grupales": {
-    label: "Conocer los grupos",
+    texto: "Conocer los grupos",
     href: "/como-te-acompanamos",
   },
   "sesiones-individuales": {
-    label: "Saber cómo funcionan",
+    texto: "Saber cómo funcionan",
     href: "/como-te-acompanamos",
   },
 };
@@ -137,7 +137,7 @@ export default function Home() {
                     href={enlace.href}
                     className="inline-flex min-h-11 items-center font-semibold underline-offset-[6px] hover:decoration-2"
                   >
-                    {enlace.label}
+                    {enlace.texto}
                   </a>
                 </Tarjeta>
               );

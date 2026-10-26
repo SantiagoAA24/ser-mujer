@@ -1,0 +1,29 @@
+{
+  "ejemplo": true,
+  "items": [
+    {
+      "pregunta": "¿Es confidencial?",
+      "respuesta": "Sí. Lo que compartes con nosotras se queda aquí, y en los grupos todas acordamos cuidar lo que se dice. Antes de empezar te explicamos con claridad cómo protegemos tu información."
+    },
+    {
+      "pregunta": "¿Tengo que contar mi historia?",
+      "respuesta": "No. Tú decides qué contar, cuánto y cuándo. Puedes participar escuchando, y nadie te va a pedir detalles que no quieras dar."
+    },
+    {
+      "pregunta": "¿Cuánto cuesta?",
+      "respuesta": "[RESPUESTA SOBRE COSTOS: qué es gratuito, valor de talleres, grupos y sesiones, y si hay opciones de apoyo económico.]"
+    },
+    {
+      "pregunta": "¿Es presencial o virtual?",
+      "respuesta": "[RESPUESTA SOBRE MODALIDADES Y CIUDAD.]"
+    },
+    {
+      "pregunta": "No sé por dónde empezar, ¿qué hago?",
+      "respuesta": "Es muy común. Escríbenos y conversamos sin compromiso para ver qué te haría bien ahora."
+    },
+    {
+      "pregunta": "¿Puedo dejarlo si no me siento cómoda?",
+      "respuesta": "Siempre. Puedes pausar o dejarlo en cualquier momento, sin dar explicaciones, y volver cuando quieras."
+    }
+  ]
+}
