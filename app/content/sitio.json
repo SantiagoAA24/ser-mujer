@@ -4,7 +4,7 @@
   "copyrightAnio": 2026,
   "whatsapp": {
     "etiqueta": "WhatsApp · [NÚMERO]",
-    "href": "#"
+    "href": "https://wa.me/[NUMERO]"
   },
   "instagram": {
     "etiqueta": "Instagram · [@USUARIO]",

@@ -58,6 +58,12 @@ export function listarEventos(): Evento[] {
   return eventos.items;
 }
 
+export function listarProximosEventos(cantidad = 3): Evento[] {
+  return [...eventos.items]
+    .sort((a, b) => a.fecha.localeCompare(b.fecha))
+    .slice(0, cantidad);
+}
+
 export function obtenerEvento(slug: string): Evento | undefined {
   return porSlug(eventos.items, slug);
 }
@@ -76,6 +82,12 @@ export function listarTestimonios(): Testimonio[] {
 
 export function obtenerTestimonio(slug: string): Testimonio | undefined {
   return porSlug(testimonios.items, slug);
+}
+
+export function obtenerTestimonioDestacado(): Testimonio | undefined {
+  return (
+    testimonios.items.find((item) => item.destacado) ?? testimonios.items[0]
+  );
 }
 
 export function listarServicios(): Servicio[] {

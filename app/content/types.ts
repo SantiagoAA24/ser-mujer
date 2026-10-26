@@ -100,6 +100,13 @@ export type Testimonio = {
   titulo: string;
   duracion: string;
   portada: PortadaTestimonio;
+  /** Cita del bloque destacado en inicio (placeholder hasta contenido real). */
+  cita?: string;
+  /** Nombre o inicial mostrada junto a la cita. */
+  nombre?: string;
+  /** ID de YouTube; si viene entre corchetes no se carga el iframe. */
+  youtubeId?: string;
+  destacado?: boolean;
 };
 
 export type CtaServicio = {
@@ -111,6 +118,8 @@ export type Servicio = {
   slug: string;
   numero: string;
   titulo: string;
+  /** Resumen corto para tarjetas de inicio. */
+  resumen: string;
   queEs: string;
   paraQuien: string;
   comoFunciona: string[];
