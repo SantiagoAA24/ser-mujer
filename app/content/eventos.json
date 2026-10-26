@@ -3,73 +3,59 @@
   "items": [
     {
       "slug": "conversatorio-volver-a-confiar",
-      "fecha": "2026-10-05",
-      "modalidad": "virtual",
       "titulo": "Conversatorio: volver a confiar",
-      "hora": "6:00 p. m.",
+      "inicio": "2026-10-05T18:00:00-05:00",
+      "duracionMin": 90,
+      "modalidad": "virtual",
       "lugar": "Transmisión por [PLATAFORMA]",
       "descripcion": "Una conversación abierta para escuchar desde donde estés. No necesitas inscribirte.",
-      "cupos": "Sin límite de cupos",
-      "enVivo": true,
-      "cuposCompletos": false,
-      "precio": "Gratuito",
-      "calSlug": "[CAL_SLUG]"
+      "cupos": { "total": 0, "disponibles": 0 },
+      "precio": null,
+      "transmisionUrl": "https://[PLATAFORMA]/transmisiones"
     },
     {
       "slug": "circulo-de-bienvenida",
-      "fecha": "2026-10-08",
-      "modalidad": "virtual",
       "titulo": "Círculo de bienvenida",
-      "hora": "6:00 p. m.",
+      "inicio": "2026-10-08T18:00:00-05:00",
+      "duracionMin": 90,
+      "modalidad": "virtual",
       "lugar": "Videollamada",
       "descripcion": "Un primer encuentro para conocer el espacio y a otras mujeres, sin tener que contar nada.",
-      "cupos": "8 cupos disponibles de 20",
-      "enVivo": false,
-      "cuposCompletos": false,
-      "precio": "Gratuito",
-      "calSlug": "[CAL_SLUG]"
+      "cupos": { "total": 20, "disponibles": 8 },
+      "precio": null
     },
     {
       "slug": "taller-poner-limites-con-ternura",
-      "fecha": "2026-10-14",
-      "modalidad": "presencial",
       "titulo": "Taller: poner límites con ternura",
-      "hora": "5:00 p. m.",
+      "inicio": "2026-10-14T17:00:00-05:00",
+      "duracionMin": 120,
+      "modalidad": "presencial",
       "lugar": "[LUGAR, CIUDAD]",
       "descripcion": "Herramientas sencillas para decir que no cuidándote a ti y al vínculo.",
-      "cupos": "5 cupos disponibles de 15",
-      "enVivo": false,
-      "cuposCompletos": false,
-      "precio": "Gratuito",
-      "calSlug": "[CAL_SLUG]"
+      "cupos": { "total": 15, "disponibles": 5 },
+      "precio": null
     },
     {
       "slug": "encuentro-escritura-carta-a-mi-misma",
-      "fecha": "2026-10-22",
-      "modalidad": "virtual",
       "titulo": "Encuentro de escritura: carta a mí misma",
-      "hora": "7:00 p. m.",
+      "inicio": "2026-10-22T19:00:00-05:00",
+      "duracionMin": 90,
+      "modalidad": "virtual",
       "lugar": "Videollamada",
       "descripcion": "Escribimos juntas, cada una a su ritmo. Compartir lo escrito es opcional.",
-      "cupos": "15 cupos disponibles de 25",
-      "enVivo": false,
-      "cuposCompletos": false,
-      "precio": "Gratuito",
-      "calSlug": "[CAL_SLUG]"
+      "cupos": { "total": 25, "disponibles": 15 },
+      "precio": null
     },
     {
       "slug": "taller-respiracion-y-calma",
-      "fecha": "2026-10-29",
-      "modalidad": "presencial",
       "titulo": "Taller de respiración y calma",
-      "hora": "6:00 p. m.",
+      "inicio": "2026-10-29T18:00:00-05:00",
+      "duracionMin": 90,
+      "modalidad": "presencial",
       "lugar": "[LUGAR, CIUDAD]",
       "descripcion": "Ejercicios para volver al cuerpo cuando todo se siente demasiado.",
-      "cupos": "Cupos completos",
-      "enVivo": false,
-      "cuposCompletos": true,
-      "precio": "Gratuito",
-      "calSlug": "[CAL_SLUG]"
+      "cupos": { "total": 15, "disponibles": 0 },
+      "precio": null
     }
   ]
 }

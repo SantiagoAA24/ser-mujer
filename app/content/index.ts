@@ -22,6 +22,7 @@ export type {
   Certificacion,
   Coleccion,
   CtaServicio,
+  CuposEvento,
   EnlaceSitio,
   Episodio,
   Evento,
@@ -77,8 +78,13 @@ export function listarEventos(): Evento[] {
 }
 
 export function listarProximosEventos(cantidad = 3): Evento[] {
+  const ahora = new Date();
   return [...eventos.items]
-    .sort((a, b) => a.fecha.localeCompare(b.fecha))
+    .filter((e) => {
+      const fin = new Date(e.inicio).getTime() + e.duracionMin * 60_000;
+      return fin > ahora.getTime();
+    })
+    .sort((a, b) => a.inicio.localeCompare(b.inicio))
     .slice(0, cantidad);
 }
 

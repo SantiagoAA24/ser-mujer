@@ -94,19 +94,25 @@ export type Episodio = {
   spotifyUrl?: string;
 };
 
+export type CuposEvento = {
+  total: number;
+  disponibles: number;
+};
+
 export type Evento = {
   slug: string;
-  fecha: string;
-  modalidad: ModalidadEvento;
   titulo: string;
-  hora: string;
+  /** ISO 8601 con offset, p. ej. 2026-10-08T18:00:00-05:00 */
+  inicio: string;
+  duracionMin: number;
+  modalidad: ModalidadEvento;
   lugar: string;
   descripcion: string;
-  cupos: string;
-  enVivo: boolean;
-  cuposCompletos: boolean;
-  precio: string;
-  calSlug: string;
+  cupos: CuposEvento;
+  /** `null` = gratuito */
+  precio: number | null;
+  transmisionUrl?: string;
+  calSlug?: string;
 };
 
 export type Recurso = {
