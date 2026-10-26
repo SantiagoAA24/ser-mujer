@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ser, Mujer · Testimonios · Escritorio</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap">
+<style>
+body{margin:0}
+a{color:#46467A}a:hover{color:#2F2F5C}
+a:focus-visible,button:focus-visible{outline:3px solid #7769C4;outline-offset:2px}
+.degradado{background-color:#F2EBDA;background-image:url(/assets/grano.png),radial-gradient(60% 75% at 96% 4%,#7769C4 0%,rgba(119,105,196,0) 62%),radial-gradient(55% 70% at 100% 100%,#EBB049 0%,rgba(235,176,73,0) 62%),radial-gradient(50% 65% at 62% 62%,#CFABD0 0%,rgba(207,171,208,0) 68%),radial-gradient(60% 70% at 38% 0%,#F5CBC0 0%,rgba(245,203,192,0) 70%),radial-gradient(45% 60% at 0% 100%,#C1D5C8 0%,rgba(193,213,200,0) 70%)}
+</style>
+</helmet>
+<div style="font-family: 'Montserrat', sans-serif; color: #46467A; background: #F2EBDA; font-size: 17px; line-height: 1.7">
+
+<header style="position: sticky; top: 0; z-index: 10; background: #F2EBDA; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; padding: 14px 56px; border-bottom: 1px solid rgba(70,70,122,0.2)">
+<a href="Inicio.dc.html" aria-label="Ser, Mujer — inicio" style="display: flex; align-items: center"><img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 68px; width: auto; display: block"></a>
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 14.5px">
+<a href="Inicio.dc.html" style="padding: 12px 0; text-decoration: none">Inicio</a>
+<a href="Acompanamos.dc.html" style="padding: 12px 0; text-decoration: none">Cómo te acompañamos</a>
+<a href="QuienSoy.dc.html" style="padding: 12px 0; text-decoration: none">Quién soy</a>
+<a href="Podcast.dc.html" style="padding: 12px 0; text-decoration: none">Podcast</a>
+<a href="Recursos.dc.html" style="padding: 12px 0; text-decoration: none">Recursos</a>
+<a href="Eventos.dc.html" style="padding: 12px 0; text-decoration: none">Eventos</a>
+<a href="Contacto.dc.html" style="padding: 12px 0; text-decoration: none">Contacto</a>
+</nav>
+<a href="https://www.google.com" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 10px 22px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-weight: 600; font-size: 14.5px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+Salida rápida
+</a>
+</header>
+
+<main>
+<section id="arriba" class="degradado" style="padding: 88px 56px 96px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 22px">
+<div style="font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase">Testimonios</div>
+<h1 style="margin: 0; max-width: 780px; font-family: 'Noto Serif', serif; font-weight: 400; font-size: clamp(40px, 5vw, 72px); line-height: 1.08; letter-spacing: -0.01em">Historias compartidas, <span style="font-style: italic">en sus palabras</span></h1>
+<p style="margin: 0; max-width: 560px; font-size: 19px; line-height: 32px">Mujeres que quisieron contar cómo ha sido su camino. Cada historia se publica con su consentimiento y cuidando su identidad.</p>
+</div>
+</section>
+
+<section aria-label="Reproductor" style="padding: 72px 56px 40px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: flex-start">
+<div style="flex: 1.7 1 560px; position: relative; aspect-ratio: 16 / 9; border-radius: 28px; overflow: hidden; background: {{sel.bg}}">
+<div aria-hidden="true" style="position: absolute; left: {{sel.x1}}; top: {{sel.y1}}; width: 46%; aspect-ratio: 1 / 1; background: {{sel.c1}}; border-radius: 52% 48% 60% 40% / 50% 58% 42% 50%"></div>
+<div aria-hidden="true" style="position: absolute; left: {{sel.x2}}; top: {{sel.y2}}; width: 14%; aspect-ratio: 1 / 1; background: {{sel.c2}}; border-radius: 50%"></div>
+<sc-if value="{{pausado}}" hint-placeholder-val="{{true}}">
+<button type="button" onClick="{{alternar}}" aria-label="Reproducir" style="position: absolute; left: 50%; top: 46%; width: 96px; height: 96px; margin: -48px 0 0 -48px; border: 0; border-radius: 50%; background: #46467A; color: #F2EBDA; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z"></path></svg></button>
+</sc-if>
+<sc-if value="{{reproduciendo}}" hint-placeholder-val="{{false}}">
+<div style="position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); max-width: 70%; padding: 8px 18px; border-radius: 10px; background: rgba(47,47,92,0.92); color: #FFFFFF; font-size: 18px; line-height: 1.45; text-align: center">[Subtítulos: lo que ella va diciendo aparece aquí.]</div>
+</sc-if>
+<div style="position: absolute; left: 16px; right: 16px; bottom: 16px; display: flex; align-items: center; gap: 14px; padding: 8px 18px 8px 8px; border-radius: 999px; background: #FFFFFF">
+<button type="button" onClick="{{alternar}}" aria-label="{{etiquetaBoton}}" style="flex: none; width: 48px; height: 48px; border: 0; border-radius: 50%; background: #46467A; color: #F2EBDA; display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
+<sc-if value="{{pausado}}" hint-placeholder-val="{{true}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z"></path></svg></sc-if>
+<sc-if value="{{reproduciendo}}" hint-placeholder-val="{{false}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"></path></svg></sc-if>
+</button>
+<div style="flex: none; font-size: 14px; font-weight: 600">{{tiempo}} / {{sel.dur}}</div>
+<div role="progressbar" aria-label="Avance del video" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{progNum}}" style="flex: 1; height: 6px; border-radius: 3px; background: rgba(70,70,122,0.25)"><div style="width: {{prog}}; height: 100%; border-radius: 3px; background: #46467A"></div></div>
+<button type="button" aria-label="Subtítulos activados" aria-pressed="true" style="flex: none; height: 44px; min-width: 44px; padding: 0 10px; border: 0; border-radius: 8px; background: #46467A; color: #F2EBDA; font: 600 13px 'Montserrat', sans-serif; cursor: pointer">CC</button>
+<button type="button" aria-label="Volumen" style="flex: none; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: #46467A; display: inline-flex; align-items: center; justify-content: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4z"></path><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"></path></svg></button>
+<button type="button" aria-label="Pantalla completa" style="flex: none; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: #46467A; display: inline-flex; align-items: center; justify-content: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path></svg></button>
+</div>
+</div>
+
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+<span style="padding: 4px 14px; border-radius: 999px; background: {{sel.tagBg}}; color: {{sel.tagFg}}; font-size: 14px; font-weight: 600">{{sel.temaLabel}}</span>
+<span style="padding: 2.5px 14px; border-radius: 999px; border: 1.5px solid #46467A; font-size: 14px; font-weight: 600">{{estado}}</span>
+</div>
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 36px; line-height: 44px">{{sel.titulo}}</h2>
+<div style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F6B4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.8 2.8L16 9.5"></path></svg>Publicado con su consentimiento · {{sel.dur}} min</div>
+<p style="margin: 0; font-size: 16px">[Una o dos frases que presentan este testimonio, sin detalles que identifiquen a la persona.]</p>
+<div style="background: #FFFFFF; border-radius: 16px; padding: 16px 20px; font-size: 15px; display: flex; flex-direction: column; gap: 4px">
+<div>No se reproduce solo: tú decides cuándo empezar.</div>
+<div>Subtítulos activados desde el inicio.</div>
+<div>La voz o la imagen pueden estar modificadas para proteger su identidad.</div>
+<div>Puedes pausar o salir en cualquier momento.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="Todos los testimonios" style="padding: 40px 56px 88px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<div role="group" aria-label="Filtrar por tema" style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{filtros}}" as="f" hint-placeholder-count="5">
+<button type="button" aria-pressed="{{f.on}}" onClick="{{f.pick}}" style="min-height: 44px; padding: 8px 22px; border-radius: 999px; border: 1.5px solid #46467A; background: {{f.bg}}; color: {{f.fg}}; font: 600 15px 'Montserrat', sans-serif; cursor: pointer">{{f.label}}</button>
+</sc-for>
+</div>
+<div aria-live="polite" style="font-size: 15px">{{conteo}}</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px 24px">
+<sc-for list="{{lista}}" as="t" hint-placeholder-count="6">
+<article style="display: flex; flex-direction: column; gap: 12px">
+<button type="button" onClick="{{t.pick}}" aria-label="{{t.aria}}" style="position: relative; display: block; width: 100%; aspect-ratio: 16 / 10; padding: 0; border: 0; border-radius: 24px; overflow: hidden; background: {{t.bg}}; cursor: pointer; outline: {{t.anillo}}; outline-offset: 3px">
+<span aria-hidden="true" style="position: absolute; left: {{t.x1}}; top: {{t.y1}}; width: 50%; aspect-ratio: 1 / 1; background: {{t.c1}}; border-radius: 52% 48% 60% 40% / 50% 58% 42% 50%"></span>
+<span aria-hidden="true" style="position: absolute; left: {{t.x2}}; top: {{t.y2}}; width: 16%; aspect-ratio: 1 / 1; background: {{t.c2}}; border-radius: 50%"></span>
+<span aria-hidden="true" style="position: absolute; left: 16px; bottom: 16px; width: 52px; height: 52px; border-radius: 50%; background: #46467A; color: #F2EBDA; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5z"></path></svg></span>
+<span style="position: absolute; right: 14px; bottom: 16px; padding: 2px 12px; border-radius: 999px; background: #FFFFFF; color: #46467A; font: 600 14px/24px 'Montserrat', sans-serif">{{t.dur}}</span>
+</button>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<span style="padding: 2px 12px; border-radius: 999px; background: {{t.tagBg}}; color: {{t.tagFg}}; font-size: 13.5px; font-weight: 600">{{t.temaLabel}}</span>
+<span style="font-size: 14px">{{t.viendo}}</span>
+</div>
+<h3 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 24px; line-height: 32px">{{t.titulo}}</h3>
+<div style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6B4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.8 2.8L16 9.5"></path></svg>Publicado con su consentimiento</div>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section aria-label="Compartir tu testimonio" style="padding: 0 56px 96px">
+<div style="max-width: 1240px; margin: 0 auto; box-sizing: border-box; background: #C1D5C8; border-radius: 28px; padding: 40px 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 56px">
+<div style="flex: 1 1 480px; max-width: 720px; display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px; line-height: 38px">¿Te gustaría compartir tu historia?</h2>
+<p style="margin: 0; font-size: 16px">Solo si quieres y cuando te sientas lista. Puede ser sin mostrar tu rostro ni tu nombre, tú revisas el video antes de publicarlo y puedes pedir que lo retiremos en cualquier momento.</p>
+</div>
+<a href="Contacto.dc.html" style="display: inline-flex; align-items: center; min-height: 52px; box-sizing: border-box; padding: 12px 30px; border-radius: 999px; border: 1.5px solid #46467A; font-weight: 600; text-decoration: none">Escribirnos para conversarlo</a>
+</div>
+</section>
+</main>
+
+<footer id="pie" style="background: #F2EBDA; padding: 64px 56px 40px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; justify-content: space-between">
+<div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 16px; max-width: 340px">
+<img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 92px; width: auto; align-self: flex-start">
+<div style="font-family: 'Noto Serif', serif; font-style: italic; font-size: 17px">Acompañamiento, sanación y transformación desde el amor.</div>
+</div>
+<nav aria-label="Pie de página" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+<div style="font-weight: 600; margin-bottom: 8px">Explora</div>
+<a href="Acompanamos.dc.html" style="padding: 6px 0">Cómo te acompañamos</a>
+<a href="QuienSoy.dc.html" style="padding: 6px 0">Quién soy</a>
+<a href="Podcast.dc.html" style="padding: 6px 0">Podcast</a>
+<a href="Recursos.dc.html" style="padding: 6px 0">Recursos</a>
+<a href="Eventos.dc.html" style="padding: 6px 0">Eventos</a>
+<a href="Contacto.dc.html" style="padding: 6px 0">Contacto</a>
+</nav>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+<div style="font-weight: 600; margin-bottom: 8px">Contacto</div>
+<div style="padding: 6px 0">[CORREO ELECTRÓNICO]</div>
+<div style="padding: 6px 0">[CIUDAD, PAÍS]</div>
+<div style="padding: 6px 0">[HORARIO DE ATENCIÓN]</div>
+<a href="#pie" style="padding: 6px 0">Cómo navegar con seguridad</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+<div style="font-weight: 600">Escríbenos</div>
+<a href="#pie" style="display: inline-flex; align-items: center; gap: 12px; min-height: 48px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #C1D5C8; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.4-4.2A8 8 0 1 1 8.5 19L4 20z"></path></svg>
+WhatsApp · [NÚMERO]
+</a>
+<a href="#pie" style="display: inline-flex; align-items: center; gap: 12px; min-height: 48px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #CFABD0; color: #2F2F5C; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.5"></rect><circle cx="12" cy="12" r="3.6"></circle><path d="M16.6 7.4h.01"></path></svg>
+Instagram · [@USUARIO]
+</a>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(70,70,122,0.3); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 8px 32px; justify-content: space-between; font-size: 14px">
+<div>Si estás en peligro inmediato, llama a [LÍNEA DE EMERGENCIA LOCAL].</div>
+<div>© 2026 Ser, Mujer</div>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3080}}'>
+class Component extends DCLogic {
+renderVals() {
+var self = this;
+var s = this.state || {};
+var tema = s.tema || 'todos';
+var selId = s.sel == null ? 0 : s.sel;
+var play = !!s.play;
+var B = '#46467A', P = '#2F2F5C', M = '#7769C4', N = '#C1D5C8', R = '#CFABD0', D = '#F5CBC0', O = '#EBB049', C = '#F2EBDA';
+var temas = { sanacion: ['Sanación', N, B], amor: ['Amor propio', D, B], perdon: ['Perdón', R, P], comunidad: ['Comunidad', '#FFFFFF', B] };
+var datos = [
+['sanacion', 'Volver a sentirme en casa conmigo', '4:12', M, D, O, '-6%', '48%', '78%', '12%'],
+['amor', 'Aprendí a hablarme con cariño', '3:05', N, M, C, '58%', '-22%', '10%', '62%'],
+['perdon', 'Perdonarme fue el primer paso', '5:20', D, R, O, '-12%', '6%', '74%', '58%'],
+['comunidad', 'No era la única', '2:48', B, N, R, '60%', '40%', '12%', '14%'],
+['sanacion', 'Un día a la vez', '3:36', R, C, M, '30%', '52%', '76%', '10%'],
+['comunidad', 'Lo que encontré en el grupo', '4:01', O, C, M, '-8%', '-24%', '70%', '56%']
+];
+var todos = datos.map(function (d, i) {
+var t = temas[d[0]];
+var on = i === selId;
+return { tema: d[0], temaLabel: t[0], tagBg: t[1], tagFg: t[2], titulo: d[1], dur: d[2], bg: d[3], c1: d[4], c2: d[5], x1: d[6], y1: d[7], x2: d[8], y2: d[9],
+aria: 'Reproducir: ' + d[1] + ', ' + d[2] + ' minutos',
+anillo: on ? '3px solid #46467A' : 'none',
+viendo: on ? 'En el reproductor' : '',
+pick: function () { self.setState({ sel: i, play: true }); } };
+});
+var lista = todos.filter(function (t) { return tema === 'todos' || t.tema === tema; });
+var defsF = [['todos', 'Todos'], ['sanacion', 'Sanación'], ['amor', 'Amor propio'], ['perdon', 'Perdón'], ['comunidad', 'Comunidad']];
+return {
+sel: todos[selId],
+lista: lista,
+conteo: lista.length === 1 ? '1 testimonio' : lista.length + ' testimonios',
+filtros: defsF.map(function (f) {
+var on = f[0] === tema;
+return { label: f[1], on: on, bg: on ? B : 'transparent', fg: on ? C : B, pick: function () { self.setState({ tema: f[0] }); } };
+}),
+pausado: !play,
+reproduciendo: play,
+estado: play ? 'Reproduciendo' : 'En pausa',
+etiquetaBoton: play ? 'Pausar' : 'Reproducir',
+tiempo: play ? '1:24' : '0:00',
+prog: play ? '34%' : '0%',
+progNum: play ? 34 : 0,
+alternar: function () { self.setState({ play: !play }); }
+};
+}
+}
+</script>
+</body>
+</html>

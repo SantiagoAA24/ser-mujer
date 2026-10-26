@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sistema de diseño · Componentes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap">
+<style>
+body{margin:0}
+a{color:#46467A}a:hover{color:#2F2F5C}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 2900px; box-sizing: border-box; padding: 80px; background: #F2EBDA; color: #46467A; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.6; display: flex; flex-direction: column; gap: 64px">
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase">Sistema de diseño · 03</div>
+<h1 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 56px; line-height: 1.1">Componentes</h1>
+<p style="margin: 0; max-width: 780px">Formas redondeadas y sin sombras duras. Todo lo que se puede pulsar mide al menos 44 px de alto y muestra un anillo de foco Margarita de 3 px al navegar con teclado.</p>
+</div>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Botones</h2>
+<div style="display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 20px">
+<div style="background: #FFFFFF; border-radius: 24px; padding: 32px; display: grid; grid-template-columns: 120px repeat(4, minmax(0, 1fr)); gap: 24px 16px; align-items: center; justify-items: start">
+<div></div>
+<div style="font-size: 13px; font-weight: 600">Normal</div>
+<div style="font-size: 13px; font-weight: 600">Hover</div>
+<div style="font-size: 13px; font-weight: 600">Foco</div>
+<div style="font-size: 13px; font-weight: 600">Deshabilitado</div>
+
+<div style="font-weight: 600">Primario</div>
+<button type="button" style="min-height: 56px; padding: 14px 28px; border: 0; border-radius: 999px; background: #46467A; color: #F2EBDA; font: 600 16px 'Montserrat', sans-serif; cursor: pointer">Dar el primer paso</button>
+<button type="button" style="min-height: 56px; padding: 14px 28px; border: 0; border-radius: 999px; background: #2F2F5C; color: #F2EBDA; font: 600 16px 'Montserrat', sans-serif; cursor: pointer">Dar el primer paso</button>
+<button type="button" style="min-height: 56px; padding: 14px 28px; border: 0; border-radius: 999px; background: #46467A; color: #F2EBDA; font: 600 16px 'Montserrat', sans-serif; cursor: pointer; outline: 3px solid #7769C4; outline-offset: 2px">Dar el primer paso</button>
+<button type="button" disabled style="min-height: 56px; padding: 14px 28px; border: 0; border-radius: 999px; background: #46467A; color: #F2EBDA; font: 600 16px 'Montserrat', sans-serif; opacity: 0.45">Dar el primer paso</button>
+
+<div style="font-weight: 600">Secundario</div>
+<button type="button" style="min-height: 56px; padding: 14px 28px; border: 1.5px solid #46467A; border-radius: 999px; background: transparent; color: #46467A; font: 600 16px 'Montserrat', sans-serif; cursor: pointer">Escribir por WhatsApp</button>
+<button type="button" style="min-height: 56px; padding: 14px 28px; border: 1.5px solid #2F2F5C; border-radius: 999px; background: rgba(70,70,122,0.08); color: #2F2F5C; font: 600 16px 'Montserrat', sans-serif; cursor: pointer">Escribir por WhatsApp</button>
+<button type="button" style="min-height: 56px; padding: 14px 28px; border: 1.5px solid #46467A; border-radius: 999px; background: transparent; color: #46467A; font: 600 16px 'Montserrat', sans-serif; cursor: pointer; outline: 3px solid #7769C4; outline-offset: 2px">Escribir por WhatsApp</button>
+<button type="button" disabled style="min-height: 56px; padding: 14px 28px; border: 1.5px solid #46467A; border-radius: 999px; background: transparent; color: #46467A; font: 600 16px 'Montserrat', sans-serif; opacity: 0.45">Escribir por WhatsApp</button>
+
+<div style="font-weight: 600">Texto</div>
+<a href="#" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-underline-offset: 6px">Cómo te acompañamos</a>
+<a href="#" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-underline-offset: 6px; color: #2F2F5C; text-decoration-thickness: 2px">Cómo te acompañamos</a>
+<a href="#" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-underline-offset: 6px; outline: 3px solid #7769C4; outline-offset: 2px; border-radius: 6px">Cómo te acompañamos</a>
+<span style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; opacity: 0.45">Cómo te acompañamos</span>
+</div>
+
+<div style="background: #46467A; color: #F2EBDA; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px">
+<div style="font-size: 13px; font-weight: 600">Sobre Bahía Azul o Margarita Azul</div>
+<button type="button" style="min-height: 56px; padding: 14px 28px; border: 0; border-radius: 999px; background: #EBB049; color: #2F2F5C; font: 600 16px 'Montserrat', sans-serif; cursor: pointer">Agendar una conversación</button>
+<button type="button" style="min-height: 56px; padding: 14px 28px; border: 1.5px solid #F2EBDA; border-radius: 999px; background: transparent; color: #F2EBDA; font: 600 16px 'Montserrat', sans-serif; cursor: pointer">Escribir por WhatsApp</button>
+<a href="#" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-underline-offset: 6px; color: #F2EBDA">Conoce quién soy</a>
+<div style="font-size: 14px">Un solo botón primario por sección. Tamaños: grande 56 px, pequeño 44 px (encabezado). En móvil ocupan todo el ancho.</div>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Formularios</h2>
+<div style="background: #FFFFFF; border-radius: 24px; padding: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 40px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-nombre" style="font-weight: 600">¿Cómo quieres que te llamemos?</label>
+<input id="f-nombre" type="text" placeholder="Puede ser un apodo" style="height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #46467A; border-radius: 12px; background: #FFFFFF; color: #46467A; font: 400 17px 'Montserrat', sans-serif">
+<div style="font-size: 14px">Campo normal · no hace falta tu nombre real.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-contacto" style="font-weight: 600">WhatsApp o correo</label>
+<input id="f-contacto" type="text" value="mi.correo@ejemplo.com" style="height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #46467A; border-radius: 12px; background: #FFFFFF; color: #46467A; font: 400 17px 'Montserrat', sans-serif; outline: 3px solid #7769C4; outline-offset: 2px">
+<div style="font-size: 14px">Campo en foco · anillo Margarita.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-error" style="font-weight: 600">Correo</label>
+<input id="f-error" type="text" value="mi.correo" aria-invalid="true" aria-describedby="f-error-msg" style="height: 52px; box-sizing: border-box; padding: 0 16px; border: 2px solid #A63A50; border-radius: 12px; background: #FFFFFF; color: #46467A; font: 400 17px 'Montserrat', sans-serif">
+<div id="f-error-msg" style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #A63A50">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5v5.5M12 16.5h.01"></path></svg>
+Parece que falta una parte, por ejemplo @correo.com
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-msg" style="font-weight: 600">Cuéntanos lo que quieras <span style="font-weight: 400">(opcional)</span></label>
+<textarea id="f-msg" rows="4" placeholder="Hasta donde te sientas cómoda" style="box-sizing: border-box; padding: 14px 16px; border: 1.5px solid #46467A; border-radius: 12px; background: #FFFFFF; color: #46467A; font: 400 17px/1.6 'Montserrat', sans-serif; resize: vertical"></textarea>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-sel" style="font-weight: 600">¿Cómo prefieres que te contactemos?</label>
+<select id="f-sel" style="height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #46467A; border-radius: 12px; background: #FFFFFF; color: #46467A; font: 400 17px 'Montserrat', sans-serif">
+<option>WhatsApp</option>
+<option>Correo electrónico</option>
+<option>Llamada</option>
+</select>
+<div style="font-size: 14px">Selector · mismo alto y borde que el campo.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 4px">
+<legend style="padding: 0; font-weight: 600; margin-bottom: 6px">Me interesa</legend>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px"><input type="checkbox" checked style="width: 22px; height: 22px; margin: 0; accent-color: #46467A"> Acompañamiento personalizado</label>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px"><input type="checkbox" style="width: 22px; height: 22px; margin: 0; accent-color: #46467A"> Talleres y encuentros grupales</label>
+</fieldset>
+<fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 4px">
+<legend style="padding: 0; font-weight: 600; margin-bottom: 6px">Modalidad</legend>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px"><input type="radio" name="mod" checked style="width: 22px; height: 22px; margin: 0; accent-color: #46467A"> Virtual</label>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px"><input type="radio" name="mod" style="width: 22px; height: 22px; margin: 0; accent-color: #46467A"> Presencial</label>
+</fieldset>
+</div>
+</div>
+<div style="font-size: 14px; max-width: 900px">Etiqueta siempre visible encima del campo (el texto de ejemplo nunca la reemplaza). Se marca lo opcional, no lo obligatorio. Los errores se explican con calma, con icono y texto, y nunca solo con color. Casillas y opciones: 22 px, con toda la fila pulsable (44 px).</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Tarjetas y etiquetas</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<div style="background: #FFFFFF; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+<span style="padding: 4px 14px; border-radius: 999px; background: #C1D5C8; font-size: 14px; font-weight: 600">Taller</span>
+<h3 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 26px; line-height: 1.25">Tarjeta de contenido</h3>
+<p style="margin: 0; font-size: 15px">Blanca sobre Crema. Para eventos, recursos y episodios del podcast.</p>
+<a href="#" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-underline-offset: 6px">Saber más</a>
+</div>
+<div style="background: #C1D5C8; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+<div aria-hidden="true" style="font-family: 'Noto Serif', serif; font-style: italic; font-size: 36px; line-height: 1">01</div>
+<h3 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 26px; line-height: 1.25">Tarjeta de color</h3>
+<p style="margin: 0; font-size: 15px">Niebla Marina con texto Bahía Azul. Para las formas de acompañamiento.</p>
+</div>
+<div style="background: #CFABD0; color: #2F2F5C; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+<div aria-hidden="true" style="font-family: 'Noto Serif', serif; font-style: italic; font-size: 36px; line-height: 1">02</div>
+<h3 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 26px; line-height: 1.25">Tarjeta de color</h3>
+<p style="margin: 0; font-size: 15px">Rosa Primavera: el texto pasa a Bahía Profundo.</p>
+</div>
+<div style="background: #F5CBC0; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+<div aria-hidden="true" style="font-family: 'Noto Serif', serif; font-style: italic; font-size: 36px; line-height: 1">03</div>
+<h3 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 26px; line-height: 1.25">Tarjeta de color</h3>
+<p style="margin: 0; font-size: 15px">Rosa Durazno con texto Bahía Azul.</p>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<span style="padding: 4px 14px; border-radius: 999px; background: #C1D5C8; font-size: 14px; font-weight: 600">Taller</span>
+<span style="padding: 4px 14px; border-radius: 999px; background: #CFABD0; color: #2F2F5C; font-size: 14px; font-weight: 600">Podcast</span>
+<span style="padding: 4px 14px; border-radius: 999px; background: #F5CBC0; font-size: 14px; font-weight: 600">Recurso</span>
+<span style="padding: 2.5px 14px; border-radius: 999px; border: 1.5px solid #46467A; font-size: 14px; font-weight: 600">Virtual</span>
+<span style="padding: 4px 14px; border-radius: 999px; background: #46467A; color: #F2EBDA; font-size: 14px; font-weight: 600">Cupos abiertos</span>
+<span style="font-size: 14px; margin-left: 12px">Etiquetas: 14 px SemiBold, radio completo. Informan; no son botones.</span>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Avisos y alertas</h2>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+<div role="status" style="display: flex; gap: 16px; padding: 20px 24px; border-radius: 16px; background: #FFFFFF; border: 1.5px solid #7769C4">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7769C4" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5.5M12 7.5h.01"></path></svg>
+<div><div style="font-weight: 600">Información</div><div style="font-size: 15px">Respondemos los mensajes en [HORARIO DE ATENCIÓN].</div></div>
+</div>
+<div role="status" style="display: flex; gap: 16px; padding: 20px 24px; border-radius: 16px; background: #FFFFFF; border: 1.5px solid #2F6B4F">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2F6B4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.8 2.8L16 9.5"></path></svg>
+<div><div style="font-weight: 600">Recibimos tu mensaje</div><div style="font-size: 15px">Gracias por escribirnos. Te responderemos por el medio que elegiste.</div></div>
+</div>
+<div role="status" style="display: flex; gap: 16px; padding: 20px 24px; border-radius: 16px; background: #FFFFFF; border: 1.5px solid #EBB049">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#46467A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M12 4l9 15.5H3L12 4z"></path><path d="M12 10v4.5M12 17h.01"></path></svg>
+<div><div style="font-weight: 600">Antes de continuar</div><div style="font-size: 15px">Si compartes este dispositivo, recuerda borrar tu historial al terminar.</div></div>
+</div>
+<div role="alert" style="display: flex; gap: 16px; padding: 20px 24px; border-radius: 16px; background: #FFFFFF; border: 1.5px solid #A63A50">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A63A50" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5v5.5M12 16.5h.01"></path></svg>
+<div><div style="font-weight: 600">No pudimos enviar tu mensaje</div><div style="font-size: 15px">No es por algo que hayas hecho. Inténtalo de nuevo o escríbenos por WhatsApp.</div></div>
+</div>
+</div>
+<div role="note" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; padding: 20px 28px; border-radius: 16px; background: #46467A; color: #F2EBDA">
+<div><strong>Aviso de seguridad (franja de página).</strong> Si estás en peligro inmediato, llama a [LÍNEA DE EMERGENCIA LOCAL].</div>
+<a href="#" style="display: inline-flex; align-items: center; min-height: 44px; color: #F2EBDA; font-weight: 600; text-underline-offset: 6px">Cómo navegar con seguridad</a>
+</div>
+<div style="font-size: 14px; max-width: 900px">Cada aviso lleva icono, título y una frase. El color del borde acompaña, pero el significado está en el texto. El aviso amarillo usa icono Bahía Azul porque el naranja no alcanza contraste por sí solo.</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2900}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

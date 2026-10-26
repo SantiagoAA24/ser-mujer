@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ser, Mujer · Eventos · Escritorio</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap">
+<style>
+body{margin:0}
+a{color:#46467A}a:hover{color:#2F2F5C}
+a:focus-visible,button:focus-visible{outline:3px solid #7769C4;outline-offset:2px}
+.degradado{background-color:#F2EBDA;background-image:url(/assets/grano.png),radial-gradient(60% 75% at 96% 4%,#7769C4 0%,rgba(119,105,196,0) 62%),radial-gradient(55% 70% at 100% 100%,#EBB049 0%,rgba(235,176,73,0) 62%),radial-gradient(50% 65% at 62% 62%,#CFABD0 0%,rgba(207,171,208,0) 68%),radial-gradient(60% 70% at 38% 0%,#F5CBC0 0%,rgba(245,203,192,0) 70%),radial-gradient(45% 60% at 0% 100%,#C1D5C8 0%,rgba(193,213,200,0) 70%)}
+</style>
+</helmet>
+<div style="font-family: 'Montserrat', sans-serif; color: #46467A; background: #F2EBDA; font-size: 17px; line-height: 1.7">
+
+<header style="position: sticky; top: 0; z-index: 10; background: #F2EBDA; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; padding: 14px 56px; border-bottom: 1px solid rgba(70,70,122,0.2)">
+<a href="Inicio.dc.html" aria-label="Ser, Mujer — inicio" style="display: flex; align-items: center"><img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 68px; width: auto; display: block"></a>
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 14.5px">
+<a href="Inicio.dc.html" style="padding: 12px 0; text-decoration: none">Inicio</a>
+<a href="Acompanamos.dc.html" style="padding: 12px 0; text-decoration: none">Cómo te acompañamos</a>
+<a href="QuienSoy.dc.html" style="padding: 12px 0; text-decoration: none">Quién soy</a>
+<a href="Podcast.dc.html" style="padding: 12px 0; text-decoration: none">Podcast</a>
+<a href="Recursos.dc.html" style="padding: 12px 0; text-decoration: none">Recursos</a>
+<a href="#arriba" aria-current="page" style="padding: 12px 0; text-decoration: none; font-weight: 600; box-shadow: 0 2px 0 #46467A">Eventos</a>
+<a href="Contacto.dc.html" style="padding: 12px 0; text-decoration: none">Contacto</a>
+</nav>
+<a href="https://www.google.com" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 10px 22px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-weight: 600; font-size: 14.5px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+Salida rápida
+</a>
+</header>
+
+<main>
+<section id="arriba" class="degradado" style="padding: 88px 56px 96px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 22px">
+<div style="font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase">Eventos</div>
+<h1 style="margin: 0; max-width: 780px; font-family: 'Noto Serif', serif; font-weight: 400; font-size: clamp(40px, 5vw, 72px); line-height: 1.08; letter-spacing: -0.01em">Encuentros para <span style="font-style: italic">conocernos sin prisa</span></h1>
+<p style="margin: 0; max-width: 560px; font-size: 19px; line-height: 32px">Talleres, círculos y transmisiones en vivo. Por ahora todos son gratuitos, y puedes participar con la cámara apagada y sin hablar si así lo prefieres.</p>
+</div>
+</section>
+
+<section aria-label="Próximos eventos" style="padding: 56px 56px 96px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<div role="group" aria-label="Filtrar por modalidad" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+<sc-for list="{{mods}}" as="f" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{f.on}}" onClick="{{f.pick}}" style="min-height: 44px; padding: 8px 22px; border-radius: 999px; border: 1.5px solid #46467A; background: {{f.bg}}; color: {{f.fg}}; font: 600 15px 'Montserrat', sans-serif; cursor: pointer">{{f.label}}</button>
+</sc-for>
+<span aria-live="polite" style="font-size: 15px; margin-left: 8px">{{conteo}}</span>
+</div>
+<div role="group" aria-label="Cambiar vista" style="display: inline-flex; padding: 4px; border-radius: 999px; background: #FFFFFF">
+<sc-for list="{{vistas}}" as="v" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{v.on}}" onClick="{{v.pick}}" style="min-height: 44px; padding: 8px 24px; border: 0; border-radius: 999px; background: {{v.bg}}; color: {{v.fg}}; font: 600 15px 'Montserrat', sans-serif; cursor: pointer">{{v.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{esLista}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<sc-for list="{{lista}}" as="e" hint-placeholder-count="5">
+<article style="background: {{e.bg}}; color: {{e.fg}}; border-radius: 28px; padding: 28px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 36px">
+<div style="flex: none; width: 104px; text-align: center; padding: 14px 0; border-radius: 20px; background: {{e.fechaBg}}; color: #46467A">
+<div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em">{{e.sem}}</div>
+<div style="font-family: 'Noto Serif', serif; font-size: 44px; line-height: 1.05">{{e.dia}}</div>
+<div style="font-size: 14px; font-weight: 600">octubre</div>
+</div>
+<div style="flex: 1 1 480px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-if value="{{e.vivo}}" hint-placeholder-val="{{false}}"><span style="display: inline-flex; align-items: center; gap: 8px; padding: 2px 14px 2px 10px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-size: 14px; font-weight: 600"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #2F2F5C"></span>En vivo</span></sc-if>
+<span style="padding: 0.5px 14px; border-radius: 999px; border: 1.5px solid {{e.fg}}; font-size: 14px; font-weight: 600">{{e.modLabel}}</span>
+</div>
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px; line-height: 38px">{{e.titulo}}</h2>
+<div style="font-weight: 600; font-size: 16px">{{e.hora}} · {{e.lugar}}</div>
+<p style="margin: 0; font-size: 16px; max-width: 640px">{{e.desc}}</p>
+</div>
+<div style="flex: 0 1 240px; display: flex; flex-direction: column; align-items: flex-start; gap: 6px">
+<div style="font-family: 'Noto Serif', serif; font-size: 24px; line-height: 1.2">{{e.precio}}</div>
+<div style="font-size: 15px">{{e.cupos}}</div>
+<a href="Evento.dc.html" style="display: inline-flex; align-items: center; min-height: 52px; box-sizing: border-box; padding: 12px 28px; border-radius: 999px; background: {{e.btnBg}}; color: {{e.btnFg}}; border: 1.5px solid {{e.btnBorde}}; font-weight: 600; font-size: 16px; text-decoration: none; margin-top: 6px">{{e.accion}}</a>
+</div>
+</article>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{esCal}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<div style="flex: 2 1 640px; background: #FFFFFF; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px; line-height: 38px">Octubre de 2026</h2>
+<div style="display: flex; gap: 8px">
+<button type="button" aria-label="Mes anterior" disabled style="width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid #46467A; background: transparent; color: #46467A; opacity: 0.45; display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+<button type="button" aria-label="Mes siguiente" style="width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid #46467A; background: transparent; color: #46467A; display: inline-flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+</div>
+</div>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; font-size: 13px; font-weight: 600; padding: 0 8px"><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div></div>
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px">
+<sc-for list="{{celdas}}" as="c" hint-placeholder-count="34">
+<button type="button" disabled="{{c.off}}" aria-pressed="{{c.on}}" aria-label="{{c.aria}}" onClick="{{c.pick}}" style="min-height: 96px; padding: 8px 10px; border-radius: 14px; border: 1.5px solid {{c.borde}}; background: {{c.bg}}; color: {{c.fg}}; visibility: {{c.vis}}; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; font-family: 'Montserrat', sans-serif; cursor: {{c.cur}}">
+<span style="font-size: 16px; font-weight: {{c.peso}}">{{c.n}}</span>
+<span style="font-size: 13px; line-height: 1.3; font-weight: 600">{{c.ev}}</span>
+</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 4px; background: #C1D5C8"></span>Día con evento</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 4px; background: #46467A"></span>Día elegido</span>
+</div>
+</div>
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 26px; line-height: 34px">{{tituloDia}}</h2>
+<sc-for list="{{delDia}}" as="e" hint-placeholder-count="1">
+<article style="background: #FFFFFF; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-if value="{{e.vivo}}" hint-placeholder-val="{{false}}"><span style="display: inline-flex; align-items: center; gap: 8px; padding: 2px 14px 2px 10px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-size: 14px; font-weight: 600"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #2F2F5C"></span>En vivo</span></sc-if>
+<span style="padding: 0.5px 14px; border-radius: 999px; border: 1.5px solid #46467A; font-size: 14px; font-weight: 600">{{e.modLabel}}</span>
+</div>
+<h3 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 24px; line-height: 32px">{{e.titulo}}</h3>
+<div style="font-weight: 600; font-size: 15px">{{e.hora}} · {{e.lugar}}</div>
+<p style="margin: 0; font-size: 15px">{{e.desc}}</p>
+<div style="font-size: 15px"><strong>{{e.precio}}</strong> · {{e.cupos}}</div>
+<a href="Evento.dc.html" style="display: inline-flex; align-items: center; min-height: 52px; box-sizing: border-box; padding: 12px 28px; border-radius: 999px; background: #46467A; color: #F2EBDA; font-weight: 600; font-size: 16px; text-decoration: none; margin-top: 6px">{{e.accion}}</a>
+</article>
+</sc-for>
+<sc-if value="{{diaVacio}}" hint-placeholder-val="{{false}}">
+<div style="background: #FFFFFF; border-radius: 24px; padding: 24px; font-size: 16px">No hay eventos este día. Elige un día marcado en el calendario.</div>
+</sc-if>
+</div>
+</div>
+</sc-if>
+
+<div style="font-size: 15px">¿Quieres que te avisemos de nuevos eventos? <a href="Contacto.dc.html" style="font-weight: 600; text-underline-offset: 6px">Escríbenos</a> y te contamos, sin compromiso.</div>
+</div>
+</section>
+</main>
+
+<footer id="pie" style="background: #F2EBDA; padding: 64px 56px 40px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; justify-content: space-between">
+<div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 16px; max-width: 340px">
+<img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 92px; width: auto; align-self: flex-start">
+<div style="font-family: 'Noto Serif', serif; font-style: italic; font-size: 17px">Acompañamiento, sanación y transformación desde el amor.</div>
+</div>
+<nav aria-label="Pie de página" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+<div style="font-weight: 600; margin-bottom: 8px">Explora</div>
+<a href="Acompanamos.dc.html" style="padding: 6px 0">Cómo te acompañamos</a>
+<a href="QuienSoy.dc.html" style="padding: 6px 0">Quién soy</a>
+<a href="Podcast.dc.html" style="padding: 6px 0">Podcast</a>
+<a href="Recursos.dc.html" style="padding: 6px 0">Recursos</a>
+<a href="Eventos.dc.html" style="padding: 6px 0">Eventos</a>
+<a href="Contacto.dc.html" style="padding: 6px 0">Contacto</a>
+</nav>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+<div style="font-weight: 600; margin-bottom: 8px">Contacto</div>
+<div style="padding: 6px 0">[CORREO ELECTRÓNICO]</div>
+<div style="padding: 6px 0">[CIUDAD, PAÍS]</div>
+<div style="padding: 6px 0">[HORARIO DE ATENCIÓN]</div>
+<a href="#pie" style="padding: 6px 0">Cómo navegar con seguridad</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+<div style="font-weight: 600">Escríbenos</div>
+<a href="#pie" style="display: inline-flex; align-items: center; gap: 12px; min-height: 48px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #C1D5C8; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.4-4.2A8 8 0 1 1 8.5 19L4 20z"></path></svg>
+WhatsApp · [NÚMERO]
+</a>
+<a href="#pie" style="display: inline-flex; align-items: center; gap: 12px; min-height: 48px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #CFABD0; color: #2F2F5C; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.5"></rect><circle cx="12" cy="12" r="3.6"></circle><path d="M16.6 7.4h.01"></path></svg>
+Instagram · [@USUARIO]
+</a>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(70,70,122,0.3); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 8px 32px; justify-content: space-between; font-size: 14px">
+<div>Si estás en peligro inmediato, llama a [LÍNEA DE EMERGENCIA LOCAL].</div>
+<div>© 2026 Ser, Mujer</div>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"vistaInicial":{"editor":"enum","options":["lista","calendario"],"default":"lista"},"$preview":{"width":1440,"height":2580}}'>
+class Component extends DCLogic {
+renderVals() {
+var self = this;
+var s = this.state || {};
+var vista = s.vista || this.props.vistaInicial || 'lista';
+var mod = s.mod || 'todos';
+var dia = s.dia == null ? 8 : s.dia;
+var B = '#46467A', P = '#2F2F5C', N = '#C1D5C8', C = '#F2EBDA', O = '#EBB049', W = '#FFFFFF';
+var sems = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
+var datos = [
+[5, 'virtual', 'Conversatorio: volver a confiar', '6:00 p. m.', 'Transmisión por [PLATAFORMA]', 'Una conversación abierta para escuchar desde donde estés. No necesitas inscribirte.', 'Sin límite de cupos', true, false],
+[8, 'virtual', 'Círculo de bienvenida', '6:00 p. m.', 'Videollamada', 'Un primer encuentro para conocer el espacio y a otras mujeres, sin tener que contar nada.', '8 cupos disponibles de 20', false, false],
+[14, 'presencial', 'Taller: poner límites con ternura', '5:00 p. m.', '[LUGAR, CIUDAD]', 'Herramientas sencillas para decir que no cuidándote a ti y al vínculo.', '5 cupos disponibles de 15', false, false],
+[22, 'virtual', 'Encuentro de escritura: carta a mí misma', '7:00 p. m.', 'Videollamada', 'Escribimos juntas, cada una a su ritmo. Compartir lo escrito es opcional.', '15 cupos disponibles de 25', false, false],
+[29, 'presencial', 'Taller de respiración y calma', '6:00 p. m.', '[LUGAR, CIUDAD]', 'Ejercicios para volver al cuerpo cuando todo se siente demasiado.', 'Cupos completos', false, true]
+];
+var todos = datos.map(function (d) {
+var vivo = d[7], lleno = d[8];
+var wd = (d[0] + 2) % 7;
+return {
+dia: d[0], sem: sems[wd].slice(0, 3), semLargo: sems[wd], mod: d[1], modLabel: d[1] === 'virtual' ? 'Virtual' : 'Presencial',
+titulo: d[2], hora: d[3], lugar: d[4], desc: d[5], cupos: d[6], vivo: vivo, precio: 'Gratuito',
+accion: vivo ? 'Unirme a la transmisión' : (lleno ? 'Avisarme si hay cupo' : 'Inscribirme'),
+bg: vivo ? B : W, fg: vivo ? C : B, fechaBg: vivo ? C : N,
+btnBg: vivo ? O : (lleno ? 'transparent' : B), btnFg: vivo ? P : (lleno ? B : C), btnBorde: vivo ? O : B
+};
+});
+var lista = todos.filter(function (e) { return mod === 'todos' || e.mod === mod; });
+var celdas = [];
+for (var b = 0; b < 3; b++) celdas.push({ n: '', ev: '', off: true, on: false, aria: '', borde: 'transparent', bg: 'transparent', fg: B, vis: 'hidden', peso: 400, cur: 'default', pick: function () {} });
+for (var n = 1; n <= 31; n++) {
+(function (n) {
+var ev = lista.filter(function (e) { return e.dia === n; })[0];
+var on = n === dia;
+celdas.push({
+n: n, ev: ev ? ev.titulo : '', off: !ev, on: on,
+aria: sems[(n + 2) % 7] + ' ' + n + ' de octubre' + (ev ? ': ' + ev.titulo : ', sin eventos'),
+borde: on ? B : (ev ? N : 'rgba(70,70,122,0.15)'),
+bg: on && ev ? B : (ev ? N : 'transparent'), fg: on && ev ? C : B,
+vis: 'visible', peso: ev ? 600 : 400, cur: ev ? 'pointer' : 'default',
+pick: function () { self.setState({ dia: n }); }
+});
+})(n);
+}
+var delDia = lista.filter(function (e) { return e.dia === dia; });
+function seg(defs, actual, clave, activoBg) {
+return defs.map(function (f) {
+var on = f[0] === actual;
+var cambio = {}; cambio[clave] = f[0];
+return { label: f[1], on: on, bg: on ? B : 'transparent', fg: on ? C : B, pick: function () { self.setState(cambio); } };
+});
+}
+return {
+mods: seg([['todos', 'Todos'], ['virtual', 'Virtuales'], ['presencial', 'Presenciales']], mod, 'mod'),
+vistas: seg([['lista', 'Lista'], ['calendario', 'Calendario']], vista, 'vista'),
+esLista: vista === 'lista',
+esCal: vista === 'calendario',
+lista: lista,
+conteo: lista.length === 1 ? '1 evento en octubre' : lista.length + ' eventos en octubre',
+celdas: celdas,
+delDia: delDia,
+diaVacio: delDia.length === 0,
+tituloDia: sems[(dia + 2) % 7].charAt(0).toUpperCase() + sems[(dia + 2) % 7].slice(1) + ' ' + dia + ' de octubre'
+};
+}
+}
+</script>
+</body>
+</html>

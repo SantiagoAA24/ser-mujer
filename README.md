@@ -1,87 +1,18 @@
-# Welcome to React Router!
+# Kit de arranque · Ser, Mujer
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Archivos para empezar la implementación del sitio con Cursor (modo Agent). Cópialos en la raíz del proyecto creado en la fase 1 de `docs/paso-a-paso.md`.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+| Archivo | Para qué sirve |
+|---|---|
+| `AGENTS.md` | Reglas del proyecto que lee el agente: stack, rutas, sistema de diseño, privacidad, accesibilidad y forma de trabajar. |
+| `.cursor/rules/ser-mujer.mdc` | Regla siempre activa en Cursor que remite a `AGENTS.md`. |
+| `docs/paso-a-paso.md` | Las fases del proyecto con los prompts listos para pegar. |
+| `design/referencia/` | El código fuente limpio de cada lámina del diseño (escritorio y móvil) y del sistema de diseño. Es mucho más liviano y legible para el agente que los HTML exportados. |
+| `app/styles/tokens.css` | Colores, tipografías, escala y utilidades (degradado, patrón, forma orgánica) para Tailwind v4. |
+| `app/lib/salida-rapida.ts` | Implementación de referencia de la Salida rápida y del atajo Esc + Esc. |
+| `public/assets/` | Logo (azul y crema), colibrí del patrón (azul y crema) y textura de grano. |
+| `public/_headers` | Cabeceras de seguridad para Cloudflare Pages o Netlify. |
 
-## Features
+Los HTML exportados (los que pesan 0,6 a 4 MB) guárdalos aparte para mirarlos en el navegador; no los adjuntes al chat de Cursor.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+Pendiente fuera del código: el logo en vector (SVG) en sus versiones del manual, el destino de la Salida rápida, los datos entre corchetes y la política de tratamiento de datos.

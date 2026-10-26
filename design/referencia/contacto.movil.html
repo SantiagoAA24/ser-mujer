@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ser, Mujer · Contacto · Móvil</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap">
+<style>
+body{margin:0}
+a{color:#46467A}a:hover{color:#2F2F5C}
+input:focus-visible,textarea:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid #7769C4;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 1900px; font-family: 'Montserrat', sans-serif; color: #46467A; background: #F2EBDA; font-size: 16px; line-height: 27px">
+
+<header style="position: sticky; top: 0; z-index: 10; background: #F2EBDA; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 16px; border-bottom: 1px solid rgba(70,70,122,0.2)">
+<a href="Inicio-movil.dc.html" aria-label="Ser, Mujer — inicio" style="display: flex; align-items: center"><img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 68px; width: auto; display: block"></a>
+<div style="display: flex; align-items: center; gap: 8px">
+<a href="https://www.google.com" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+Salida rápida
+</a>
+<button type="button" aria-label="Abrir menú" aria-expanded="false" style="width: 44px; height: 44px; border: 0; border-radius: 12px; background: transparent; color: #46467A; display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</div>
+</header>
+
+<main id="arriba" style="padding: 40px 16px 56px; display: flex; flex-direction: column; gap: 20px">
+<div style="padding: 0 4px; display: flex; flex-direction: column; gap: 14px">
+<div style="font-weight: 600; font-size: 13px; line-height: 20px; letter-spacing: 0.18em; text-transform: uppercase">Primer contacto</div>
+<h1 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 40px; line-height: 46px; letter-spacing: -0.01em">Escríbenos <span style="font-style: italic">cuando quieras</span></h1>
+<p style="margin: 0; font-size: 17px; line-height: 28px">Es un formulario corto. Solo te pedimos lo necesario para responderte, y puedes dejar en blanco lo que prefieras.</p>
+</div>
+<div role="note" style="display: flex; gap: 14px; padding: 18px 20px; border-radius: 20px; background: #C1D5C8">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><rect x="5" y="10.5" width="14" height="9.5" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>
+<div><div style="font-weight: 600">Lo que compartas aquí es confidencial</div><div style="font-size: 15px; line-height: 24px">Se queda entre nosotras, y tú decides cuánto contar.</div></div>
+</div>
+
+<form style="background: #FFFFFF; border-radius: 28px; padding: 28px 20px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="m-nombre" style="font-weight: 600">¿Cómo quieres que te llamemos?</label>
+<input id="m-nombre" type="text" autocomplete="off" placeholder="Tu nombre o un seudónimo" style="height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #46467A; border-radius: 12px; background: #FFFFFF; color: #46467A; font: 400 16px 'Montserrat', sans-serif">
+<div style="font-size: 14px; line-height: 22px">No hace falta tu nombre real.</div>
+</div>
+
+<fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 8px">
+<legend style="padding: 0; font-weight: 600; margin-bottom: 8px">¿Cómo prefieres que te contactemos?</legend>
+<sc-for list="{{opciones}}" as="o" hint-placeholder-count="3">
+<label style="display: flex; align-items: center; gap: 12px; min-height: 52px; box-sizing: border-box; padding: 8px 16px; border-radius: 12px; border: 1.5px solid {{o.borde}}; background: {{o.fondo}}; cursor: pointer"><input type="radio" name="via-m" checked="{{o.on}}" onChange="{{o.pick}}" style="flex: none; width: 22px; height: 22px; margin: 0; accent-color: #46467A"> {{o.label}}</label>
+</sc-for>
+<sc-if value="{{esCorreo}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-direction: column; gap: 6px; margin-top: 8px">
+<label for="m-correo" style="font-weight: 600">Tu correo</label>
+<input id="m-correo" type="email" autocomplete="off" placeholder="nombre@ejemplo.com" style="height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #46467A; border-radius: 12px; background: #FFFFFF; color: #46467A; font: 400 16px 'Montserrat', sans-serif">
+<div style="font-size: 14px; line-height: 22px">Elige un correo que solo tú revises.</div>
+</div>
+</sc-if>
+<sc-if value="{{esWhats}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px; margin-top: 8px">
+<label for="m-tel" style="font-weight: 600">Tu número de WhatsApp</label>
+<input id="m-tel" type="tel" autocomplete="off" placeholder="Con indicativo, p. ej. +57…" style="height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #46467A; border-radius: 12px; background: #FFFFFF; color: #46467A; font: 400 16px 'Montserrat', sans-serif">
+<div style="font-size: 14px; line-height: 22px">Elige un número que solo tú revises. Nuestro primer mensaje será discreto.</div>
+</div>
+</sc-if>
+<sc-if value="{{esNinguna}}" hint-placeholder-val="{{false}}">
+<div style="margin-top: 8px; padding: 14px 16px; border-radius: 12px; background: #F2EBDA; font-size: 15px; line-height: 24px">Está bien. No te escribiremos: leeremos tu mensaje y aquí seguiremos cuando quieras volver.</div>
+</sc-if>
+</fieldset>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="m-msg" style="font-weight: 600">¿Quieres contarnos algo? <span style="font-weight: 400">(opcional)</span></label>
+<textarea id="m-msg" rows="4" placeholder="Hasta donde te sientas cómoda." style="box-sizing: border-box; padding: 12px 16px; border: 1.5px solid #46467A; border-radius: 12px; background: #FFFFFF; color: #46467A; font: 400 16px/1.6 'Montserrat', sans-serif; resize: vertical"></textarea>
+</div>
+
+<a href="Contacto-ok-movil.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 56px; border-radius: 999px; background: #46467A; color: #F2EBDA; font-weight: 600; text-decoration: none">Enviar mensaje</a>
+<div style="font-size: 14px; line-height: 22px; text-align: center; margin-top: -10px">Al enviar no te comprometes a nada.</div>
+</form>
+
+<div style="padding: 0 4px; font-size: 15px; line-height: 24px">¿Prefieres hablar directamente? <a href="#arriba" style="font-weight: 600; text-underline-offset: 4px">Escríbenos por WhatsApp</a> o <a href="Agendar-movil.dc.html" style="font-weight: 600; text-underline-offset: 4px">agenda una sesión</a>.</div>
+</main>
+
+<footer style="border-top: 1px solid rgba(70,70,122,0.3); padding: 20px 20px 28px; font-size: 14px; line-height: 22px">Si estás en peligro inmediato, llama a [LÍNEA DE EMERGENCIA LOCAL].<br><a href="#arriba">Cómo navegar con seguridad</a><br>© 2026 Ser, Mujer</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1900}}'>
+class Component extends DCLogic {
+renderVals() {
+var self = this;
+var via = (this.state && this.state.via) || 'correo';
+var acepta = !!(this.state && this.state.acepta);
+var defs = [['correo', 'Por correo electrónico'], ['whatsapp', 'Por WhatsApp'], ['ninguna', 'Prefiero no ser contactada']];
+return {
+opciones: defs.map(function (d) {
+var on = via === d[0];
+return { label: d[1], on: on, borde: on ? '#46467A' : 'rgba(70,70,122,0.35)', fondo: on ? '#F2EBDA' : '#FFFFFF', pick: function () { self.setState({ via: d[0] }); } };
+}),
+esCorreo: via === 'correo',
+esWhats: via === 'whatsapp',
+esNinguna: via === 'ninguna',
+acepta: acepta,
+toggleAcepta: function () { self.setState({ acepta: !acepta }); }
+};
+}
+}
+</script>
+</body>
+</html>

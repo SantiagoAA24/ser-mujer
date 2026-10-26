@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sistema de diseño · Ilustración y patrón</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap">
+<style>
+body{margin:0}
+.patron-c{background-image:url(/assets/colibri-crema.png);background-size:120px auto}
+.patron-a{background-image:url(/assets/colibri-azul.png);background-size:120px auto}
+.degradado{background-color:#F2EBDA;background-image:url(/assets/grano.png),radial-gradient(60% 75% at 96% 4%,#7769C4 0%,rgba(119,105,196,0) 62%),radial-gradient(55% 70% at 100% 100%,#EBB049 0%,rgba(235,176,73,0) 62%),radial-gradient(50% 65% at 62% 62%,#CFABD0 0%,rgba(207,171,208,0) 68%),radial-gradient(60% 70% at 38% 0%,#F5CBC0 0%,rgba(245,203,192,0) 70%),radial-gradient(45% 60% at 0% 100%,#C1D5C8 0%,rgba(193,213,200,0) 70%)}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 1750px; box-sizing: border-box; padding: 80px; background: #F2EBDA; color: #46467A; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.6; display: flex; flex-direction: column; gap: 56px">
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase">Sistema de diseño · 06</div>
+<h1 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 56px; line-height: 1.1">Ilustración y patrón</h1>
+<p style="margin: 0; max-width: 800px">Cuatro recursos gráficos, todos decorativos y ocultos para lectores de pantalla. Regla general: un solo recurso protagonista por pantalla, y nunca detrás de un párrafo. No se usan fotos de personas reales.</p>
+</div>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Patrón del colibrí</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 200px; border-radius: 20px; overflow: hidden; background: #7769C4"><div class="patron-c" aria-hidden="true" style="position: absolute; inset: 0; opacity: 0.4"></div></div>
+<div style="font-size: 14.5px"><strong>Crema al 40 % sobre Margarita.</strong> Dentro de formas orgánicas, sin texto encima.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 200px; border-radius: 20px; overflow: hidden; background: #46467A"><div class="patron-c" aria-hidden="true" style="position: absolute; inset: 0; opacity: 0.1"></div><div style="position: absolute; left: 24px; bottom: 20px; right: 24px; color: #F2EBDA; font-family: 'Noto Serif', serif; font-size: 24px; line-height: 1.25">Conversemos</div></div>
+<div style="font-size: 14.5px"><strong>Crema al 10 % sobre Bahía Azul.</strong> Único caso en que puede ir bajo texto: sección de cierre.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 200px; border-radius: 20px; overflow: hidden; background: #C1D5C8"><div class="patron-a" aria-hidden="true" style="position: absolute; inset: 0; opacity: 0.3"></div></div>
+<div style="font-size: 14.5px"><strong>Bahía al 30 % sobre Niebla Marina.</strong> Portadas de recursos y eventos sin imagen.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 200px; border-radius: 20px; overflow: hidden; background: #EBB049"><div class="patron-c" aria-hidden="true" style="position: absolute; inset: 0; opacity: 0.45"></div></div>
+<div style="font-size: 14.5px"><strong>Crema al 45 % sobre Verano Naranja.</strong> Solo piezas pequeñas: portada del podcast, redes.</div>
+</div>
+</div>
+<div style="font-size: 14px; max-width: 940px">Módulo de 120 a 132 px de ancho, sin rotar ni recolorear fuera de estas cuatro parejas (las del manual). No va en el encabezado, formularios, tarjetas de texto ni sobre el degradado.</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Botánica en línea</h2>
+<div style="height: 300px; border-radius: 20px; background: #FFFFFF; display: flex; align-items: flex-end; justify-content: center; gap: 36px; padding: 24px; box-sizing: border-box">
+<svg viewBox="0 0 120 160" fill="none" stroke="#7769C4" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true" style="height: 200px; width: auto"><path d="M60 26V158"></path><path d="M60 26C52 16 54 6 60 0 66 6 68 16 60 26Z"></path><path d="M60 60C44 56 30 42 26 26 42 30 56 44 60 60Z"></path><path d="M60 60C76 56 90 42 94 26 78 30 64 44 60 60Z"></path><path d="M60 90C44 86 30 72 26 56 42 60 56 74 60 90Z"></path><path d="M60 90C76 86 90 72 94 56 78 60 64 74 60 90Z"></path><path d="M60 120C44 116 30 102 26 86 42 90 56 104 60 120Z"></path><path d="M60 120C76 116 90 102 94 86 78 90 64 104 60 120Z"></path></svg>
+<svg viewBox="-80 -100 160 360" fill="none" stroke="#CFABD0" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true" style="height: 250px; width: auto"><path d="M0 0C-22-30-14-70 0-92 14-70 22-30 0 0Z"></path><path d="M0 0C-40-14-48-52-34-78-22-60-10-30 0 0"></path><path d="M0 0C40-14 48-52 34-78 22-60 10-30 0 0"></path><path d="M0 0C-52-4-66-30-62-52-44-44-20-24 0 0"></path><path d="M0 0C52-4 66-30 62-52 44-44 20-24 0 0"></path><path d="M0 0C4 60-6 140 2 256"></path><path d="M1 170C40 140 60 100 62 60 30 80 8 120 1 170Z"></path></svg>
+</div>
+<div style="font-size: 14.5px">Trazo fino de 1,3 a 1,6 px, sin relleno. Margarita, Rosa Primavera o Verano Naranja sobre Crema o Blanco; Crema sobre Bahía Azul.</div>
+<div style="font-size: 14.5px"><strong>Dónde:</strong> esquinas de sección, separadores, mensajes de confirmación y pantallas sin contenido. Siempre al margen del texto.</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Formas orgánicas</h2>
+<div style="height: 300px; border-radius: 20px; background: #FFFFFF; display: flex; align-items: center; justify-content: center">
+<div aria-hidden="true" style="position: relative; width: 220px; height: 220px">
+<div style="position: absolute; inset: 0; overflow: hidden; background: #7769C4; border-radius: 58% 42% 47% 53% / 46% 55% 45% 54%"><div class="patron-c" style="position: absolute; inset: 0; opacity: 0.4"></div></div>
+<div style="position: absolute; left: -8%; bottom: -6%; width: 40%; height: 40%; background: #F5CBC0; border-radius: 52% 48% 60% 40% / 50% 58% 42% 50%"></div>
+<div style="position: absolute; right: 2%; top: -6%; width: 20%; height: 20%; background: #EBB049; border-radius: 50%"></div>
+</div>
+</div>
+<div style="font-size: 14.5px">Manchas suaves de color pleno. Sustituyen a la fotografía: sirven de marco para ilustración o de espacio reservado de imagen.</div>
+<div style="font-size: 14.5px"><strong>Dónde:</strong> sección principal, «Quién soy» (hasta tener retrato ilustrado) y portadas. Máximo tres formas por grupo y una en Verano Naranja.</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Degradado con grano</h2>
+<div class="degradado" style="height: 300px; border-radius: 20px; padding: 28px; box-sizing: border-box; display: flex; align-items: flex-end">
+<div style="font-family: 'Noto Serif', serif; font-size: 28px; line-height: 1.2; max-width: 240px">El texto vive en la zona clara</div>
+</div>
+<div style="font-size: 14.5px">Crema de base con Margarita arriba a la derecha, Naranja abajo a la derecha, Primavera al centro, Durazno y Niebla a la izquierda, más grano fino.</div>
+<div style="font-size: 14.5px"><strong>Dónde:</strong> solo en la sección principal de cada página. El texto (Bahía Azul) se coloca en la mitad izquierda; nunca sobre la mancha Margarita.</div>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<div style="background: #FFFFFF; border-radius: 20px; padding: 28px 32px; display: flex; flex-direction: column; gap: 8px; border: 1.5px solid #2F6B4F">
+<h3 style="margin: 0; font-weight: 600; font-size: 20px">Sí</h3>
+<div style="font-size: 15px">Un recurso protagonista por pantalla; el resto, color plano.</div>
+<div style="font-size: 15px">Ilustración, formas o patrón en lugar de fotos de personas.</div>
+<div style="font-size: 15px">Mucho aire alrededor: el recurso acompaña, no llena.</div>
+<div style="font-size: 15px">Marcar todo como decorativo para lectores de pantalla.</div>
+</div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 28px 32px; display: flex; flex-direction: column; gap: 8px; border: 1.5px solid #A63A50">
+<h3 style="margin: 0; font-weight: 600; font-size: 20px">No</h3>
+<div style="font-size: 15px">Patrón o flores detrás de párrafos, campos o botones.</div>
+<div style="font-size: 15px">Degradado y patrón juntos en la misma sección.</div>
+<div style="font-size: 15px">Imágenes de dolor, manos, lágrimas o siluetas encogidas.</div>
+<div style="font-size: 15px">Animaciones bruscas; si se anima, movimiento lento y respetando «reducir movimiento».</div>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1750}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

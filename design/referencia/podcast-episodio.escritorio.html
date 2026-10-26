@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ser, Mujer · Episodio · Escritorio</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap">
+<style>
+body{margin:0}
+a{color:#46467A}a:hover{color:#2F2F5C}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #7769C4;outline-offset:2px}
+summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
+.patron-c{background-image:url(/assets/colibri-crema.png);background-size:110px auto}
+</style>
+</helmet>
+<div style="font-family: 'Montserrat', sans-serif; color: #46467A; background: #F2EBDA; font-size: 17px; line-height: 1.7">
+
+<header style="position: sticky; top: 0; z-index: 10; background: #F2EBDA; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; padding: 14px 56px; border-bottom: 1px solid rgba(70,70,122,0.2)">
+<a href="Inicio.dc.html" aria-label="Ser, Mujer — inicio" style="display: flex; align-items: center"><img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 68px; width: auto; display: block"></a>
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 14.5px">
+<a href="Inicio.dc.html" style="padding: 12px 0; text-decoration: none">Inicio</a>
+<a href="Acompanamos.dc.html" style="padding: 12px 0; text-decoration: none">Cómo te acompañamos</a>
+<a href="QuienSoy.dc.html" style="padding: 12px 0; text-decoration: none">Quién soy</a>
+<a href="Podcast.dc.html" aria-current="page" style="padding: 12px 0; text-decoration: none; font-weight: 600; box-shadow: 0 2px 0 #46467A">Podcast</a>
+<a href="Recursos.dc.html" style="padding: 12px 0; text-decoration: none">Recursos</a>
+<a href="Eventos.dc.html" style="padding: 12px 0; text-decoration: none">Eventos</a>
+<a href="Contacto.dc.html" style="padding: 12px 0; text-decoration: none">Contacto</a>
+</nav>
+<a href="https://www.google.com" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 10px 22px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-weight: 600; font-size: 14.5px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+Salida rápida
+</a>
+</header>
+
+<main id="arriba">
+<section style="background: #F5CBC0; padding: 40px 56px 64px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<a href="Podcast.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; font-size: 15px; text-underline-offset: 6px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>Todos los episodios</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px 56px">
+<div aria-hidden="true" style="flex: 0 1 280px; position: relative; aspect-ratio: 1 / 1; border-radius: 28px; overflow: hidden; background: #EBB049; margin: 0 auto">
+<div class="patron-c" style="position: absolute; inset: 0; opacity: 0.45"></div>
+<div style="position: absolute; left: 24px; bottom: 20px; font-family: 'Noto Serif', serif; font-style: italic; font-size: 72px; line-height: 1; color: #2F2F5C">12</div>
+</div>
+<div style="flex: 1 1 560px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; font-size: 15px; font-weight: 600">
+<span>Episodio 12 · 28 de septiembre de 2026 · 28 min</span>
+<span style="padding: 2px 12px; border-radius: 999px; background: #C1D5C8; font-size: 14px">Sanación</span>
+</div>
+<h1 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: clamp(40px, 4.6vw, 64px); line-height: 1.1; letter-spacing: -0.01em">Volver a confiar en ti</h1>
+
+<div role="region" aria-label="Reproductor del episodio" style="align-self: stretch; box-sizing: border-box; background: #FFFFFF; border-radius: 24px; padding: 18px 24px 16px; display: flex; flex-direction: column; gap: 10px; margin-top: 4px">
+<div style="display: flex; align-items: center; gap: 14px">
+<div style="font-size: 14px; font-weight: 600; flex: none">{{tiempo}}</div>
+<div role="progressbar" aria-label="Avance del episodio" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{progNum}}" style="flex: 1; height: 8px; border-radius: 4px; background: rgba(70,70,122,0.22)"><div style="width: {{prog}}; height: 100%; border-radius: 4px; background: #46467A"></div></div>
+<div style="font-size: 14px; font-weight: 600; flex: none">28:04</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+<div style="display: flex; align-items: center; gap: 10px">
+<button type="button" aria-label="Retroceder 15 segundos" style="height: 44px; padding: 0 14px; border: 1.5px solid #46467A; border-radius: 999px; background: transparent; color: #46467A; font: 600 14px 'Montserrat', sans-serif; cursor: pointer">−15 s</button>
+<button type="button" onClick="{{alternar}}" aria-label="{{etiquetaBoton}}" style="width: 60px; height: 60px; border: 0; border-radius: 50%; background: #46467A; color: #F2EBDA; display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
+<sc-if value="{{pausado}}" hint-placeholder-val="{{true}}"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z"></path></svg></sc-if>
+<sc-if value="{{reproduciendo}}" hint-placeholder-val="{{false}}"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"></path></svg></sc-if>
+</button>
+<button type="button" aria-label="Adelantar 30 segundos" style="height: 44px; padding: 0 14px; border: 1.5px solid #46467A; border-radius: 999px; background: transparent; color: #46467A; font: 600 14px 'Montserrat', sans-serif; cursor: pointer">+30 s</button>
+<span style="font-size: 14px; font-weight: 600; margin-left: 6px">{{estado}}</span>
+</div>
+<div style="display: flex; align-items: center; gap: 10px">
+<button type="button" onClick="{{cambiarVel}}" aria-label="{{velAria}}" style="height: 44px; min-width: 64px; padding: 0 14px; border: 1.5px solid #46467A; border-radius: 999px; background: transparent; color: #46467A; font: 600 14px 'Montserrat', sans-serif; cursor: pointer">{{vel}}</button>
+<button type="button" aria-label="Volumen" style="width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: #46467A; display: inline-flex; align-items: center; justify-content: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4z"></path><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"></path></svg></button>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; font-size: 15px">
+<span style="font-weight: 600">También en</span>
+<a href="#arriba" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-underline-offset: 6px">Spotify</a>
+<a href="#arriba" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-underline-offset: 6px">Apple Podcasts</a>
+<a href="#arriba" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-underline-offset: 6px">YouTube</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 72px 56px 96px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px 72px; align-items: flex-start">
+<div style="flex: 2 1 600px; display: flex; flex-direction: column; gap: 48px; max-width: 760px">
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px; line-height: 38px">De qué hablamos</h2>
+<p style="margin: 0; font-size: 19px; line-height: 32px">[Descripción del episodio en dos o tres frases: el tema, quién participa y qué puede llevarse quien escucha.]</p>
+<p style="margin: 0; font-size: 15px">Este episodio toca temas sensibles. Puedes pausar cuando quieras y volver después.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px; line-height: 38px">Notas del episodio</h2>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+<li style="display: flex; gap: 20px; padding: 12px 0; border-top: 1px solid rgba(70,70,122,0.25)"><a href="#arriba" style="flex: 0 0 64px; font-weight: 600">00:00</a><span>[Momento 1: bienvenida y tema del día.]</span></li>
+<li style="display: flex; gap: 20px; padding: 12px 0; border-top: 1px solid rgba(70,70,122,0.25)"><a href="#arriba" style="flex: 0 0 64px; font-weight: 600">04:30</a><span>[Momento 2: idea o pregunta principal.]</span></li>
+<li style="display: flex; gap: 20px; padding: 12px 0; border-top: 1px solid rgba(70,70,122,0.25)"><a href="#arriba" style="flex: 0 0 64px; font-weight: 600">12:15</a><span>[Momento 3: ejercicio o reflexión guiada.]</span></li>
+<li style="display: flex; gap: 20px; padding: 12px 0; border-top: 1px solid rgba(70,70,122,0.25); border-bottom: 1px solid rgba(70,70,122,0.25)"><a href="#arriba" style="flex: 0 0 64px; font-weight: 600">23:40</a><span>[Momento 4: cierre y lo que queda para la semana.]</span></li>
+</ol>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px; line-height: 38px">Recursos mencionados</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px">
+<a href="#arriba" style="display: flex; flex-direction: column; gap: 4px; background: #FFFFFF; border-radius: 20px; padding: 20px 24px; text-decoration: none"><span style="align-self: flex-start; padding: 2px 12px; border-radius: 999px; background: #C1D5C8; font-size: 13.5px; font-weight: 600">Ejercicio</span><span style="font-weight: 600">[Nombre del recurso 1]</span><span style="font-size: 15px">[Una línea sobre para qué sirve.]</span></a>
+<a href="#arriba" style="display: flex; flex-direction: column; gap: 4px; background: #FFFFFF; border-radius: 20px; padding: 20px 24px; text-decoration: none"><span style="align-self: flex-start; padding: 2px 12px; border-radius: 999px; background: #CFABD0; color: #2F2F5C; font-size: 13.5px; font-weight: 600">Lectura</span><span style="font-weight: 600">[Nombre del recurso 2]</span><span style="font-size: 15px">[Una línea sobre para qué sirve.]</span></a>
+<a href="Agendar.dc.html" style="display: flex; flex-direction: column; gap: 4px; background: #FFFFFF; border-radius: 20px; padding: 20px 24px; text-decoration: none"><span style="align-self: flex-start; padding: 2px 12px; border-radius: 999px; background: #F5CBC0; font-size: 13.5px; font-weight: 600">Acompañamiento</span><span style="font-weight: 600">Sesiones individuales</span><span style="font-size: 15px">Si quieres conversar sobre lo que te movió este episodio.</span></a>
+</div>
+</div>
+
+<details style="background: #FFFFFF; border-radius: 24px; padding: 8px 28px">
+<summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px"><span style="font-family: 'Noto Serif', serif; font-size: 26px; line-height: 34px">Transcripción</span><span style="display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600">Mostrar u ocultar<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8l5 5 5-5"></path></svg></span></summary>
+<div style="padding: 4px 0 24px; display: flex; flex-direction: column; gap: 14px; font-size: 16px; border-top: 1px solid rgba(70,70,122,0.25); margin-top: 4px; padding-top: 20px">
+<p style="margin: 0"><strong>00:00 · [Nombre]:</strong> [Texto de la transcripción. Cada intervención va en un párrafo, con la marca de tiempo y quién habla.]</p>
+<p style="margin: 0"><strong>00:42 · [Nombre]:</strong> [Texto de la transcripción.]</p>
+<p style="margin: 0"><strong>01:30 · [Nombre]:</strong> [Texto de la transcripción.]</p>
+<a href="#arriba" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-underline-offset: 6px">Descargar la transcripción completa</a>
+</div>
+</details>
+</div>
+
+<aside aria-label="Episodios relacionados" style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0 0 4px; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px; line-height: 38px">Episodios relacionados</h2>
+<a href="Episodio.dc.html" style="display: flex; gap: 16px; align-items: center; background: #FFFFFF; border-radius: 20px; padding: 14px 20px 14px 14px; text-decoration: none"><span aria-hidden="true" style="flex: none; width: 64px; height: 64px; border-radius: 16px; background: #C1D5C8; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif', serif; font-style: italic; font-size: 28px">7</span><span style="display: flex; flex-direction: column"><span style="font-family: 'Noto Serif', serif; font-size: 20px; line-height: 27px">Empezar de nuevo, despacio</span><span style="font-size: 14px">Sanación · 29 min · 20 jul 2026</span></span></a>
+<a href="Episodio.dc.html" style="display: flex; gap: 16px; align-items: center; background: #FFFFFF; border-radius: 20px; padding: 14px 20px 14px 14px; text-decoration: none"><span aria-hidden="true" style="flex: none; width: 64px; height: 64px; border-radius: 16px; background: #F5CBC0; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif', serif; font-style: italic; font-size: 28px">11</span><span style="display: flex; flex-direction: column"><span style="font-family: 'Noto Serif', serif; font-size: 20px; line-height: 27px">El amor propio no es egoísmo</span><span style="font-size: 14px">Amor propio · 24 min · 14 sep 2026</span></span></a>
+<a href="Episodio.dc.html" style="display: flex; gap: 16px; align-items: center; background: #FFFFFF; border-radius: 20px; padding: 14px 20px 14px 14px; text-decoration: none"><span aria-hidden="true" style="flex: none; width: 64px; height: 64px; border-radius: 16px; background: #CFABD0; color: #2F2F5C; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif', serif; font-style: italic; font-size: 28px">10</span><span style="display: flex; flex-direction: column"><span style="font-family: 'Noto Serif', serif; font-size: 20px; line-height: 27px">Perdonar sin olvidar quién eres</span><span style="font-size: 14px">Perdón · 31 min · 31 ago 2026</span></span></a>
+<a href="Podcast.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-underline-offset: 6px">Ver todos los episodios</a>
+</aside>
+</div>
+</section>
+</main>
+
+<footer id="pie" style="background: #F2EBDA; padding: 64px 56px 40px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; justify-content: space-between">
+<div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 16px; max-width: 340px">
+<img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 92px; width: auto; align-self: flex-start">
+<div style="font-family: 'Noto Serif', serif; font-style: italic; font-size: 17px">Acompañamiento, sanación y transformación desde el amor.</div>
+</div>
+<nav aria-label="Pie de página" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+<div style="font-weight: 600; margin-bottom: 8px">Explora</div>
+<a href="Acompanamos.dc.html" style="padding: 6px 0">Cómo te acompañamos</a>
+<a href="QuienSoy.dc.html" style="padding: 6px 0">Quién soy</a>
+<a href="Podcast.dc.html" style="padding: 6px 0">Podcast</a>
+<a href="Recursos.dc.html" style="padding: 6px 0">Recursos</a>
+<a href="Eventos.dc.html" style="padding: 6px 0">Eventos</a>
+<a href="Contacto.dc.html" style="padding: 6px 0">Contacto</a>
+</nav>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+<div style="font-weight: 600; margin-bottom: 8px">Contacto</div>
+<div style="padding: 6px 0">[CORREO ELECTRÓNICO]</div>
+<div style="padding: 6px 0">[CIUDAD, PAÍS]</div>
+<div style="padding: 6px 0">[HORARIO DE ATENCIÓN]</div>
+<a href="#pie" style="padding: 6px 0">Cómo navegar con seguridad</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+<div style="font-weight: 600">Escríbenos</div>
+<a href="#pie" style="display: inline-flex; align-items: center; gap: 12px; min-height: 48px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #C1D5C8; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.4-4.2A8 8 0 1 1 8.5 19L4 20z"></path></svg>
+WhatsApp · [NÚMERO]
+</a>
+<a href="#pie" style="display: inline-flex; align-items: center; gap: 12px; min-height: 48px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #CFABD0; color: #2F2F5C; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.5"></rect><circle cx="12" cy="12" r="3.6"></circle><path d="M16.6 7.4h.01"></path></svg>
+Instagram · [@USUARIO]
+</a>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(70,70,122,0.3); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 8px 32px; justify-content: space-between; font-size: 14px">
+<div>Si estás en peligro inmediato, llama a [LÍNEA DE EMERGENCIA LOCAL].</div>
+<div>© 2026 Ser, Mujer</div>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2530}}'>
+class Component extends DCLogic {
+renderVals() {
+var self = this;
+var s = this.state || {};
+var play = !!s.play;
+var v = s.vel || 0;
+var vels = ['1×', '1,25×', '1,5×'];
+return {
+pausado: !play,
+reproduciendo: play,
+estado: play ? 'Reproduciendo' : 'En pausa',
+etiquetaBoton: play ? 'Pausar' : 'Reproducir',
+tiempo: play ? '03:20' : '00:00',
+prog: play ? '12%' : '0%',
+progNum: play ? 12 : 0,
+vel: vels[v],
+velAria: 'Velocidad ' + vels[v] + ', cambiar',
+alternar: function () { self.setState({ play: !play }); },
+cambiarVel: function () { self.setState({ vel: (v + 1) % 3 }); }
+};
+}
+}
+</script>
+</body>
+</html>

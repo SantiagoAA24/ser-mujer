@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sistema de diseño · Color</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 2150px; box-sizing: border-box; padding: 80px; background: #F2EBDA; color: #46467A; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.6; display: flex; flex-direction: column; gap: 64px">
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase">Sistema de diseño · 01</div>
+<h1 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 56px; line-height: 1.1">Color</h1>
+<p style="margin: 0; max-width: 760px">La paleta es la del manual. Bahía Azul lleva casi todo el texto; los pasteles son fondos y los acentos se usan con medida. Las razones de contraste siguen WCAG 2.1 (AA: 4,5:1 texto normal, 3:1 texto de 24 px o más).</p>
+</div>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Paleta y rol principal</h2>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{swatches}}" as="s" hint-placeholder-count="10">
+<div style="background: #FFFFFF; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column">
+<div style="height: 96px; background: {{s.hex}}; border-bottom: 1px solid rgba(70,70,122,0.15)"></div>
+<div style="padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 2px">
+<div style="font-weight: 600">{{s.name}}</div>
+<div style="font-size: 14px">{{s.hex}} · {{s.token}}</div>
+<div style="font-size: 14px; margin-top: 6px">{{s.role}}</div>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="font-size: 14px">* Bahía Profundo y los cuatro colores de estado no están en el manual: son añadidos funcionales para llegar a AA sobre Rosa Primavera y Verano Naranja, y para formularios.</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Roles de uso</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<div style="background: #FFFFFF; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-weight: 600; font-size: 18px">Fondos</h3>
+<div style="font-size: 14.5px"><strong>Crema</strong> · fondo base de página, encabezado y pie.</div>
+<div style="font-size: 14.5px"><strong>Blanco</strong> · tarjetas, campos y avisos.</div>
+<div style="font-size: 14.5px"><strong>Margarita Azul</strong> · sección de bienvenida y bloques emotivos.</div>
+<div style="font-size: 14.5px"><strong>Bahía Azul</strong> · llamado a agendar y cierres.</div>
+<div style="font-size: 14.5px"><strong>Niebla, Primavera, Durazno</strong> · columnas y tarjetas de color.</div>
+<div style="font-size: 14.5px"><strong>Degradado con grano</strong> · solo sección principal.</div>
+</div>
+<div style="background: #FFFFFF; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-weight: 600; font-size: 18px">Texto</h3>
+<div style="font-size: 14.5px"><strong>Bahía Azul</strong> · texto por defecto sobre Crema, Blanco, Niebla y Durazno.</div>
+<div style="font-size: 14.5px"><strong>Bahía Profundo</strong> · texto sobre Rosa Primavera y Verano Naranja.</div>
+<div style="font-size: 14.5px"><strong>Blanco</strong> · texto sobre Margarita Azul.</div>
+<div style="font-size: 14.5px"><strong>Crema</strong> · texto sobre Bahía Azul.</div>
+</div>
+<div style="background: #FFFFFF; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-weight: 600; font-size: 18px">Acentos</h3>
+<div style="font-size: 14.5px"><strong>Verano Naranja</strong> · reservado: Salida rápida y botón principal sobre fondo oscuro.</div>
+<div style="font-size: 14.5px"><strong>Margarita Azul</strong> · anillo de foco, casillas marcadas, títulos de 24 px o más sobre claro.</div>
+<div style="font-size: 14.5px"><strong>Rosa Durazno / Niebla</strong> · formas orgánicas y etiquetas.</div>
+</div>
+<div style="background: #FFFFFF; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-weight: 600; font-size: 18px">Estados</h3>
+<div style="font-size: 14.5px"><strong>Foco</strong> · anillo Margarita 3 px + separación 2 px (Crema sobre fondos oscuros).</div>
+<div style="font-size: 14.5px"><strong>Hover</strong> · Bahía Azul pasa a Bahía Profundo.</div>
+<div style="font-size: 14.5px"><strong>Error</strong> #A63A50 · <strong>Éxito</strong> #2F6B4F, siempre con icono y texto.</div>
+<div style="font-size: 14.5px"><strong>Aviso</strong> · borde Naranja, texto Bahía. <strong>Info</strong> · borde Margarita.</div>
+<div style="font-size: 14.5px"><strong>Deshabilitado</strong> · 45 % de opacidad.</div>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Sí · texto de cualquier tamaño (AA)</h2>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{ok}}" as="c" hint-placeholder-count="10">
+<div style="background: {{c.bg}}; color: {{c.fg}}; border-radius: 14px; padding: 18px 20px; border: 1px solid rgba(70,70,122,0.15); display: flex; flex-direction: column; gap: 4px">
+<div style="font-family: 'Noto Serif', serif; font-size: 24px; line-height: 1.2">Te acompañamos</div>
+<div style="font-size: 14px">{{c.label}}</div>
+<div style="font-size: 14px; font-weight: 600">{{c.ratio}} : 1 · AA</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Con cuidado · solo títulos de 24 px o más</h2>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{big}}" as="c" hint-placeholder-count="4">
+<div style="background: {{c.bg}}; color: {{c.fg}}; border-radius: 14px; padding: 18px 20px; border: 1px solid rgba(70,70,122,0.15); display: flex; flex-direction: column; gap: 4px">
+<div style="font-family: 'Noto Serif', serif; font-size: 28px; line-height: 1.2">Título</div>
+<div style="font-size: 14px; color: {{c.note}}">{{c.label}}</div>
+<div style="font-size: 14px; font-weight: 600; color: {{c.note}}">{{c.ratio}} : 1 · no para párrafos</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">No usar para texto · contraste insuficiente</h2>
+<p style="margin: 0; max-width: 820px">Estas parejas aparecen en el manual para el logo, formas o fondos y ahí siguen siendo válidas. Para texto, iconos con significado o bordes de campos, no.</p>
+<div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{no}}" as="c" hint-placeholder-count="12">
+<div style="background: #FFFFFF; border-radius: 14px; overflow: hidden; border: 1px solid rgba(70,70,122,0.15)">
+<div style="background: {{c.bg}}; color: {{c.fg}}; padding: 18px 16px; font-family: 'Noto Serif', serif; font-size: 22px; text-decoration: line-through">Texto</div>
+<div style="padding: 12px 16px 14px; font-size: 13.5px; display: flex; flex-direction: column; gap: 2px">
+<div>{{c.label}}</div>
+<div style="font-weight: 600; color: #A63A50">{{c.ratio}} : 1 · no cumple</div>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2150}}'>
+class Component extends DCLogic {
+renderVals() {
+var B = '#46467A', P = '#2F2F5C', W = '#FFFFFF', C = '#F2EBDA', M = '#7769C4', N = '#C1D5C8', R = '#CFABD0', D = '#F5CBC0', O = '#EBB049';
+return {
+swatches: [
+{ name: 'Bahía Azul', hex: B, token: 'texto', role: 'Texto principal, botón primario, fondo de cierre.' },
+{ name: 'Crema', hex: C, token: 'fondo', role: 'Fondo base. Texto sobre Bahía Azul.' },
+{ name: 'Margarita Azul', hex: M, token: 'marca', role: 'Secciones emotivas, foco, títulos grandes.' },
+{ name: 'Niebla Marina', hex: N, token: 'superficie-1', role: 'Fondo de sección, tarjeta, etiqueta.' },
+{ name: 'Rosa Primavera', hex: R, token: 'superficie-2', role: 'Fondo de sección, tarjeta, etiqueta.' },
+{ name: 'Rosa Durazno', hex: D, token: 'superficie-3', role: 'Fondo de sección, formas orgánicas.' },
+{ name: 'Verano Naranja', hex: O, token: 'acento', role: 'Salida rápida y botón sobre oscuro.' },
+{ name: 'Blanco', hex: W, token: 'superficie-0', role: 'Tarjetas, campos. Texto sobre Margarita.' },
+{ name: 'Bahía Profundo *', hex: P, token: 'texto-fuerte', role: 'Hover y texto sobre Primavera y Naranja.' },
+{ name: 'Error * / Éxito *', hex: '#A63A50', token: 'estado', role: 'Error #A63A50 · Éxito #2F6B4F.' }
+],
+ok: [
+{ bg: C, fg: B, label: 'Bahía sobre Crema', ratio: '7,3' },
+{ bg: W, fg: B, label: 'Bahía sobre Blanco', ratio: '8,7' },
+{ bg: N, fg: B, label: 'Bahía sobre Niebla Marina', ratio: '5,6' },
+{ bg: D, fg: B, label: 'Bahía sobre Rosa Durazno', ratio: '5,9' },
+{ bg: R, fg: P, label: 'Bahía Profundo sobre Primavera', ratio: '6,2' },
+{ bg: O, fg: P, label: 'Bahía Profundo sobre Naranja', ratio: '6,4' },
+{ bg: M, fg: W, label: 'Blanco sobre Margarita', ratio: '4,6' },
+{ bg: B, fg: C, label: 'Crema sobre Bahía', ratio: '7,3' },
+{ bg: B, fg: W, label: 'Blanco sobre Bahía', ratio: '8,7' },
+{ bg: W, fg: M, label: 'Margarita sobre Blanco', ratio: '4,6' }
+],
+big: [
+{ bg: C, fg: M, note: B, label: 'Margarita sobre Crema', ratio: '3,8' },
+{ bg: M, fg: C, note: W, label: 'Crema sobre Margarita', ratio: '3,8' },
+{ bg: R, fg: B, note: P, label: 'Bahía sobre Rosa Primavera', ratio: '4,3' },
+{ bg: O, fg: B, note: P, label: 'Bahía sobre Verano Naranja', ratio: '4,5 justo' }
+],
+no: [
+{ bg: C, fg: N, label: 'Niebla Marina sobre Crema', ratio: '1,3' },
+{ bg: C, fg: D, label: 'Rosa Durazno sobre Crema', ratio: '1,2' },
+{ bg: C, fg: R, label: 'Rosa Primavera sobre Crema', ratio: '1,7' },
+{ bg: C, fg: O, label: 'Verano Naranja sobre Crema', ratio: '1,6' },
+{ bg: W, fg: O, label: 'Verano Naranja sobre Blanco', ratio: '1,9' },
+{ bg: W, fg: R, label: 'Rosa Primavera sobre Blanco', ratio: '2,0' },
+{ bg: M, fg: N, label: 'Niebla Marina sobre Margarita', ratio: '3,0' },
+{ bg: M, fg: B, label: 'Bahía sobre Margarita', ratio: '1,9' },
+{ bg: N, fg: M, label: 'Margarita sobre Niebla Marina', ratio: '3,0' },
+{ bg: R, fg: M, label: 'Margarita sobre Rosa Primavera', ratio: '2,3' },
+{ bg: O, fg: M, label: 'Margarita sobre Verano Naranja', ratio: '2,4' },
+{ bg: B, fg: R, label: 'Rosa Primavera sobre Bahía (texto pequeño)', ratio: '4,3' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

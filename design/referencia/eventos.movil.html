@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Ser, Mujer · Eventos · Móvil</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap">
+<style>
+body{margin:0}
+a{color:#46467A}a:hover{color:#2F2F5C}
+a:focus-visible,button:focus-visible{outline:3px solid #7769C4;outline-offset:2px}
+.degradado{background-color:#F2EBDA;background-image:url(/assets/grano.png),radial-gradient(70% 45% at 100% 100%,#7769C4 0%,rgba(119,105,196,0) 60%),radial-gradient(60% 40% at 0% 100%,#EBB049 0%,rgba(235,176,73,0) 62%),radial-gradient(80% 50% at 60% 0%,#F5CBC0 0%,rgba(245,203,192,0) 70%),radial-gradient(60% 45% at 0% 35%,#C1D5C8 0%,rgba(193,213,200,0) 70%)}
+</style>
+</helmet>
+<div style="width: 390px; font-family: 'Montserrat', sans-serif; color: #46467A; background: #F2EBDA; font-size: 16px; line-height: 27px">
+
+<header style="position: sticky; top: 0; z-index: 10; background: #F2EBDA; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 16px; border-bottom: 1px solid rgba(70,70,122,0.2)">
+<a href="Inicio-movil.dc.html" aria-label="Ser, Mujer — inicio" style="display: flex; align-items: center"><img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 68px; width: auto; display: block"></a>
+<div style="display: flex; align-items: center; gap: 8px">
+<a href="https://www.google.com" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+Salida rápida
+</a>
+<button type="button" aria-label="Abrir menú" aria-expanded="false" style="width: 44px; height: 44px; border: 0; border-radius: 12px; background: transparent; color: #46467A; display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</div>
+</header>
+
+<main id="arriba">
+<section class="degradado" style="padding: 44px 20px 64px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-weight: 600; font-size: 13px; line-height: 20px; letter-spacing: 0.18em; text-transform: uppercase">Eventos</div>
+<h1 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 40px; line-height: 46px; letter-spacing: -0.01em">Encuentros para <span style="font-style: italic">conocernos sin prisa</span></h1>
+<p style="margin: 0; font-size: 17px; line-height: 28px">Por ahora todos son gratuitos, y puedes participar con la cámara apagada y sin hablar si así lo prefieres.</p>
+</section>
+
+<section aria-label="Próximos eventos" style="padding: 28px 0 48px; display: flex; flex-direction: column; gap: 14px">
+<div role="group" aria-label="Cambiar vista" style="align-self: stretch; margin: 0 16px; display: flex; padding: 4px; border-radius: 999px; background: #FFFFFF">
+<sc-for list="{{vistas}}" as="v" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{v.on}}" onClick="{{v.pick}}" style="flex: 1; min-height: 44px; border: 0; border-radius: 999px; background: {{v.bg}}; color: {{v.fg}}; font: 600 15px 'Montserrat', sans-serif; cursor: pointer">{{v.label}}</button>
+</sc-for>
+</div>
+<div role="group" aria-label="Filtrar por modalidad" style="display: flex; gap: 8px; overflow-x: auto; padding: 2px 16px 4px">
+<sc-for list="{{mods}}" as="f" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{f.on}}" onClick="{{f.pick}}" style="flex: none; min-height: 44px; padding: 6px 18px; border-radius: 999px; border: 1.5px solid #46467A; background: {{f.bg}}; color: {{f.fg}}; font: 600 15px 'Montserrat', sans-serif; cursor: pointer">{{f.label}}</button>
+</sc-for>
+</div>
+<div aria-live="polite" style="padding: 0 20px; font-size: 14px; line-height: 22px">{{conteo}}</div>
+
+<sc-if value="{{esLista}}" hint-placeholder-val="{{true}}">
+<div style="padding: 0 16px; display: flex; flex-direction: column; gap: 14px">
+<sc-for list="{{lista}}" as="e" hint-placeholder-count="5">
+<article style="background: {{e.bg}}; color: {{e.fg}}; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; align-items: stretch; gap: 10px">
+<div style="display: flex; align-items: center; gap: 14px">
+<div style="flex: none; width: 76px; text-align: center; padding: 8px 0; border-radius: 16px; background: {{e.fechaBg}}; color: #46467A">
+<div style="font-size: 13px; line-height: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em">{{e.sem}}</div>
+<div style="font-family: 'Noto Serif', serif; font-size: 32px; line-height: 34px">{{e.dia}}</div>
+<div style="font-size: 13px; line-height: 16px; font-weight: 600">oct</div>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px">
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-if value="{{e.vivo}}" hint-placeholder-val="{{false}}"><span style="display: inline-flex; align-items: center; gap: 6px; padding: 0 12px 0 8px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-size: 13.5px; font-weight: 600"><span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #2F2F5C"></span>En vivo</span></sc-if>
+<span style="padding: 0 12px; border-radius: 999px; border: 1.5px solid {{e.fg}}; font-size: 13.5px; line-height: 24px; font-weight: 600">{{e.modLabel}}</span>
+</div>
+<div style="font-weight: 600; font-size: 14.5px; line-height: 22px">{{e.hora}} · {{e.lugar}}</div>
+</div>
+</div>
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 24px; line-height: 32px">{{e.titulo}}</h2>
+<p style="margin: 0; font-size: 15px; line-height: 24px">{{e.desc}}</p>
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px"><span style="font-family: 'Noto Serif', serif; font-size: 20px">{{e.precio}}</span><span style="font-size: 14px">{{e.cupos}}</span></div>
+<a href="Evento-movil.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 52px; box-sizing: border-box; border-radius: 999px; background: {{e.btnBg}}; color: {{e.btnFg}}; border: 1.5px solid {{e.btnBorde}}; font-weight: 600; text-decoration: none">{{e.accion}}</a>
+</article>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{esCal}}" hint-placeholder-val="{{false}}">
+<div style="padding: 0 16px; display: flex; flex-direction: column; gap: 14px">
+<div style="background: #FFFFFF; border-radius: 24px; padding: 16px 12px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 4px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 24px; line-height: 32px">Octubre de 2026</h2>
+<div style="display: flex; gap: 8px">
+<button type="button" aria-label="Mes anterior" disabled style="width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid #46467A; background: transparent; color: #46467A; opacity: 0.45; display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+<button type="button" aria-label="Mes siguiente" style="width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid #46467A; background: transparent; color: #46467A; display: inline-flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+</div>
+</div>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; text-align: center; font-size: 13px; font-weight: 600"><div>L</div><div>M</div><div>X</div><div>J</div><div>V</div><div>S</div><div>D</div></div>
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px">
+<sc-for list="{{celdas}}" as="c" hint-placeholder-count="34">
+<button type="button" disabled="{{c.off}}" aria-pressed="{{c.on}}" aria-label="{{c.aria}}" onClick="{{c.pick}}" style="height: 46px; padding: 0; border-radius: 12px; border: 0; background: {{c.bg}}; color: {{c.fg}}; visibility: {{c.vis}}; opacity: {{c.op}}; font: {{c.peso}} 16px 'Montserrat', sans-serif; cursor: {{c.cur}}">{{c.n}}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; line-height: 20px; padding: 0 4px">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 4px; background: #C1D5C8"></span>Día con evento</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 4px; background: #46467A"></span>Día elegido</span>
+</div>
+</div>
+<h2 style="margin: 4px 4px 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 24px; line-height: 32px">{{tituloDia}}</h2>
+<sc-for list="{{delDia}}" as="e" hint-placeholder-count="1">
+<article style="background: #FFFFFF; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; align-items: stretch; gap: 8px">
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-if value="{{e.vivo}}" hint-placeholder-val="{{false}}"><span style="display: inline-flex; align-items: center; gap: 6px; padding: 0 12px 0 8px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-size: 13.5px; font-weight: 600"><span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #2F2F5C"></span>En vivo</span></sc-if>
+<span style="padding: 0 12px; border-radius: 999px; border: 1.5px solid #46467A; font-size: 13.5px; line-height: 24px; font-weight: 600">{{e.modLabel}}</span>
+</div>
+<h3 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 22px; line-height: 29px">{{e.titulo}}</h3>
+<div style="font-weight: 600; font-size: 14.5px; line-height: 22px">{{e.hora}} · {{e.lugar}}</div>
+<p style="margin: 0; font-size: 15px; line-height: 24px">{{e.desc}}</p>
+<div style="font-size: 14.5px"><strong>{{e.precio}}</strong> · {{e.cupos}}</div>
+<a href="Evento-movil.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 999px; background: #46467A; color: #F2EBDA; font-weight: 600; text-decoration: none; margin-top: 4px">{{e.accion}}</a>
+</article>
+</sc-for>
+<sc-if value="{{diaVacio}}" hint-placeholder-val="{{false}}">
+<div style="background: #FFFFFF; border-radius: 24px; padding: 20px; font-size: 15px; line-height: 24px">No hay eventos este día. Elige un día marcado en el calendario.</div>
+</sc-if>
+</div>
+</sc-if>
+</section>
+</main>
+
+<footer id="pie" style="padding: 40px 20px 28px; display: flex; flex-direction: column; gap: 20px">
+<img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 76px; width: auto; align-self: flex-start">
+<div style="font-family: 'Noto Serif', serif; font-style: italic">Acompañamiento, sanación y transformación desde el amor.</div>
+<a href="#pie" style="display: flex; align-items: center; gap: 12px; min-height: 52px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #C1D5C8; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.4-4.2A8 8 0 1 1 8.5 19L4 20z"></path></svg>
+WhatsApp · [NÚMERO]
+</a>
+<a href="#pie" style="display: flex; align-items: center; gap: 12px; min-height: 52px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #CFABD0; color: #2F2F5C; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.5"></rect><circle cx="12" cy="12" r="3.6"></circle><path d="M16.6 7.4h.01"></path></svg>
+Instagram · [@USUARIO]
+</a>
+<nav aria-label="Pie de página" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; font-size: 15px">
+<a href="Acompanamos-movil.dc.html" style="padding: 10px 0">Cómo te acompañamos</a>
+<a href="QuienSoy-movil.dc.html" style="padding: 10px 0">Quién soy</a>
+<a href="Podcast-movil.dc.html" style="padding: 10px 0">Podcast</a>
+<a href="Recursos-movil.dc.html" style="padding: 10px 0">Recursos</a>
+<a href="Eventos-movil.dc.html" style="padding: 10px 0">Eventos</a>
+<a href="Contacto-movil.dc.html" style="padding: 10px 0">Contacto</a>
+</nav>
+<div style="font-size: 15px">
+<div style="font-weight: 600">Contacto</div>
+<div>[CORREO ELECTRÓNICO]</div>
+<div>[CIUDAD, PAÍS] · [HORARIO DE ATENCIÓN]</div>
+<a href="#pie" style="display: inline-flex; align-items: center; min-height: 44px">Cómo navegar con seguridad</a>
+</div>
+<div style="border-top: 1px solid rgba(70,70,122,0.3); padding-top: 14px; font-size: 14px; line-height: 22px">Si estás en peligro inmediato, llama a [LÍNEA DE EMERGENCIA LOCAL].<br>© 2026 Ser, Mujer</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"vistaInicial":{"editor":"enum","options":["lista","calendario"],"default":"lista"},"$preview":{"width":390,"height":3660}}'>
+class Component extends DCLogic {
+renderVals() {
+var self = this;
+var s = this.state || {};
+var vista = s.vista || this.props.vistaInicial || 'lista';
+var mod = s.mod || 'todos';
+var dia = s.dia == null ? 8 : s.dia;
+var B = '#46467A', P = '#2F2F5C', N = '#C1D5C8', C = '#F2EBDA', O = '#EBB049', W = '#FFFFFF';
+var sems = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
+var datos = [
+[5, 'virtual', 'Conversatorio: volver a confiar', '6:00 p. m.', 'Transmisión por [PLATAFORMA]', 'Una conversación abierta para escuchar desde donde estés. No necesitas inscribirte.', 'Sin límite de cupos', true, false],
+[8, 'virtual', 'Círculo de bienvenida', '6:00 p. m.', 'Videollamada', 'Un primer encuentro para conocer el espacio y a otras mujeres, sin tener que contar nada.', '8 cupos de 20', false, false],
+[14, 'presencial', 'Taller: poner límites con ternura', '5:00 p. m.', '[LUGAR, CIUDAD]', 'Herramientas sencillas para decir que no cuidándote a ti y al vínculo.', '5 cupos de 15', false, false],
+[22, 'virtual', 'Encuentro de escritura: carta a mí misma', '7:00 p. m.', 'Videollamada', 'Escribimos juntas, cada una a su ritmo. Compartir lo escrito es opcional.', '15 cupos de 25', false, false],
+[29, 'presencial', 'Taller de respiración y calma', '6:00 p. m.', '[LUGAR, CIUDAD]', 'Ejercicios para volver al cuerpo cuando todo se siente demasiado.', 'Cupos completos', false, true]
+];
+var todos = datos.map(function (d) {
+var vivo = d[7], lleno = d[8];
+var wd = (d[0] + 2) % 7;
+return {
+dia: d[0], sem: sems[wd].slice(0, 3), mod: d[1], modLabel: d[1] === 'virtual' ? 'Virtual' : 'Presencial',
+titulo: d[2], hora: d[3], lugar: d[4], desc: d[5], cupos: d[6], vivo: vivo, precio: 'Gratuito',
+accion: vivo ? 'Unirme a la transmisión' : (lleno ? 'Avisarme si hay cupo' : 'Inscribirme'),
+bg: vivo ? B : W, fg: vivo ? C : B, fechaBg: vivo ? C : N,
+btnBg: vivo ? O : (lleno ? 'transparent' : B), btnFg: vivo ? P : (lleno ? B : C), btnBorde: vivo ? O : B
+};
+});
+var lista = todos.filter(function (e) { return mod === 'todos' || e.mod === mod; });
+var celdas = [];
+for (var b = 0; b < 3; b++) celdas.push({ n: '', off: true, on: false, aria: '', bg: 'transparent', fg: B, vis: 'hidden', op: 1, peso: 400, cur: 'default', pick: function () {} });
+for (var n = 1; n <= 31; n++) {
+(function (n) {
+var ev = lista.filter(function (e) { return e.dia === n; })[0];
+var on = n === dia && !!ev;
+celdas.push({
+n: n, off: !ev, on: on,
+aria: sems[(n + 2) % 7] + ' ' + n + ' de octubre' + (ev ? ': ' + ev.titulo : ', sin eventos'),
+bg: on ? B : (ev ? N : 'transparent'), fg: on ? C : B,
+vis: 'visible', op: ev ? 1 : 0.6, peso: ev ? 600 : 400, cur: ev ? 'pointer' : 'default',
+pick: function () { self.setState({ dia: n }); }
+});
+})(n);
+}
+var delDia = lista.filter(function (e) { return e.dia === dia; });
+function seg(defs, actual, clave) {
+return defs.map(function (f) {
+var on = f[0] === actual;
+var cambio = {}; cambio[clave] = f[0];
+return { label: f[1], on: on, bg: on ? B : 'transparent', fg: on ? C : B, pick: function () { self.setState(cambio); } };
+});
+}
+var nd = sems[(dia + 2) % 7];
+return {
+mods: seg([['todos', 'Todos'], ['virtual', 'Virtuales'], ['presencial', 'Presenciales']], mod, 'mod'),
+vistas: seg([['lista', 'Lista'], ['calendario', 'Calendario']], vista, 'vista'),
+esLista: vista === 'lista',
+esCal: vista === 'calendario',
+lista: lista,
+conteo: lista.length === 1 ? '1 evento en octubre' : lista.length + ' eventos en octubre',
+celdas: celdas,
+delDia: delDia,
+diaVacio: delDia.length === 0,
+tituloDia: nd.charAt(0).toUpperCase() + nd.slice(1) + ' ' + dia + ' de octubre'
+};
+}
+}
+</script>
+</body>
+</html>

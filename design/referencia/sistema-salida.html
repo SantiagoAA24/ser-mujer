@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sistema de diseño · Salida rápida</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap">
+<style>
+body{margin:0}
+a{color:#46467A}a:hover{color:#2F2F5C}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 1700px; box-sizing: border-box; padding: 80px; background: #F2EBDA; color: #46467A; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.6; display: flex; flex-direction: column; gap: 48px">
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase">Sistema de diseño · 05</div>
+<h1 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 56px; line-height: 1.1">Salida rápida</h1>
+<p style="margin: 0; max-width: 800px">Permite abandonar el sitio en un solo gesto si alguien se acerca. Es el único elemento que usa Verano Naranja en el encabezado, para que se encuentre sin leer.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+
+<section style="background: #FFFFFF; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 28px">1 · Siempre visible</h2>
+<div style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(70,70,122,0.2)">
+<div style="background: #F2EBDA; display: flex; align-items: center; justify-content: space-between; padding: 8px 20px; border-bottom: 1px solid rgba(70,70,122,0.2)">
+<img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 68px; width: auto; display: block">
+<a href="#" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 10px 22px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-weight: 600; font-size: 14.5px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+Salida rápida
+</a>
+</div>
+<div style="background: #7769C4; color: #FFFFFF; padding: 28px 20px 36px; font-family: 'Noto Serif', serif; font-size: 22px; line-height: 1.35">…la página sigue desplazándose por debajo y el botón no se mueve.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 15px">
+<div><strong>Posición:</strong> extremo derecho del encabezado fijo, en todas las páginas y anchos. Nunca dentro del menú móvil ni tapado por ventanas emergentes.</div>
+<div><strong>Forma:</strong> píldora Verano Naranja, texto Bahía Profundo (6,4 : 1), icono de cierre + texto. Mínimo 44 px de alto. El texto no se abrevia ni se reemplaza por solo icono.</div>
+<div><strong>Hover:</strong> fondo Bahía Profundo y texto Crema. <strong>Foco:</strong> anillo Margarita de 3 px.</div>
+<div><strong>Teclado:</strong> es el primer elemento al tabular; atajo: pulsar Esc dos veces.</div>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 28px">2 · Aviso al pasar el cursor</h2>
+<div style="border-radius: 16px; background: #F2EBDA; padding: 24px 24px 28px; display: flex; flex-direction: column; align-items: flex-end; gap: 0">
+<a href="#" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 10px 22px; border-radius: 999px; background: #2F2F5C; color: #F2EBDA; font-weight: 600; font-size: 14.5px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+Salida rápida
+</a>
+<div aria-hidden="true" style="width: 14px; height: 14px; background: #46467A; transform: rotate(45deg); margin: 9px 64px -8px 0"></div>
+<div role="tooltip" style="max-width: 320px; background: #46467A; color: #F2EBDA; border-radius: 14px; padding: 16px 18px; font-size: 14.5px; line-height: 1.55">
+<div style="font-weight: 600">Sal de esta página al instante</div>
+<div>Se abrirá una página neutra en esta misma pestaña. También puedes pulsar Esc dos veces.</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 15px">
+<div><strong>Cuándo:</strong> al pasar el cursor y al recibir foco de teclado. Aparece en 150 ms y desaparece al salir; no bloquea el clic.</div>
+<div><strong>Estilo:</strong> Bahía Azul con texto Crema (7,3 : 1), radio 14 px, ancho máximo 320 px, alineado al borde derecho del botón.</div>
+<div><strong>Móvil (sin cursor):</strong> en la primera visita, una línea bajo el encabezado: «¿Necesitas salir rápido? Toca Salida rápida.» con botón Entendido. No vuelve a mostrarse.</div>
+<div><strong>Sin confirmación:</strong> un clic sale de inmediato. Nunca se pregunta «¿Seguro?».</div>
+</div>
+</section>
+</div>
+
+<section style="background: #FFFFFF; border-radius: 24px; padding: 36px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 28px">3 · Pantalla neutra de destino</h2>
+<div style="border-radius: 14px; overflow: hidden; border: 1px solid #C9C9D2; font-family: system-ui, sans-serif; color: #33343A">
+<div style="background: #E6E7EB; padding: 10px 14px; display: flex; align-items: center; gap: 12px">
+<div style="display: flex; gap: 6px"><span style="width: 11px; height: 11px; border-radius: 50%; background: #B8BAC2"></span><span style="width: 11px; height: 11px; border-radius: 50%; background: #B8BAC2"></span><span style="width: 11px; height: 11px; border-radius: 50%; background: #B8BAC2"></span></div>
+<div style="background: #FFFFFF; border-radius: 8px 8px 0 0; padding: 6px 16px; font-size: 13px; margin-bottom: -10px">El tiempo hoy</div>
+</div>
+<div style="background: #FFFFFF; padding: 8px 14px; border-bottom: 1px solid #E1E2E7"><div style="background: #F1F2F5; border-radius: 999px; padding: 6px 16px; font-size: 13px">[SITIO NEUTRO EXTERNO]</div></div>
+<div style="background: #FFFFFF; padding: 32px 36px 40px; display: flex; flex-direction: column; gap: 20px">
+<div style="font-size: 26px">El tiempo hoy</div>
+<div style="display: flex; align-items: center; gap: 20px">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#5F6270" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="10"></circle><path d="M24 6v4M24 38v4M6 24h4M38 24h4M11 11l3 3M34 14l3-3"></path><path d="M24 52h26a9 9 0 0 0 0-18 13 13 0 0 0-25 3 8 8 0 0 0-1 15z" fill="#FFFFFF"></path></svg>
+<div><div style="font-size: 44px; line-height: 1">18°</div><div style="font-size: 14px; color: #5F6270">Parcialmente nublado</div></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px">
+<div style="background: #F1F2F5; border-radius: 10px; padding: 12px; font-size: 13px">Lun<br><strong>19°</strong></div>
+<div style="background: #F1F2F5; border-radius: 10px; padding: 12px; font-size: 13px">Mar<br><strong>17°</strong></div>
+<div style="background: #F1F2F5; border-radius: 10px; padding: 12px; font-size: 13px">Mié<br><strong>18°</strong></div>
+<div style="background: #F1F2F5; border-radius: 10px; padding: 12px; font-size: 13px">Jue<br><strong>20°</strong></div>
+<div style="background: #F1F2F5; border-radius: 10px; padding: 12px; font-size: 13px">Vie<br><strong>18°</strong></div>
+</div>
+</div>
+</div>
+<div style="font-size: 14px">Ilustración del tipo de destino: una página cotidiana, sin relación con Ser, Mujer. No es una pantalla que debamos diseñar con la marca.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px; padding-top: 8px">
+<h3 style="margin: 0; font-weight: 600; font-size: 20px">Reglas</h3>
+<div><strong>Destino:</strong> un sitio externo y corriente (el clima, un buscador, noticias). Mejor externo que una página propia: así la dirección visible tampoco menciona a Ser, Mujer.</div>
+<div><strong>Misma pestaña:</strong> reemplaza la página actual, de modo que el botón Atrás no regrese al sitio.</div>
+<div><strong>Sin rastro visual:</strong> ningún logo, color ni texto de la marca en el destino; el título de la pestaña cambia de inmediato.</div>
+<div><strong>Sin pasos intermedios:</strong> no hay animación, mensaje de despedida ni ventana de confirmación.</div>
+<div style="display: flex; gap: 14px; padding: 16px 18px; border-radius: 14px; border: 1.5px solid #EBB049; margin-top: 8px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#46467A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M12 4l9 15.5H3L12 4z"></path><path d="M12 10v4.5M12 17h.01"></path></svg>
+<div><strong>Límite que hay que decir.</strong> Salida rápida no borra el historial del navegador. El pie y la página de Recursos deben enlazar una guía breve: «Cómo navegar con seguridad y borrar tu historial».</div>
+</div>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1700}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

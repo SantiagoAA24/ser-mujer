@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sistema de diseño · Encabezado y pie</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap">
+<style>
+body{margin:0}
+a{color:#46467A}a:hover{color:#2F2F5C}
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 2100px; box-sizing: border-box; padding: 80px; background: #E9E1CE; color: #46467A; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.6; display: flex; flex-direction: column; gap: 56px">
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase">Sistema de diseño · 04</div>
+<h1 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 56px; line-height: 1.1">Encabezado y pie de página</h1>
+<p style="margin: 0; max-width: 780px">El encabezado queda fijo al desplazarse, con fondo Crema opaco. Salida rápida ocupa siempre el extremo derecho, en escritorio y en móvil, y nunca se esconde dentro del menú.</p>
+</div>
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Encabezado · escritorio (desde 1024 px)</h2>
+<div style="border-radius: 16px; overflow: hidden; background: #F2EBDA; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 14px 40px">
+<img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 68px; width: auto; display: block">
+<nav aria-label="Principal (ejemplo)" style="display: flex; align-items: center; gap: 26px; font-size: 14.5px">
+<a href="#" aria-current="page" style="padding: 12px 0; text-decoration: none; font-weight: 600; box-shadow: 0 2px 0 #46467A">Inicio</a>
+<a href="#" style="padding: 12px 0; text-decoration: none">Cómo te acompañamos</a>
+<a href="#" style="padding: 12px 0; text-decoration: none">Quién soy</a>
+<a href="#" style="padding: 12px 0; text-decoration: none">Podcast</a>
+<a href="#" style="padding: 12px 0; text-decoration: none">Recursos</a>
+<a href="#" style="padding: 12px 0; text-decoration: none">Eventos</a>
+<a href="#" style="padding: 12px 0; text-decoration: none">Contacto</a>
+</nav>
+<a href="#" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; box-sizing: border-box; padding: 10px 22px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-weight: 600; font-size: 14.5px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+Salida rápida
+</a>
+</div>
+<div style="font-size: 14px; max-width: 980px">Alto 96 px. Logo a 68 px (mínimo digital del manual). Enlaces Montserrat 14,5 px; la página actual va en SemiBold con línea inferior de 2 px. Al pasar el cursor, subrayado. Al desplazarse aparece una línea inferior de 1 px Bahía Azul al 20 %.</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Móvil (menos de 1024 px)</h2>
+<div style="display: grid; grid-template-columns: repeat(3, 390px); gap: 55px; align-items: start">
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-weight: 600">Encabezado cerrado</div>
+<div style="height: 620px; border-radius: 28px; overflow: hidden; background: #F2EBDA; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 16px; border-bottom: 1px solid rgba(70,70,122,0.2)">
+<img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 68px; width: auto; display: block">
+<div style="display: flex; align-items: center; gap: 8px">
+<a href="#" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+Salida rápida
+</a>
+<button type="button" aria-label="Abrir menú" aria-expanded="false" style="width: 44px; height: 44px; border: 0; border-radius: 12px; background: transparent; color: #46467A; display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</div>
+</div>
+<div style="padding: 40px 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px">
+<div style="font-family: 'Noto Serif', serif; font-size: 40px; line-height: 46px">No estás sola,<br><span style="font-style: italic">te acompañamos</span></div>
+<div>Aquí serás escuchada, respetada y acompañada, a tu ritmo.</div>
+<a href="#" style="display: flex; align-items: center; justify-content: center; align-self: stretch; min-height: 56px; border-radius: 999px; background: #46467A; color: #F2EBDA; font-weight: 600; text-decoration: none">Dar el primer paso</a>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-weight: 600">Menú abierto</div>
+<div style="height: 620px; border-radius: 28px; overflow: hidden; background: #F2EBDA; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 16px; border-bottom: 1px solid rgba(70,70,122,0.2)">
+<img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 68px; width: auto; display: block">
+<div style="display: flex; align-items: center; gap: 8px">
+<a href="#" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; background: #EBB049; color: #2F2F5C; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"></path></svg>
+Salida rápida
+</a>
+<button type="button" aria-label="Cerrar menú" aria-expanded="true" style="width: 44px; height: 44px; border: 0; border-radius: 12px; background: #46467A; color: #F2EBDA; display: inline-flex; align-items: center; justify-content: center; cursor: pointer">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+</div>
+</div>
+<nav aria-label="Principal móvil (ejemplo)" style="padding: 12px 20px 24px; display: flex; flex-direction: column">
+<a href="#" aria-current="page" style="padding: 12px 0; font-family: 'Noto Serif', serif; font-size: 24px; text-decoration: none; border-bottom: 1px solid rgba(70,70,122,0.2); font-style: italic">Inicio</a>
+<a href="#" style="padding: 12px 0; font-family: 'Noto Serif', serif; font-size: 24px; text-decoration: none; border-bottom: 1px solid rgba(70,70,122,0.2)">Cómo te acompañamos</a>
+<a href="#" style="padding: 12px 0; font-family: 'Noto Serif', serif; font-size: 24px; text-decoration: none; border-bottom: 1px solid rgba(70,70,122,0.2)">Quién soy</a>
+<a href="#" style="padding: 12px 0; font-family: 'Noto Serif', serif; font-size: 24px; text-decoration: none; border-bottom: 1px solid rgba(70,70,122,0.2)">Podcast</a>
+<a href="#" style="padding: 12px 0; font-family: 'Noto Serif', serif; font-size: 24px; text-decoration: none; border-bottom: 1px solid rgba(70,70,122,0.2)">Recursos</a>
+<a href="#" style="padding: 12px 0; font-family: 'Noto Serif', serif; font-size: 24px; text-decoration: none; border-bottom: 1px solid rgba(70,70,122,0.2)">Eventos</a>
+<a href="#" style="padding: 12px 0; font-family: 'Noto Serif', serif; font-size: 24px; text-decoration: none">Contacto</a>
+<a href="#" style="margin-top: 12px; display: flex; align-items: center; justify-content: center; min-height: 56px; border-radius: 999px; background: #46467A; color: #F2EBDA; font-weight: 600; text-decoration: none">Agendar una conversación</a>
+</nav>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="font-weight: 600">Pie de página</div>
+<div style="height: 620px; border-radius: 28px; overflow: hidden; background: #F2EBDA; padding: 32px 20px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+<img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 76px; width: auto; align-self: flex-start">
+<div style="font-family: 'Noto Serif', serif; font-style: italic">Acompañamiento, sanación y transformación desde el amor.</div>
+<a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 52px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #C1D5C8; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.4-4.2A8 8 0 1 1 8.5 19L4 20z"></path></svg>
+WhatsApp · [NÚMERO]
+</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 52px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #CFABD0; color: #2F2F5C; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.5"></rect><circle cx="12" cy="12" r="3.6"></circle><path d="M16.6 7.4h.01"></path></svg>
+Instagram · [@USUARIO]
+</a>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; font-size: 15px">
+<a href="#" style="padding: 10px 0">Cómo te acompañamos</a>
+<a href="#" style="padding: 10px 0">Quién soy</a>
+<a href="#" style="padding: 10px 0">Podcast</a>
+<a href="#" style="padding: 10px 0">Recursos</a>
+<a href="#" style="padding: 10px 0">Eventos</a>
+<a href="#" style="padding: 10px 0">Contacto</a>
+</div>
+<div style="border-top: 1px solid rgba(70,70,122,0.3); padding-top: 14px; font-size: 14px">Si estás en peligro inmediato, llama a [LÍNEA DE EMERGENCIA LOCAL].<br>© 2026 Ser, Mujer</div>
+</div>
+</div>
+
+</div>
+<div style="font-size: 14px; max-width: 980px">Encabezado móvil de 84 px. El menú se abre como panel a pantalla completa bajo el encabezado, con enlaces de 48 px de alto mínimo; el botón de menú cambia a cerrar. En el pie, WhatsApp e Instagram van primero y a todo el ancho.</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 400; font-size: 30px">Pie de página · escritorio</h2>
+<div style="border-radius: 16px; background: #F2EBDA; padding: 56px 48px 32px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; gap: 72px; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 360px">
+<img src="/assets/logo-azul.png" alt="Ser, Mujer" style="height: 92px; width: auto; align-self: flex-start">
+<div style="font-family: 'Noto Serif', serif; font-style: italic; font-size: 17px">Acompañamiento, sanación y transformación desde el amor.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+<div style="font-weight: 600; margin-bottom: 8px">Explora</div>
+<a href="#" style="padding: 6px 0">Cómo te acompañamos</a>
+<a href="#" style="padding: 6px 0">Quién soy</a>
+<a href="#" style="padding: 6px 0">Podcast</a>
+<a href="#" style="padding: 6px 0">Recursos</a>
+<a href="#" style="padding: 6px 0">Eventos</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+<div style="font-weight: 600">Escríbenos</div>
+<a href="#" style="display: inline-flex; align-items: center; gap: 12px; min-height: 48px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #C1D5C8; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.4-4.2A8 8 0 1 1 8.5 19L4 20z"></path></svg>
+WhatsApp · [NÚMERO]
+</a>
+<a href="#" style="display: inline-flex; align-items: center; gap: 12px; min-height: 48px; box-sizing: border-box; padding: 8px 22px; border-radius: 999px; background: #CFABD0; color: #2F2F5C; font-weight: 600; text-decoration: none">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.5"></rect><circle cx="12" cy="12" r="3.6"></circle><path d="M16.6 7.4h.01"></path></svg>
+Instagram · [@USUARIO]
+</a>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(70,70,122,0.3); padding-top: 20px; display: flex; justify-content: space-between; gap: 32px; font-size: 14px">
+<div>Si estás en peligro inmediato, llama a [LÍNEA DE EMERGENCIA LOCAL].</div>
+<div>© 2026 Ser, Mujer</div>
+</div>
+</div>
+<div style="font-size: 14px; max-width: 980px">Tres columnas: marca, navegación y contacto. Fondo Crema tras la sección de cierre Bahía Azul. El pie completo va en las páginas de contenido (inicio, acompañamiento, perfil, podcast, recursos, eventos, testimonios). Los flujos de formulario y sus confirmaciones (contacto, agenda, inscripción confirmada) usan un pie reducido de una línea.</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2100}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

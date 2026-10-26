@@ -1,0 +1,13 @@
+---
+description: Reglas del proyecto Ser, Mujer (stack, diseño, privacidad y accesibilidad)
+alwaysApply: true
+---
+
+Lee y sigue siempre `AGENTS.md` en la raíz del proyecto antes de proponer o escribir código.
+
+Recordatorios que no se negocian:
+- La «Salida rápida» va en el encabezado de todas las páginas y usa `app/lib/salida-rapida.ts`.
+- Colores, tipografías y radios solo desde los tokens de `app/styles/tokens.css`.
+- Las referencias visuales están en `design/referencia/`; no inventes textos ni datos.
+- Sin rastreadores, sin datos personales en el navegador y con los embebidos cargados solo tras un clic.
+- Termina cada tarea con `npm run typecheck` y `npm run build` sin errores.
