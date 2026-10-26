@@ -41,6 +41,8 @@
     "href": "/seguridad"
   },
   "tituloCalendario": "Cita",
+  "tiempoRespuesta": "[TIEMPO DE RESPUESTA]",
+  "nombreFirma": "[NOMBRE]",
   "mostrarRecursosPago": false,
   "podcast": {
     "spotify": { "label": "Spotify", "href": "[URL_SPOTIFY]" },

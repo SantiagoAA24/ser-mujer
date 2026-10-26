@@ -51,6 +51,10 @@ export type Sitio = {
    * Sin el nombre del sitio ni el tema del encuentro.
    */
   tituloCalendario: string;
+  /** Plazo de respuesta al formulario de contacto (placeholder hasta definir). */
+  tiempoRespuesta: string;
+  /** Nombre con el que se firman los mensajes de respuesta. */
+  nombreFirma: string;
   /** Cuando sea true, SeccionRecursosPago mostrará programas de pago. */
   mostrarRecursosPago: boolean;
   /** Enlaces al show en plataformas externas (solo texto, sin logos). */
