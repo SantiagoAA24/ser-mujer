@@ -33,7 +33,6 @@ export type {
   ModalidadEvento,
   NotaEpisodio,
   Perfil,
-  PortadaTestimonio,
   Pregunta,
   Profesional,
   Recurso,
@@ -44,6 +43,7 @@ export type {
   Testimonio,
   TipoRecurso,
   TokenColor,
+  VarianteMiniatura,
 } from "./types";
 
 export { sitio } from "./sitio";

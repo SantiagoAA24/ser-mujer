@@ -121,23 +121,19 @@ export type Recurso = {
   correoOpcional: boolean;
 };
 
-export type PortadaTestimonio = {
-  fondo: TokenColor;
-  forma1: TokenColor;
-  forma2: TokenColor;
-  x1: string;
-  y1: string;
-  x2: string;
-  y2: string;
-};
+/** Índice de composición abstracta de miniatura (0–5). */
+export type VarianteMiniatura = 0 | 1 | 2 | 3 | 4 | 5;
 
 export type Testimonio = {
   slug: string;
   tema: Tema;
   titulo: string;
   duracion: string;
-  portada: PortadaTestimonio;
-  /** Cita del bloque destacado en inicio (placeholder hasta contenido real). */
+  /** Presentación breve del testimonio, sin datos identificables. */
+  descripcion: string;
+  /** Composición de MiniaturaAbstracta (sin fotos ni fotogramas). */
+  variante: VarianteMiniatura;
+  /** Cita del bloque destacado legado (placeholder hasta contenido real). */
   cita?: string;
   /** Nombre o inicial mostrada junto a la cita. */
   nombre?: string;

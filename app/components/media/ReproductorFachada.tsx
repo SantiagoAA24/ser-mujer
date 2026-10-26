@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import { cn } from "~/components/ui/cn";
 
@@ -17,6 +17,8 @@ export type ReproductorFachadaProps = {
    * Usar solo tras un clic explícito de la usuaria (p. ej. play en la lista).
    */
   iniciarActivo?: boolean;
+  /** Notifica cuando el iframe se monta o se vuelve a la fachada. */
+  onActivoChange?: (activo: boolean) => void;
 };
 
 function idListo(id: string | undefined): id is string {
@@ -48,9 +50,14 @@ export function ReproductorFachada({
   ariaLabel = "Reproducir",
   className,
   iniciarActivo = false,
+  onActivoChange,
 }: ReproductorFachadaProps) {
   const puedeCargar = idListo(id);
   const [activo, setActivo] = useState(iniciarActivo && puedeCargar);
+
+  useEffect(() => {
+    onActivoChange?.(activo);
+  }, [activo, onActivoChange]);
 
   return (
     <div

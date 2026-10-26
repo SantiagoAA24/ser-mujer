@@ -1,9 +1,9 @@
 import { TarjetaEpisodioDestacado } from "~/components/contenido/TarjetaEpisodioDestacado";
 import { TarjetaEvento } from "~/components/contenido/TarjetaEvento";
 import { FormasOrganicas } from "~/components/ilustracion/FormasOrganicas";
-import { ReproductorFachada } from "~/components/media/ReproductorFachada";
 import { Apertura } from "~/components/secciones/Apertura";
 import { LlamadoFinal } from "~/components/secciones/LlamadoFinal";
+import { SeccionTestimonios } from "~/components/secciones/SeccionTestimonios";
 import { Boton } from "~/components/ui/Boton";
 import { EtiquetaSeccion } from "~/components/ui/EtiquetaSeccion";
 import { Tarjeta } from "~/components/ui/Tarjeta";
@@ -11,7 +11,6 @@ import {
   listarEpisodios,
   listarProximosEventos,
   listarServicios,
-  obtenerTestimonioDestacado,
   sitio,
 } from "~/content";
 import type { TarjetaVariante } from "~/components/ui/Tarjeta";
@@ -45,7 +44,6 @@ export default function Home() {
   const servicios = listarServicios();
   const episodio = listarEpisodios()[0];
   const eventos = listarProximosEventos(3);
-  const testimonio = obtenerTestimonioDestacado();
 
   return (
     <>
@@ -146,42 +144,7 @@ export default function Home() {
         </div>
       </section>
 
-      {testimonio != null ? (
-        <section className="px-5 pb-16 pt-0 lg:px-14 lg:pb-28 lg:pt-6">
-          <div className="mx-auto flex max-w-[1240px] flex-col gap-4 lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-[72px] lg:gap-y-12">
-            <div className="order-2 w-full lg:order-1 lg:flex-[1.1_1_460px]">
-              <ReproductorFachada
-                proveedor="youtube"
-                id={testimonio.youtubeId}
-                ariaLabel="Reproducir video del testimonio"
-                badge={`[VIDEO DEL TESTIMONIO · ${testimonio.duracion}]`}
-                fondo={
-                  <div
-                    className="patron-azul absolute inset-0 opacity-25"
-                    aria-hidden="true"
-                  />
-                }
-                className="h-[210px] aspect-auto lg:h-auto lg:aspect-[16/10]"
-              />
-            </div>
-            <figure className="order-1 m-0 flex flex-[1_1_420px] flex-col items-start gap-4 lg:order-2 lg:gap-5">
-              <EtiquetaSeccion>Una historia compartida</EtiquetaSeccion>
-              <blockquote className="m-0 font-serif text-2xl italic leading-[34px] text-bahia lg:text-[30px] lg:leading-[42px]">
-                «{testimonio.cita}»
-              </blockquote>
-              <figcaption className="text-[15px] text-bahia lg:text-base">
-                <strong>{testimonio.nombre}</strong> · compartido con su permiso
-              </figcaption>
-              <p className="m-0 hidden text-sm text-bahia lg:block">
-                El video incluye subtítulos y no se reproduce solo.
-              </p>
-              <Boton variante="texto" href="/testimonios" className="px-0">
-                Ver más testimonios
-              </Boton>
-            </figure>
-          </div>
-        </section>
-      ) : null}
+      <SeccionTestimonios />
 
       {episodio != null ? (
         <section className="bg-durazno px-5 py-16 lg:px-14 lg:py-24">
