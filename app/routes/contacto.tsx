@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router";
 
 import { AreaTexto } from "~/components/ui/AreaTexto";
+import { Aviso } from "~/components/ui/Aviso";
 import { Boton } from "~/components/ui/Boton";
 import { CampoTexto } from "~/components/ui/CampoTexto";
 import { EtiquetaSeccion } from "~/components/ui/EtiquetaSeccion";
@@ -9,6 +10,7 @@ import { GrupoOpciones } from "~/components/ui/GrupoOpciones";
 import { cn } from "~/components/ui/cn";
 import { sitio } from "~/content";
 import { enlaceUsable } from "~/lib/enlaces";
+import { formspreeUrl } from "~/lib/env";
 
 import type { Route } from "./+types/contacto";
 
@@ -89,11 +91,14 @@ function IconoCandado({ className }: { className?: string }) {
   );
 }
 
+type EstadoEnvio = "idle" | "enviando" | "error";
+
 export default function Contacto() {
   const navigate = useNavigate();
   const formRef = useRef<HTMLFormElement>(null);
   const [via, setVia] = useState<ViaContacto>("correo");
   const [errores, setErrores] = useState<ErroresForm>({});
+  const [estado, setEstado] = useState<EstadoEnvio>("idle");
   const debeEnfocarError = useRef(false);
 
   useEffect(() => {
@@ -105,9 +110,12 @@ export default function Contacto() {
     primero?.focus();
   }, [errores]);
 
-  function validarYEnviar(e: FormEvent<HTMLFormElement>) {
+  async function validarYEnviar(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const datos = new FormData(e.currentTarget);
+    if (estado === "enviando") return;
+
+    const form = e.currentTarget;
+    const datos = new FormData(form);
     const nombre = String(datos.get("nombre") ?? "").trim();
     const correo = String(datos.get("correo") ?? "").trim();
     const whatsapp = String(datos.get("whatsapp") ?? "").trim();
@@ -134,12 +142,44 @@ export default function Contacto() {
     if (Object.keys(next).length > 0) {
       debeEnfocarError.current = true;
       setErrores(next);
+      setEstado("idle");
       return;
     }
 
     setErrores({});
-    // TODO(fase-7): enviar a Formspree (VITE_FORMSPREE_ID)
-    navigate("/contacto/enviado");
+
+    const endpoint = formspreeUrl();
+    if (!endpoint) {
+      setEstado("error");
+      return;
+    }
+
+    // No enviar el honeypot si está vacío (Formspree lo ignora si tiene valor).
+    const payload = new FormData();
+    payload.set("nombre", nombre);
+    payload.set("via", via);
+    if (via === "correo") payload.set("correo", correo);
+    if (via === "whatsapp") payload.set("whatsapp", whatsapp);
+    const mensaje = String(datos.get("mensaje") ?? "").trim();
+    if (mensaje) payload.set("mensaje", mensaje);
+    const gotcha = String(datos.get("_gotcha") ?? "");
+    if (gotcha) payload.set("_gotcha", gotcha);
+
+    setEstado("enviando");
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        body: payload,
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) {
+        setEstado("error");
+        return;
+      }
+      navigate("/contacto/enviado");
+    } catch {
+      setEstado("error");
+    }
   }
 
   return (
@@ -187,8 +227,29 @@ export default function Contacto() {
           ref={formRef}
           noValidate
           onSubmit={validarYEnviar}
-          className="flex w-full flex-col gap-6 rounded-[28px] bg-blanco px-5 py-7 lg:flex-[1.2] lg:basis-[480px] lg:gap-7 lg:rounded-[32px] lg:p-12"
+          className="relative flex w-full flex-col gap-6 rounded-[28px] bg-blanco px-5 py-7 lg:flex-[1.2] lg:basis-[480px] lg:gap-7 lg:rounded-[32px] lg:p-12"
         >
+          {/* Campo trampa: oculto a humanas; Formspree descarta si tiene valor. */}
+          <div className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0" aria-hidden="true">
+            <label htmlFor="c-gotcha">
+              No rellenar
+              <input
+                id="c-gotcha"
+                type="text"
+                name="_gotcha"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </label>
+          </div>
+
+          {estado === "error" ? (
+            <Aviso tono="error" titulo="No pudimos enviar tu mensaje">
+              No es por algo que hayas hecho. Puedes intentarlo de nuevo en un
+              momento.
+            </Aviso>
+          ) : null}
+
           <CampoTexto
             id="c-nombre"
             name="nombre"
@@ -261,8 +322,14 @@ export default function Contacto() {
           />
 
           <div className="flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-6 lg:gap-y-3">
-            <Boton type="submit" variante="primario" tamano="grande">
-              Enviar mensaje
+            <Boton
+              type="submit"
+              variante="primario"
+              tamano="grande"
+              disabled={estado === "enviando"}
+              aria-disabled={estado === "enviando"}
+            >
+              {estado === "enviando" ? "Enviando…" : "Enviar mensaje"}
             </Boton>
             <p className="m-0 max-w-[260px] text-center text-sm text-bahia lg:text-left">
               Al enviar no te comprometes a nada.

@@ -38,7 +38,8 @@
       ],
       "acompanante": "fundadora",
       "cupos": { "total": 20, "disponibles": 8 },
-      "precio": null
+      "precio": null,
+      "calSlug": "circulo-de-bienvenida"
     },
     {
       "slug": "taller-poner-limites-con-ternura",
@@ -57,7 +58,8 @@
       ],
       "acompanante": "fundadora",
       "cupos": { "total": 15, "disponibles": 5 },
-      "precio": null
+      "precio": null,
+      "calSlug": "taller-poner-limites"
     },
     {
       "slug": "encuentro-escritura-carta-a-mi-misma",
@@ -76,7 +78,8 @@
       ],
       "acompanante": "fundadora",
       "cupos": { "total": 25, "disponibles": 15 },
-      "precio": null
+      "precio": null,
+      "calSlug": "encuentro-escritura"
     },
     {
       "slug": "taller-respiracion-y-calma",

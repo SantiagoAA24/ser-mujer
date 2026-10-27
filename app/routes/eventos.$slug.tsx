@@ -1,15 +1,14 @@
-import { useState, type FormEvent } from "react";
 import {
   data,
   isRouteErrorResponse,
   Link,
   useLoaderData,
-  useNavigate,
 } from "react-router";
 
+import { AgendaEmbebida } from "~/components/agenda/AgendaEmbebida";
 import { TarjetaProfesional } from "~/components/contenido/TarjetaProfesional";
+import { Aviso } from "~/components/ui/Aviso";
 import { Boton } from "~/components/ui/Boton";
-import { CampoTexto } from "~/components/ui/CampoTexto";
 import { Etiqueta } from "~/components/ui/Etiqueta";
 import {
   cuposCompletos,
@@ -90,16 +89,10 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   );
 }
 
-type ErroresForm = {
-  nombre?: string;
-  medio?: string;
-};
-
 export default function EventoDetalle() {
   const { evento, acompanante } = useLoaderData<typeof loader>();
-  const navigate = useNavigate();
   const lleno = cuposCompletos(evento.cupos);
-  const [errores, setErrores] = useState<ErroresForm>({});
+  const calSlug = evento.calSlug ?? null;
 
   const duracion = formatoDuracion(evento.duracionMin);
   const horaConDuracion = duracion
@@ -108,24 +101,8 @@ export default function EventoDetalle() {
   const precioTexto = formatoPrecio(evento.precio);
   const subtituloReserva =
     evento.precio === null
-      ? "Dos datos y listo. Es gratuito y puedes cancelar cuando quieras."
-      : `Dos datos y listo. El valor es ${precioTexto} y puedes cancelar cuando quieras.`;
-
-  function validarYEnviar(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const datos = new FormData(form);
-    const nombre = String(datos.get("nombre") ?? "").trim();
-    const medio = String(datos.get("medio") ?? "").trim();
-    const next: ErroresForm = {};
-    if (!nombre) next.nombre = "Escribe un nombre o seudónimo.";
-    if (!medio) next.medio = "Indica un correo o WhatsApp.";
-    setErrores(next);
-    if (Object.keys(next).length > 0) return;
-
-    // TODO(fase-7): conectar Cal.com con evento.calSlug
-    navigate(`/eventos/${evento.slug}/confirmado`);
-  }
+      ? "Elige un horario. Es gratuito y puedes cancelar cuando quieras."
+      : `Elige un horario. El valor es ${precioTexto} y puedes cancelar cuando quieras.`;
 
   return (
     <main id="arriba">
@@ -264,11 +241,7 @@ export default function EventoDetalle() {
               </Boton>
             </div>
           ) : (
-            <form
-              onSubmit={validarYEnviar}
-              className="flex flex-col gap-[18px] rounded-[28px] bg-blanco px-5 py-7 lg:gap-[22px] lg:rounded-[32px] lg:p-10"
-              noValidate
-            >
+            <div className="flex flex-col gap-[18px] rounded-[28px] bg-blanco px-5 py-7 lg:gap-[22px] lg:rounded-[32px] lg:p-10">
               <div>
                 <h2 className="m-0 font-serif text-[26px] font-normal leading-[34px] text-bahia lg:text-h3 lg:leading-[38px]">
                   Reserva tu lugar
@@ -278,23 +251,6 @@ export default function EventoDetalle() {
                 </p>
               </div>
 
-              <CampoTexto
-                name="nombre"
-                etiqueta="¿Cómo quieres que te llamemos?"
-                placeholder="Tu nombre o un seudónimo"
-                autoComplete="off"
-                error={errores.nombre}
-              />
-
-              <CampoTexto
-                name="medio"
-                etiqueta="¿Dónde te enviamos el enlace?"
-                placeholder="Correo o WhatsApp"
-                autoComplete="off"
-                ayuda="Elige un medio que solo tú revises. El mensaje será discreto."
-                error={errores.medio}
-              />
-
               <div className="flex items-baseline justify-between gap-4 rounded-2xl bg-crema px-[18px] py-3.5 lg:px-5 lg:py-4">
                 <span className="font-semibold text-bahia">Valor</span>
                 <span className="font-serif text-[22px] leading-[1.2] text-bahia lg:text-2xl">
@@ -302,18 +258,28 @@ export default function EventoDetalle() {
                 </span>
               </div>
 
-              <Boton
-                type="submit"
-                variante="primario"
-                tamano="grande"
-                className="w-full"
-              >
-                Reservar mi lugar
-              </Boton>
-              <p className="m-0 -mt-1.5 text-center text-sm leading-[22px] text-bahia lg:text-left">
-                Después podrás elegir si quieres un recordatorio.
-              </p>
-            </form>
+              {calSlug ? (
+                <>
+                  <AgendaEmbebida
+                    calSlug={calSlug}
+                    etiquetaBoton="Reservar mi lugar"
+                  />
+                  <p className="m-0 text-center text-sm leading-[22px] text-bahia lg:text-left">
+                    Después podrás elegir si quieres un recordatorio.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <Aviso tono="aviso" titulo="Inscripción pendiente">
+                    Aún no hay horarios publicados para este encuentro. Si
+                    quieres, escríbenos y te avisamos.
+                  </Aviso>
+                  <Boton variante="primario" href="/contacto" tamano="grande">
+                    Escribirnos
+                  </Boton>
+                </>
+              )}
+            </div>
           )}
         </section>
       </div>

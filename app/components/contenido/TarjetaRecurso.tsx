@@ -5,6 +5,7 @@ import { CampoTexto } from "~/components/ui/CampoTexto";
 import { Casilla } from "~/components/ui/Casilla";
 import { cn } from "~/components/ui/cn";
 import type { Recurso } from "~/content/types";
+import { enviarCorreoBrevo } from "~/lib/brevo";
 import {
   ETIQUETA_TEMA,
   ETIQUETA_TIPO,
@@ -106,11 +107,15 @@ function dispararDescarga(archivo: string) {
   enlace.remove();
 }
 
+const CORREO_OK = /.+@.+\..+/;
+
 export function TarjetaRecurso({ recurso, className }: TarjetaRecursoProps) {
   const idCorreo = useId();
   const [panelAbierto, setPanelAbierto] = useState(false);
   const [mensaje, setMensaje] = useState<string | null>(null);
   const [boletin, setBoletin] = useState(false);
+  const [correo, setCorreo] = useState("");
+  const [errorCorreo, setErrorCorreo] = useState<string | undefined>();
 
   const ariaDescargar = `Descargar: ${recurso.titulo} (${recurso.formato}, ${recurso.detalle})`;
   const mostrarBoton = !panelAbierto && !mensaje;
@@ -127,9 +132,21 @@ export function TarjetaRecurso({ recurso, className }: TarjetaRecursoProps) {
   }
 
   function enviarACorreo() {
-    // TODO(fase 7): enviar el recurso por correo y suscribir al boletín si aplica (Brevo/MailerLite).
+    const email = correo.trim();
+    if (!email) {
+      setErrorCorreo("Escribe un correo si quieres recibirlo también.");
+      return;
+    }
+    if (!CORREO_OK.test(email)) {
+      setErrorCorreo("Parece que falta una parte, por ejemplo @correo.com.");
+      return;
+    }
+    setErrorCorreo(undefined);
+
+    // La descarga nunca depende del envío a Brevo.
     dispararDescarga(recurso.archivo);
     marcarListo("Descarga iniciada · también va a tu correo");
+    void enviarCorreoBrevo(email);
   }
 
   return (
@@ -207,11 +224,18 @@ export function TarjetaRecurso({ recurso, className }: TarjetaRecursoProps) {
           </div>
           <CampoTexto
             id={idCorreo}
+            name="EMAIL"
             etiqueta="Tu correo"
             opcional
             type="email"
             autoComplete="off"
             placeholder="nombre@ejemplo.com"
+            value={correo}
+            onChange={(e) => {
+              setCorreo(e.target.value);
+              if (errorCorreo) setErrorCorreo(undefined);
+            }}
+            error={errorCorreo}
           />
           <Casilla
             etiqueta="Además quiero recibir el boletín [FRECUENCIA]. Puedo darme de baja cuando quiera."

@@ -1,6 +1,10 @@
 # Cabeceras de seguridad para Cloudflare Pages o Netlify.
-# Ajusta la CSP cuando conectes servicios: añade sus dominios en frame-src / connect-src / form-action.
-# script-src lleva 'unsafe-inline' porque React Router incrusta un script de hidratación en cada página;
+# CSP por servicio:
+#   - formspree.io → formulario de contacto (connect-src, form-action)
+#   - app.cal.com / cal.com → embebido de agenda y eventos (script, frame, connect)
+#   - d15766d6.sibforms.com → paso opcional de recursos / Brevo (connect, form-action)
+#   - youtube-nocookie / open.spotify.com → reproductores tras clic (frame-src)
+# script-src lleva 'unsafe-inline' porque React Router incrusta un script de hidratación;
 # cuando el sitio esté estable puedes cambiarlo por los hashes de esos scripts.
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains
@@ -8,4 +12,4 @@
   X-Frame-Options: DENY
   Referrer-Policy: no-referrer
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
-  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com https://cal.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://app.cal.com; font-src 'self'; frame-src https://www.youtube-nocookie.com https://open.spotify.com https://cal.com https://app.cal.com; connect-src 'self' https://formspree.io https://app.cal.com https://cal.com https://d15766d6.sibforms.com; form-action 'self' https://formspree.io https://d15766d6.sibforms.com; base-uri 'self'; object-src 'none'
