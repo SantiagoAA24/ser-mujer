@@ -215,9 +215,9 @@ function Ampliada({
             {etiquetaModalidad(evento.modalidad)}
           </span>
         </div>
-        <h2 className="m-0 font-serif text-h3-m font-normal lg:text-h3">
+        <h3 className="m-0 font-serif text-h3-m font-normal lg:text-h3">
           {evento.titulo}
-        </h2>
+        </h3>
         <p className="m-0 hidden text-base font-semibold lg:block">
           {hora} · {evento.lugar}
         </p>

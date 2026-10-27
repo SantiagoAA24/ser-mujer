@@ -186,11 +186,11 @@ export default function Eventos() {
         </div>
       </section>
 
-      <section
-        aria-label="Próximos eventos"
-        className="px-0 py-7 lg:px-14 lg:py-14 lg:pb-24"
-      >
+      <section className="px-0 py-7 lg:px-14 lg:py-14 lg:pb-24">
         <div className="mx-auto flex max-w-[1240px] flex-col gap-3.5 lg:gap-7">
+          <h2 className="m-0 px-4 font-serif text-h3-m font-normal text-bahia lg:px-0 lg:text-h3">
+            Próximos eventos
+          </h2>
           {/* Controles: móvil = vista → filtros; escritorio = filtros | vista */}
           <div className="flex flex-col gap-3.5 px-4 lg:flex-row lg:flex-wrap lg:items-center lg:justify-between lg:gap-x-8 lg:gap-y-4 lg:px-0">
             <div className="order-1 lg:order-2">

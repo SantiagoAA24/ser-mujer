@@ -160,11 +160,11 @@ export default function Recursos() {
         </div>
       </section>
 
-      <section
-        aria-label="Biblioteca"
-        className="flex flex-col gap-3 px-0 py-8 lg:gap-7 lg:px-14 lg:py-14 lg:pb-[72px]"
-      >
+      <section className="flex flex-col gap-3 px-0 py-8 lg:gap-7 lg:px-14 lg:py-14 lg:pb-[72px]">
         <div className="mx-auto flex w-full max-w-[1240px] flex-col gap-4 lg:gap-7">
+          <h2 className="m-0 px-5 font-serif text-h3-m font-normal text-bahia lg:px-0 lg:text-h3">
+            Biblioteca
+          </h2>
           <div className="flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:items-end lg:justify-between lg:gap-x-10 lg:gap-y-4">
             <div className="flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:gap-x-10 lg:gap-y-4">
               <div

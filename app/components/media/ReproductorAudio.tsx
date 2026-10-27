@@ -133,6 +133,24 @@ export function ReproductorProvider({
     }
   }, [modo]);
 
+  const reanudar = useCallback(() => {
+    if (!episodio) return;
+    if (modo === "audio") {
+      const el = audioRef.current;
+      if (!el) return;
+      void el.play().then(
+        () => setReproduciendo(true),
+        () => undefined,
+      );
+      return;
+    }
+    if (modo === "spotify") {
+      // Vuelve a mostrar la fachada; el iframe se carga con el play.
+      setSpotifyActivo(false);
+      setReproduciendo(true);
+    }
+  }, [episodio, modo]);
+
   const reproducirAudio = useCallback(
     (siguiente: Episodio, seekA?: number) => {
       const el = audioRef.current;
@@ -199,7 +217,8 @@ export function ReproductorProvider({
         setDuration(0);
         setEpisodio(siguiente);
         setReproduciendo(true);
-        setSpotifyActivo(true);
+        // Fachada visible; el iframe solo tras el clic en play.
+        setSpotifyActivo(false);
       }
     },
     [reproducirAudio],
@@ -362,7 +381,9 @@ export function ReproductorProvider({
       ? Math.min(100, (currentTime / duration) * 100)
       : 0;
 
-  const mostrarBarra = barraFija && episodio != null && reproduciendo;
+  const mostrarBarra = barraFija && episodio != null;
+  const enMarcha =
+    reproduciendo && (modo !== "spotify" || spotifyActivo);
 
   return (
     <Contexto.Provider value={valor}>
@@ -370,15 +391,21 @@ export function ReproductorProvider({
 
       <audio ref={audioRef} preload="none" className="hidden" />
 
-      {mostrarBarra && modo === "spotify" && spotifyId && spotifyActivo ? (
+      {mostrarBarra && modo === "spotify" && spotifyId ? (
         <div className="pointer-events-none fixed inset-x-0 bottom-[88px] z-[9] px-3 lg:bottom-[100px]">
           <div className="pointer-events-auto mx-auto max-w-[560px]">
             <ReproductorFachada
-              key={spotifyId}
+              key={`${spotifyId}-${spotifyActivo ? "on" : "off"}`}
               proveedor="spotify"
               id={spotifyId}
-              iniciarActivo
+              iniciarActivo={spotifyActivo}
               ariaLabel={`Reproducir en Spotify: ${episodio.titulo}`}
+              onActivoChange={(activo) => {
+                if (activo) {
+                  setSpotifyActivo(true);
+                  setReproduciendo(true);
+                }
+              }}
               className="rounded-[20px] shadow-lg lg:rounded-[24px]"
             />
           </div>
@@ -396,18 +423,47 @@ export function ReproductorProvider({
         >
           <button
             type="button"
+            aria-label={enMarcha ? "Pausar" : "Reanudar"}
+            onClick={() => (enMarcha ? pausar() : reanudar())}
+            className="inline-flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-crema text-bahia lg:size-[52px]"
+          >
+            {enMarcha ? (
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M7 5h4v14H7zM13 5h4v14h-4z" />
+              </svg>
+            ) : (
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M8 5.5v13l11-6.5-11-6.5z" />
+              </svg>
+            )}
+          </button>
+
+          <button
+            type="button"
             aria-label="Detener"
             onClick={detener}
-            className="inline-flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-naranja text-bahia-profundo lg:size-[52px]"
+            className="inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border-[1.5px] border-crema/60 bg-transparent text-crema"
           >
             <svg
-              width="22"
-              height="22"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"
             >
-              <path d="M7 5h4v14H7zM13 5h4v14h-4z" />
+              <rect x="6" y="6" width="12" height="12" rx="1" />
             </svg>
           </button>
 
@@ -415,26 +471,48 @@ export function ReproductorProvider({
             <div className="truncate text-sm font-semibold lg:text-[15px]">
               {episodio.numero} · {episodio.titulo}
             </div>
+            {modo === "audio" ? (
+              <div
+                role="progressbar"
+                aria-label="Avance del episodio"
+                aria-valuemin={0}
+                aria-valuemax={
+                  duration > 0 ? Math.round(duration) : undefined
+                }
+                aria-valuenow={Math.round(currentTime)}
+                aria-valuetext={`${formatearTiempo(currentTime)} de ${
+                  duration > 0
+                    ? formatearTiempo(duration)
+                    : episodio.duracion
+                }`}
+                className="mt-1.5 h-1 overflow-hidden rounded-sm bg-crema/30 lg:hidden"
+              >
+                <div
+                  className="h-full rounded-sm bg-crema transition-[width] duration-150"
+                  style={{ width: `${progreso}%` }}
+                />
+              </div>
+            ) : null}
+          </div>
+
+          {modo === "audio" ? (
             <div
-              aria-hidden="true"
-              className="mt-1.5 h-1 overflow-hidden rounded-sm bg-crema/30 lg:hidden"
+              role="progressbar"
+              aria-label="Avance del episodio"
+              aria-valuemin={0}
+              aria-valuemax={duration > 0 ? Math.round(duration) : undefined}
+              aria-valuenow={Math.round(currentTime)}
+              aria-valuetext={`${formatearTiempo(currentTime)} de ${
+                duration > 0 ? formatearTiempo(duration) : episodio.duracion
+              }`}
+              className="hidden min-w-20 flex-1 overflow-hidden rounded-[3px] bg-crema/30 lg:block lg:h-1.5"
             >
               <div
-                className="h-full rounded-sm bg-crema transition-[width] duration-150"
+                className="h-full rounded-[3px] bg-crema transition-[width] duration-150"
                 style={{ width: `${progreso}%` }}
               />
             </div>
-          </div>
-
-          <div
-            aria-hidden="true"
-            className="hidden min-w-20 flex-1 overflow-hidden rounded-[3px] bg-crema/30 lg:block lg:h-1.5"
-          >
-            <div
-              className="h-full rounded-[3px] bg-crema transition-[width] duration-150"
-              style={{ width: `${progreso}%` }}
-            />
-          </div>
+          ) : null}
 
           <div className="shrink-0 text-[13px] font-semibold lg:text-sm">
             {modo === "audio" ? (

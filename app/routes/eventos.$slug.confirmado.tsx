@@ -108,7 +108,7 @@ export default function EventoConfirmado() {
   }
 
   return (
-    <main id="arriba" className="px-4 py-12 lg:px-14 lg:py-20 lg:pb-24">
+    <div id="arriba" className="px-4 py-12 lg:px-14 lg:py-20 lg:pb-24">
       <div className="mx-auto flex max-w-[1040px] flex-col gap-3 rounded-[28px] bg-blanco p-3 lg:flex-row lg:flex-wrap lg:items-stretch lg:gap-3 lg:rounded-[32px]">
         <div
           role="status"
@@ -263,13 +263,13 @@ export default function EventoConfirmado() {
           este evento.{" "}
           <Link
             to={sitio.enlaceSeguridad.href}
-            className="font-semibold underline-offset-4"
+            className="inline-flex min-h-11 items-center font-semibold underline-offset-4"
           >
             {sitio.enlaceSeguridad.label}
           </Link>
           .
         </div>
       </div>
-    </main>
+    </div>
   );
 }

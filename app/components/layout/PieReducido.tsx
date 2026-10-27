@@ -10,7 +10,10 @@ export function PieReducido() {
           Si estás en peligro inmediato, llama a {sitio.lineaEmergencia}.
         </p>
         <p className="m-0">
-          <Link to={sitio.enlaceSeguridad.href} className="underline-offset-[6px]">
+          <Link
+            to={sitio.enlaceSeguridad.href}
+            className="inline-flex min-h-11 items-center underline-offset-[6px]"
+          >
             {sitio.enlaceSeguridad.label}
           </Link>
           {" · "}© {sitio.copyrightAnio} {sitio.nombre}

@@ -49,6 +49,7 @@ export function AreaTexto({
           className,
         )}
         {...rest}
+        autoComplete="off"
       />
       {ayuda && !error ? (
         <p id={idAyuda} className="text-pequeno font-normal text-bahia">

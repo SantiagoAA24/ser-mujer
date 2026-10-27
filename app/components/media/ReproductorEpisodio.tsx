@@ -117,9 +117,11 @@ export function ReproductorEpisodio({ episodio }: Props) {
           aria-label="Avance del episodio"
           onChange={(e) => onChangeRange(e.target.value)}
           className={cn(
-            "h-2 flex-1 cursor-pointer appearance-none rounded bg-bahia/22 accent-bahia disabled:cursor-not-allowed disabled:opacity-50",
-            "[&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-bahia",
-            "[&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-bahia",
+            "h-11 flex-1 cursor-pointer appearance-none rounded bg-transparent accent-bahia disabled:cursor-not-allowed disabled:opacity-50",
+            "[&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:rounded [&::-webkit-slider-runnable-track]:bg-bahia/22",
+            "[&::-moz-range-track]:h-2 [&::-moz-range-track]:rounded [&::-moz-range-track]:bg-bahia/22",
+            "[&::-webkit-slider-thumb]:relative [&::-webkit-slider-thumb]:mt-[-14px] [&::-webkit-slider-thumb]:size-11 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-[14px] [&::-webkit-slider-thumb]:border-transparent [&::-webkit-slider-thumb]:bg-clip-padding [&::-webkit-slider-thumb]:bg-bahia",
+            "[&::-moz-range-thumb]:size-11 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-bahia",
           )}
         />
         <div className="shrink-0 text-sm font-semibold">{duracionEtiqueta}</div>
@@ -137,9 +139,11 @@ export function ReproductorEpisodio({ episodio }: Props) {
           aria-label="Avance del episodio"
           onChange={(e) => onChangeRange(e.target.value)}
           className={cn(
-            "h-2 w-full cursor-pointer appearance-none rounded bg-bahia/22 accent-bahia disabled:cursor-not-allowed disabled:opacity-50",
-            "[&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-bahia",
-            "[&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-bahia",
+            "h-11 w-full cursor-pointer appearance-none rounded bg-transparent accent-bahia disabled:cursor-not-allowed disabled:opacity-50",
+            "[&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:rounded [&::-webkit-slider-runnable-track]:bg-bahia/22",
+            "[&::-moz-range-track]:h-2 [&::-moz-range-track]:rounded [&::-moz-range-track]:bg-bahia/22",
+            "[&::-webkit-slider-thumb]:relative [&::-webkit-slider-thumb]:mt-[-14px] [&::-webkit-slider-thumb]:size-11 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-[14px] [&::-webkit-slider-thumb]:border-transparent [&::-webkit-slider-thumb]:bg-clip-padding [&::-webkit-slider-thumb]:bg-bahia",
+            "[&::-moz-range-thumb]:size-11 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-bahia",
           )}
         />
         <div className="-mt-1 flex justify-between text-[13px] font-semibold leading-[18px]">

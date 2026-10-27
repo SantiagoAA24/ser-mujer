@@ -105,7 +105,7 @@ export default function EventoDetalle() {
       : `Elige un horario. El valor es ${precioTexto} y puedes cancelar cuando quieras.`;
 
   return (
-    <main id="arriba">
+    <div id="arriba">
       <section className="flex flex-col items-start gap-3.5 bg-niebla px-5 pb-10 pt-4 text-bahia lg:gap-4 lg:px-14 lg:pb-16 lg:pt-10">
         <Link
           to="/eventos"
@@ -283,6 +283,6 @@ export default function EventoDetalle() {
           )}
         </section>
       </div>
-    </main>
+    </div>
   );
 }

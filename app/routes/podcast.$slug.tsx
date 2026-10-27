@@ -363,7 +363,7 @@ function ContenidoEpisodio({
             </div>
           </div>
 
-          <h1 className="m-0 px-1 font-serif text-[36px] font-normal leading-[42px] tracking-[-0.01em] lg:hidden">
+          <h1 className="m-0 px-1 font-serif text-[36px] font-normal leading-[42px] tracking-[-0.01em] lg:sr-only">
             {episodio.titulo}
           </h1>
 
@@ -387,9 +387,12 @@ function ContenidoEpisodio({
                   {temaLabel}
                 </Etiqueta>
               </div>
-              <h1 className="m-0 font-serif text-[clamp(40px,4.6vw,64px)] font-normal leading-[1.1] tracking-[-0.01em]">
+              <p
+                aria-hidden="true"
+                className="m-0 font-serif text-[clamp(40px,4.6vw,64px)] font-normal leading-[1.1] tracking-[-0.01em]"
+              >
                 {episodio.titulo}
-              </h1>
+              </p>
               <ReproductorEpisodio episodio={episodio} />
               <EnlacesPlataformas />
             </div>

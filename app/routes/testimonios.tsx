@@ -90,7 +90,6 @@ export default function Testimonios() {
   const [tema, setTema] = useState<FiltroTema>("todos");
   const [seleccionado, setSeleccionado] = useState<Testimonio>(todos[0]!);
   const [reproduciendo, setReproduciendo] = useState(false);
-  const [iniciarActivo, setIniciarActivo] = useState(false);
   const reproductorRef = useRef<HTMLElement>(null);
 
   const filtrados = useMemo(() => {
@@ -102,12 +101,16 @@ export default function Testimonios() {
     setReproduciendo(activo);
   }, []);
 
+  function preferReducedMotion(): boolean {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
   function elegir(t: Testimonio) {
     setSeleccionado(t);
-    setIniciarActivo(true);
-    setReproduciendo(true);
+    setReproduciendo(false);
     reproductorRef.current?.scrollIntoView({
-      behavior: "smooth",
+      behavior: preferReducedMotion() ? "auto" : "smooth",
       block: "start",
     });
   }
@@ -150,7 +153,6 @@ export default function Testimonios() {
                 seleccionado.titulo,
                 seleccionado.duracion,
               )}
-              iniciarActivo={iniciarActivo}
               onActivoChange={onActivoChange}
               fondo={
                 <MiniaturaAbstracta
@@ -192,11 +194,11 @@ export default function Testimonios() {
         </div>
       </section>
 
-      <section
-        aria-label="Todos los testimonios"
-        className="px-0 py-4 pb-14 lg:px-14 lg:pb-[88px] lg:pt-10"
-      >
+      <section className="px-0 py-4 pb-14 lg:px-14 lg:pb-[88px] lg:pt-10">
         <div className="mx-auto flex max-w-[1240px] flex-col gap-4 lg:gap-7">
+          <h2 className="m-0 px-5 font-serif text-h3-m font-normal text-bahia lg:px-0 lg:text-h3">
+            Todos los testimonios
+          </h2>
           <div className="flex flex-col gap-4 lg:flex-row lg:flex-wrap lg:items-center lg:justify-between lg:gap-x-8">
             <div
               role="group"
@@ -231,7 +233,7 @@ export default function Testimonios() {
                     layout="tarjeta"
                     duracion={t.duracion}
                     seleccionada={activa}
-                    aria-label={ariaReproducirTestimonio(t.titulo, t.duracion)}
+                    aria-label={`Ver en el reproductor: ${t.titulo}`}
                     onClick={() => elegir(t)}
                   />
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
@@ -265,10 +267,10 @@ export default function Testimonios() {
                 <button
                   key={t.slug}
                   type="button"
-                  aria-label={ariaReproducirTestimonio(t.titulo, t.duracion)}
+                  aria-label={`Ver en el reproductor: ${t.titulo}`}
                   onClick={() => elegir(t)}
                   className={cn(
-                    "flex w-full items-center gap-3.5 rounded-[20px] border-0 bg-blanco p-3 text-left text-bahia",
+                    "flex min-h-11 w-full items-center gap-3.5 rounded-[20px] border-0 bg-blanco p-3 text-left text-bahia",
                     activa &&
                       "outline outline-[3px] outline-offset-2 outline-bahia",
                   )}

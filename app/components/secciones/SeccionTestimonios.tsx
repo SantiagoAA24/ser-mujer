@@ -11,7 +11,6 @@ import {
 import type { Testimonio } from "~/content/types";
 import {
   ETIQUETA_TEMA,
-  ariaReproducirTestimonio,
   varianteEtiquetaTemaTestimonio,
 } from "~/lib/testimonios";
 
@@ -99,10 +98,7 @@ export function SeccionTestimonios() {
           <article className="flex flex-col gap-2 lg:flex-[1.5_1_520px] lg:gap-4">
             <Link
               to="/testimonios"
-              aria-label={ariaReproducirTestimonio(
-                destacado.titulo,
-                destacado.duracion,
-              )}
+              aria-label={`Ver testimonio: ${destacado.titulo}`}
               className="relative block h-[204px] overflow-hidden rounded-[24px] no-underline lg:h-auto lg:aspect-[16/9] lg:rounded-[28px]"
             >
               <MiniaturaAbstracta

@@ -9,6 +9,18 @@ export function metaDescripcion(
   return `${limpio.slice(0, 157).trimEnd()}…`;
 }
 
+/** Palabras que no deben aparecer en el título de la pestaña. */
+const PALABRAS_SENSIBLES =
+  /\b(abuso|abusos|violaci[oó]n|violaciones|violador[ae]?s?|violento[sa]?s?|violencia|agres[ií]on|agresiones)\b/i;
+
+/**
+ * Título de pestaña discreto: «Sección · Ser, Mujer».
+ * Si el texto trae palabras sensibles o plantillas, solo «Ser, Mujer».
+ */
 export function tituloSeccion(seccion: string): string {
-  return `${seccion} · Ser, Mujer`;
+  const limpio = seccion.trim();
+  if (!limpio || limpio.includes("[") || PALABRAS_SENSIBLES.test(limpio)) {
+    return "Ser, Mujer";
+  }
+  return `${limpio} · Ser, Mujer`;
 }

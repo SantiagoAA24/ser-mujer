@@ -52,6 +52,7 @@ export function Encabezado() {
   const [menuAbierto, setMenuAbierto] = useState(false);
   const menuId = useId();
   const botonMenuRef = useRef<HTMLButtonElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -61,16 +62,19 @@ export function Encabezado() {
   useEffect(() => {
     if (!menuAbierto) return;
 
-    const panel = panelRef.current;
-    if (!panel) return;
+    const header = headerRef.current;
+    if (!header) return;
 
+    // Salida rápida, menú y enlaces del panel (no el resto de la página).
     const focables = () =>
-      Array.from(panel.querySelectorAll<HTMLElement>(SELECTOR_FOCO)).filter(
+      Array.from(header.querySelectorAll<HTMLElement>(SELECTOR_FOCO)).filter(
         (el) => !el.hasAttribute("disabled") && el.offsetParent !== null,
       );
 
-    const primero = focables()[0];
-    primero?.focus();
+    const primero = focables().find(
+      (el) => el === botonMenuRef.current || el.closest("[data-salida-rapida]"),
+    );
+    (primero ?? focables()[0])?.focus();
 
     const alTecla = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -98,15 +102,25 @@ export function Encabezado() {
     const anteriorOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
+    const main = document.querySelector("main");
+    const footer = document.querySelector("footer");
+    main?.setAttribute("inert", "");
+    footer?.setAttribute("inert", "");
+
     return () => {
       document.removeEventListener("keydown", alTecla, true);
       document.body.style.overflow = anteriorOverflow;
+      main?.removeAttribute("inert");
+      footer?.removeAttribute("inert");
       botonMenuRef.current?.focus();
     };
   }, [menuAbierto]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-bahia/20 bg-crema">
+    <header
+      ref={headerRef}
+      className="fixed inset-x-0 top-0 z-40 border-b border-bahia/20 bg-crema"
+    >
       <div className="flex h-[84px] items-center justify-between gap-2 px-4 py-2 lg:h-24 lg:gap-8 lg:px-10 lg:py-3.5">
         <Link to="/" className="shrink-0" onClick={() => setMenuAbierto(false)}>
           <img
@@ -129,7 +143,7 @@ export function Encabezado() {
                 key={enlace.href}
                 to={enlace.href}
                 aria-current={activa ? "page" : undefined}
-                className={`py-3 no-underline ${
+                className={`inline-flex min-h-11 items-center py-3 no-underline ${
                   activa
                     ? "font-semibold shadow-[0_2px_0_0_var(--color-bahia)]"
                     : "font-normal hover:shadow-[0_2px_0_0_var(--color-bahia)]"
@@ -164,6 +178,9 @@ export function Encabezado() {
         <div
           id={menuId}
           ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menú principal"
           className="absolute inset-x-0 top-[84px] bottom-0 h-[calc(100dvh-84px)] overflow-y-auto bg-crema lg:hidden"
         >
           <nav

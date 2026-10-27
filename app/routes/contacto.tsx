@@ -50,7 +50,7 @@ function EnlacesDirectos({ className }: { className?: string }) {
       {whatsappOk ? (
         <a
           href={sitio.whatsapp.href}
-          className="font-semibold underline-offset-[6px]"
+          className="inline-flex min-h-11 items-center font-semibold underline-offset-[6px]"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -62,7 +62,7 @@ function EnlacesDirectos({ className }: { className?: string }) {
       o{" "}
       <Link
         to="/agendar"
-        className="font-semibold underline-offset-[6px]"
+        className="inline-flex min-h-11 items-center font-semibold underline-offset-[6px]"
       >
         agenda una sesión
       </Link>

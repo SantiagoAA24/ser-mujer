@@ -110,81 +110,89 @@ export function CalendarioEventos({
         </div>
 
         <div
-          className="grid grid-cols-7 gap-1 px-1 lg:gap-1.5 lg:px-2"
-          role="row"
+          role="grid"
+          aria-label="Calendario del mes"
+          className="flex flex-col gap-1 lg:gap-1.5"
         >
-          {DIAS_ESCRITORIO.map((label) => (
-            <div
-              key={label}
-              className="hidden py-1 text-center text-[13px] font-semibold text-bahia lg:block"
-              aria-hidden="true"
-            >
-              {label}
-            </div>
-          ))}
-          {DIAS_MOVIL.map((label) => (
-            <div
-              key={`m-${label}`}
-              className="py-1 text-center text-[13px] font-semibold text-bahia lg:hidden"
-              aria-hidden="true"
-            >
-              {label}
-            </div>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-7 gap-1 lg:gap-1.5">
-          {celdas.map((celda, i) => {
-            if (celda.tipo === "vacia") {
-              return (
-                <div
-                  key={`vacia-${i}`}
-                  className="invisible min-h-[46px] lg:min-h-24"
-                  aria-hidden="true"
-                />
-              );
-            }
-
-            const delCelda = porDia.get(celda.clave) ?? [];
-            const tieneEvento = delCelda.length > 0;
-            const seleccionado = diaElegido === celda.clave;
-            const primerTitulo = delCelda[0]?.titulo;
-
-            return (
-              <button
-                key={celda.clave}
-                type="button"
-                disabled={!tieneEvento}
-                aria-pressed={tieneEvento ? seleccionado : undefined}
-                aria-label={formatoAriaDia(
-                  celda.clave,
-                  tieneEvento ? primerTitulo : undefined,
-                )}
-                onClick={() => setDiaElegido(celda.clave)}
-                className={cn(
-                  "flex flex-col items-center justify-center rounded-xl border-0 lg:items-start lg:justify-start lg:rounded-[14px] lg:border-[1.5px] lg:px-2.5 lg:py-2",
-                  "min-h-[46px] lg:min-h-24",
-                  !tieneEvento &&
-                    "cursor-not-allowed text-bahia opacity-60 lg:border-bahia/15 lg:opacity-100 lg:disabled:opacity-100",
-                  tieneEvento &&
-                    !seleccionado &&
-                    "bg-niebla text-bahia lg:border-niebla",
-                  tieneEvento &&
-                    seleccionado &&
-                    "bg-bahia text-crema lg:border-bahia",
-                  !tieneEvento && "bg-transparent font-normal",
-                  tieneEvento && "font-semibold",
-                )}
+          <div
+            className="grid grid-cols-7 gap-1 px-1 lg:gap-1.5 lg:px-2"
+            role="row"
+          >
+            {DIAS_ESCRITORIO.map((label) => (
+              <div
+                key={label}
+                role="columnheader"
+                className="hidden py-1 text-center text-[13px] font-semibold text-bahia lg:block"
               >
-                <span className="text-base leading-none">{celda.dia}</span>
-                {tieneEvento && primerTitulo ? (
-                  <span className="mt-1.5 hidden line-clamp-2 text-left text-[13px] leading-[1.3] font-semibold lg:block">
-                    {primerTitulo}
-                  </span>
-                ) : null}
-              </button>
-            );
-          })}
+                {label}
+              </div>
+            ))}
+            {DIAS_MOVIL.map((label) => (
+              <div
+                key={`m-${label}`}
+                role="columnheader"
+                className="py-1 text-center text-[13px] font-semibold text-bahia lg:hidden"
+              >
+                {label}
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-7 gap-1 lg:gap-1.5" role="row">
+            {celdas.map((celda, i) => {
+              if (celda.tipo === "vacia") {
+                return (
+                  <div
+                    key={`vacia-${i}`}
+                    role="gridcell"
+                    className="invisible min-h-11 lg:min-h-24"
+                    aria-hidden="true"
+                  />
+                );
+              }
+
+              const delCelda = porDia.get(celda.clave) ?? [];
+              const tieneEvento = delCelda.length > 0;
+              const seleccionado = diaElegido === celda.clave;
+              const primerTitulo = delCelda[0]?.titulo;
+
+              return (
+                <button
+                  key={celda.clave}
+                  type="button"
+                  role="gridcell"
+                  disabled={!tieneEvento}
+                  aria-pressed={tieneEvento ? seleccionado : undefined}
+                  aria-label={formatoAriaDia(
+                    celda.clave,
+                    tieneEvento ? primerTitulo : undefined,
+                  )}
+                  onClick={() => setDiaElegido(celda.clave)}
+                  className={cn(
+                    "flex flex-col items-center justify-center rounded-xl border-0 lg:items-start lg:justify-start lg:rounded-[14px] lg:border-[1.5px] lg:px-2.5 lg:py-2",
+                    "min-h-11 lg:min-h-24",
+                    !tieneEvento &&
+                      "cursor-not-allowed text-bahia opacity-60 lg:border-bahia/15 lg:opacity-100 lg:disabled:opacity-100",
+                    tieneEvento &&
+                      !seleccionado &&
+                      "bg-niebla text-bahia lg:border-niebla",
+                    tieneEvento &&
+                      seleccionado &&
+                      "bg-bahia text-crema lg:border-bahia",
+                    !tieneEvento && "bg-transparent font-normal",
+                    tieneEvento && "font-semibold",
+                  )}
+                >
+                  <span className="text-base leading-none">{celda.dia}</span>
+                  {tieneEvento && primerTitulo ? (
+                    <span className="mt-1.5 hidden line-clamp-2 text-left text-[13px] leading-[1.3] font-semibold lg:block">
+                      {primerTitulo}
+                    </span>
+                  ) : null}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <div className="mt-1 hidden items-center gap-4 text-sm text-bahia lg:flex">
@@ -207,9 +215,9 @@ export function CalendarioEventos({
 
       <div className="flex w-full flex-col gap-4 lg:min-w-0 lg:flex-[1_1_340px]">
         {diaElegido ? (
-          <h3 className="m-0 px-1 font-serif text-[22px] leading-[29px] font-normal text-bahia lg:px-0 lg:text-[26px] lg:leading-[34px]">
+          <p className="m-0 px-1 font-serif text-[22px] leading-[29px] font-normal text-bahia lg:px-0 lg:text-[26px] lg:leading-[34px]">
             {formatoTituloDia(diaElegido)}
-          </h3>
+          </p>
         ) : null}
 
         {delDia.length === 0 ? (

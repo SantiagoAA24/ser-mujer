@@ -29,7 +29,7 @@ export function SalidaRapida() {
   useEffect(() => registrarAtajoSalida(), []);
 
   return (
-    <div className="relative shrink-0">
+    <div className="relative shrink-0" data-salida-rapida>
       <button
         type="button"
         onClick={salidaRapida}
@@ -38,7 +38,7 @@ export function SalidaRapida() {
         onFocus={() => setVisible(true)}
         onBlur={() => setVisible(false)}
         aria-describedby={visible ? tooltipId : undefined}
-        className="inline-flex min-h-11 items-center gap-2 rounded-full bg-naranja px-4 py-2 text-sm font-semibold text-bahia-profundo transition-colors hover:bg-bahia-profundo hover:text-crema lg:gap-2.5 lg:px-[22px] lg:py-2.5 lg:text-[14.5px]"
+        className="inline-flex min-h-11 items-center gap-2 rounded-full bg-naranja px-4 py-2 text-sm font-semibold text-bahia-profundo transition-colors hover:bg-bahia-profundo hover:text-crema focus-visible:outline-crema lg:gap-2.5 lg:px-[22px] lg:py-2.5 lg:text-[14.5px]"
       >
         <IconoCerrar className="size-3.5 lg:size-4" />
         {etiqueta}

@@ -63,7 +63,7 @@ export function PieCompleto() {
               <Link
                 key={enlace.href}
                 to={enlace.href}
-                className="py-2.5 no-underline lg:py-1.5"
+                className="inline-flex min-h-11 items-center py-2.5 no-underline lg:py-1.5"
               >
                 {enlace.label}
               </Link>
@@ -114,7 +114,7 @@ export function PieCompleto() {
           <p className="m-0">
             <Link
               to={sitio.enlaceSeguridad.href}
-              className="underline-offset-[6px]"
+              className="inline-flex min-h-11 items-center underline-offset-[6px]"
             >
               {sitio.enlaceSeguridad.label}
             </Link>
