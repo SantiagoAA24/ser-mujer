@@ -1,0 +1,52 @@
+{
+  "nombre": "Ser, Mujer",
+  "tagline": "Acompañamiento, sanación y transformación desde el amor.",
+  "copyrightAnio": 2026,
+  "whatsapp": {
+    "etiqueta": "WhatsApp · [NÚMERO]",
+    "href": "https://wa.me/[NUMERO]"
+  },
+  "instagram": {
+    "etiqueta": "Instagram · [@USUARIO]",
+    "href": "#"
+  },
+  "lineaEmergencia": "[LÍNEA DE EMERGENCIA LOCAL]",
+  "navPrincipal": [
+    { "label": "Inicio", "href": "/" },
+    { "label": "Cómo te acompañamos", "href": "/como-te-acompanamos" },
+    { "label": "Quién soy", "href": "/quien-soy" },
+    { "label": "Podcast", "href": "/podcast" },
+    { "label": "Recursos", "href": "/recursos" },
+    { "label": "Eventos", "href": "/eventos" },
+    { "label": "Contacto", "href": "/contacto" }
+  ],
+  "navPie": [
+    { "label": "Cómo te acompañamos", "href": "/como-te-acompanamos" },
+    { "label": "Quién soy", "href": "/quien-soy" },
+    { "label": "Podcast", "href": "/podcast" },
+    { "label": "Recursos", "href": "/recursos" },
+    { "label": "Eventos", "href": "/eventos" }
+  ],
+  "ctaAgendar": {
+    "label": "Agendar una conversación",
+    "href": "/agendar"
+  },
+  "salidaRapida": {
+    "etiqueta": "Salida rápida",
+    "tooltipTitulo": "Sal de esta página al instante",
+    "tooltipCuerpo": "Se abrirá una página neutra en esta misma pestaña. También puedes pulsar Esc dos veces."
+  },
+  "enlaceSeguridad": {
+    "label": "Cómo navegar con seguridad",
+    "href": "/seguridad"
+  },
+  "tituloCalendario": "Cita",
+  "tiempoRespuesta": "[TIEMPO DE RESPUESTA]",
+  "nombreFirma": "[NOMBRE]",
+  "mostrarRecursosPago": false,
+  "podcast": {
+    "spotify": { "label": "Spotify", "href": "[URL_SPOTIFY]" },
+    "apple": { "label": "Apple Podcasts", "href": "[URL_APPLE_PODCASTS]" },
+    "youtube": { "label": "YouTube", "href": "[URL_YOUTUBE]" }
+  }
+}

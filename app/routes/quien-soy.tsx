@@ -8,20 +8,40 @@ import { listarProfesionales, obtenerPerfil, sitio } from "~/content";
 import { enlaceUsable } from "~/lib/enlaces";
 
 const principiosEnfoque = [
+  // {
+  //   titulo: "Tú marcas el ritmo",
+  //   texto:
+  //     "No hay etapas que cumplir ni soluciones rápidas. Avanzamos cuando tú lo sientes.",
+  // },
+  // {
+  //   titulo: "Sin juicios ni etiquetas",
+  //   texto:
+  //     "Lo que compartes se recibe con respeto. Nadie te dirá cómo deberías sentirte.",
+  // },
+  // {
+  //   titulo: "Herramientas a tu medida",
+  //   texto:
+  //     "Cada proceso es distinto; lo que trabajamos se adapta a lo que necesitas hoy.",
+  // },
   {
-    titulo: "Tú marcas el ritmo",
+    titulo: "Espacios grupales",
     texto:
-      "No hay etapas que cumplir ni soluciones rápidas. Avanzamos cuando tú lo sientes.",
+      "Comunidades de socialización y contención donde ninguna mujer transita sola.",
   },
   {
-    titulo: "Sin juicios ni etiquetas",
+    titulo: "Tips y recomendaciones",
     texto:
-      "Lo que compartes se recibe con respeto. Nadie te dirá cómo deberías sentirte.",
+      "Contenido práctico y cercano para integrar el bienestar en tu día a día.",
   },
   {
-    titulo: "Herramientas a tu medida",
+    titulo: "Talleres transformacionales",
     texto:
-      "Cada proceso es distinto; lo que trabajamos se adapta a lo que necesitas hoy.",
+      "Encuentros profundos enfocados en sanar, soltar y reencontrar tu poder.",
+  },
+  {
+    titulo: "Acompañamiento 1 a 1",
+    texto:
+      "Sesiones personalizadas adaptadas a tus necesidades y ritmo particular.",
   },
 ] as const;
 
@@ -161,7 +181,8 @@ export default function QuienSoy() {
               El camino que me trajo hasta aquí
             </h2>
             <p className="m-0 hidden text-bahia lg:block">
-              Mi preparación es parte del cuidado que te ofrezco.
+              En medio de un "bosque oscuro del alma", decidí no rendirme. Hoy, toda esa experiencia personal y dolor transmutado, unidos a mi formación me permiten acompañarte hoy.<br /><br />
+              No te hablo desde la teoría lejana, sino desde la orilla de quien conoce el camino de regreso a casa. Estoy aquí para recordarte que tu historia no te define: es el punto de partida de tu renacer.
             </p>
           </div>
           <ol className="m-0 flex flex-[1.7_1_560px] list-none flex-col p-0">
@@ -212,7 +233,7 @@ export default function QuienSoy() {
               {perfil.enfoque}
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-3.5 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-5">
+          <div className="grid grid-cols-1 gap-3.5 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-5">
             {principiosEnfoque.map((principio) => (
               <div
                 key={principio.titulo}

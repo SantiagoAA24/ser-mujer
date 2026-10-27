@@ -1,0 +1,56 @@
+{
+  "nombre": "[Nombre y apellido]",
+  "profesion": "[Profesión o título]",
+  "presentacion": [
+    "[Párrafo 1, en primera persona: qué te llevó a crear Ser, Mujer y por qué este trabajo es importante para ti. Tres o cuatro frases.]",
+    "[Párrafo 2: cómo es estar en un espacio contigo; qué puede esperar una mujer en su primer encuentro. Tres o cuatro frases.]"
+  ],
+  "frase": "[Una frase tuya que resuma por qué haces esto.]",
+  "trayectoria": [
+    {
+      "periodo": "[AÑO – AÑO]",
+      "titulo": "[Título o grado académico]",
+      "detalle": "[Institución] · [Ciudad]"
+    },
+    {
+      "periodo": "[AÑO – AÑO]",
+      "titulo": "[Especialización o formación complementaria]",
+      "detalle": "[Institución] · [Ciudad]"
+    },
+    {
+      "periodo": "[AÑO – AÑO]",
+      "titulo": "[Experiencia: cargo u ocupación]",
+      "detalle": "[Organización] · [Una línea sobre lo que hacías.]"
+    },
+    {
+      "periodo": "[AÑO] – hoy",
+      "titulo": "Fundadora y acompañante",
+      "detalle": "Ser, Mujer · [Una línea sobre tu trabajo actual.]"
+    }
+  ],
+  "enfoque": "[Dos o tres frases sobre los enfoques o metodologías en que se apoya tu trabajo, explicados en palabras sencillas.]",
+  "certificaciones": [
+    {
+      "nombre": "[Nombre de la certificación 1]",
+      "entidad": "[Entidad que la otorga]",
+      "anio": "[Año]"
+    },
+    {
+      "nombre": "[Nombre de la certificación 2]",
+      "entidad": "[Entidad que la otorga]",
+      "anio": "[Año]"
+    },
+    {
+      "nombre": "[Nombre de la certificación 3]",
+      "entidad": "[Entidad que la otorga]",
+      "anio": "[Año]"
+    },
+    {
+      "nombre": "[Nombre de la certificación 4]",
+      "entidad": "[Entidad que la otorga]",
+      "anio": "[Año]"
+    }
+  ],
+  "registro": "[Registro o tarjeta profesional N.º, si aplica]",
+  "imagen": ""
+}

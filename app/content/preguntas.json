@@ -2,28 +2,20 @@
   "ejemplo": true,
   "items": [
     {
-      "pregunta": "¿Es confidencial?",
-      "respuesta": "Sí. Lo que compartes con nosotras se queda aquí, y en los grupos todas acordamos cuidar lo que se dice. Antes de empezar te explicamos con claridad cómo protegemos tu información."
-    },
-    {
-      "pregunta": "¿Tengo que contar mi historia?",
-      "respuesta": "No. Tú decides qué contar, cuánto y cuándo. Puedes participar escuchando, y nadie te va a pedir detalles que no quieras dar."
-    },
-    {
       "pregunta": "¿Cuánto cuesta?",
-      "respuesta": "[RESPUESTA SOBRE COSTOS: qué es gratuito, valor de talleres, grupos y sesiones, y si hay opciones de apoyo económico.]"
+      "respuesta": "El podcast, los recursos y la mayor parte de los espacios del sitio son gratuitos. Si un evento tiene costo, lo verás indicado en su página y en la información del evento. Las sesiones individuales duran hora y media y tienen un valor de $150.000."
     },
     {
       "pregunta": "¿Es presencial o virtual?",
-      "respuesta": "[RESPUESTA SOBRE MODALIDADES Y CIUDAD.]"
+      "respuesta": "Cada espacio es realizado de manera Virtual con la opción de realizarlo presencial."
     },
     {
       "pregunta": "No sé por dónde empezar, ¿qué hago?",
-      "respuesta": "Es muy común. Escríbenos y conversamos sin compromiso para ver qué te haría bien ahora."
+      "respuesta": "Empezar solo leyendo o escuchando también es empezar."
     },
     {
       "pregunta": "¿Puedo dejarlo si no me siento cómoda?",
-      "respuesta": "Siempre. Puedes pausar o dejarlo en cualquier momento, sin dar explicaciones, y volver cuando quieras."
+      "respuesta": "El proceso es 100% tuyo y puedes acompañarnos en los espacios que consideres apropiado y así mismo podrás salir sin ningún tipo de restricción. Solo permitiremos conocer tu decisión."
     }
   ]
 }

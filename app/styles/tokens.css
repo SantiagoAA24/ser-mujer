@@ -91,8 +91,8 @@
   .grano { background-image: url("/assets/grano.png"); }
 
   /* Patrón del colibrí (siempre en una capa aparte, con opacidad) */
-  .patron-crema { background-image: url("/assets/colibri-crema.png"); background-size: 132px auto; }
-  .patron-azul { background-image: url("/assets/colibri-azul.png"); background-size: 120px auto; }
+  .patron-crema { background-image: url("/assets/logo-crema.png"); background-size: 132px auto; }
+  .patron-azul { background-image: url("/assets/logo-azul.png"); background-size: 120px auto; }
 
   /* Forma orgánica de las ilustraciones */
   .forma-organica { border-radius: 58% 42% 47% 53% / 46% 55% 45% 54%; }

@@ -1,0 +1,13 @@
+{
+  "ejemplo": true,
+  "items": [
+    {
+      "slug": "fundadora",
+      "nombre": "[Nombre y apellido]",
+      "rol": "Fundadora y acompañante",
+      "servicios": ["Sesiones individuales", "Talleres"],
+      "imagen": "",
+      "actual": true
+    }
+  ]
+}

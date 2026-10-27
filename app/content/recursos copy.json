@@ -1,0 +1,93 @@
+{
+  "ejemplo": true,
+  "items": [
+    {
+      "slug": "guia-para-empezar-a-sanar-paso-a-paso",
+      "tipo": "guia",
+      "tema": "sanacion",
+      "titulo": "Guía para empezar a sanar, paso a paso",
+      "descripcion": "Una primera orientación, sin prisa, para entender por dónde comenzar.",
+      "formato": "PDF",
+      "detalle": "12 páginas",
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": true
+    },
+    {
+      "slug": "carta-a-mi-misma",
+      "tipo": "ejercicio",
+      "tema": "amor",
+      "titulo": "Carta a mí misma",
+      "descripcion": "Un ejercicio de escritura para hablarte con el cariño que mereces.",
+      "formato": "PDF",
+      "detalle": "3 páginas",
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": false
+    },
+    {
+      "slug": "respiracion-para-volver-a-la-calma",
+      "tipo": "audio",
+      "tema": "sanacion",
+      "titulo": "Respiración para volver a la calma",
+      "descripcion": "Un audio guiado para los momentos en que todo se siente demasiado.",
+      "formato": "Audio",
+      "detalle": "8 min",
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": false
+    },
+    {
+      "slug": "perdonar-a-tu-ritmo",
+      "tipo": "guia",
+      "tema": "perdon",
+      "titulo": "Perdonar a tu ritmo",
+      "descripcion": "Qué es y qué no es el perdón, y por qué nadie puede apurarlo.",
+      "formato": "PDF",
+      "detalle": "10 páginas",
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": true
+    },
+    {
+      "slug": "mi-red-de-apoyo",
+      "tipo": "ejercicio",
+      "tema": "comunidad",
+      "titulo": "Mi red de apoyo",
+      "descripcion": "Una hoja para reconocer a las personas y lugares que te sostienen.",
+      "formato": "PDF",
+      "detalle": "2 páginas",
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": false
+    },
+    {
+      "slug": "meditacion-de-amor-propio",
+      "tipo": "audio",
+      "tema": "amor",
+      "titulo": "Meditación de amor propio",
+      "descripcion": "Doce minutos para cerrar el día tratándote con amabilidad.",
+      "formato": "Audio",
+      "detalle": "12 min",
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": true
+    },
+    {
+      "slug": "diario-de-siete-dias",
+      "tipo": "ejercicio",
+      "tema": "sanacion",
+      "titulo": "Diario de siete días",
+      "descripcion": "Una pregunta suave por día para escucharte un poco más.",
+      "formato": "PDF",
+      "detalle": "9 páginas",
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": false
+    },
+    {
+      "slug": "soltar-sin-olvidar",
+      "tipo": "audio",
+      "tema": "perdon",
+      "titulo": "Soltar sin olvidar",
+      "descripcion": "Una reflexión guiada para dejar ir el peso, no tu historia.",
+      "formato": "Audio",
+      "detalle": "10 min",
+      "archivo": "/recursos/ejemplo.pdf",
+      "correoOpcional": false
+    }
+  ]
+}

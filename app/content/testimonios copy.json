@@ -1,0 +1,62 @@
+{
+  "ejemplo": true,
+  "items": [
+    {
+      "slug": "volver-a-sentirme-en-casa-conmigo",
+      "tema": "sanacion",
+      "titulo": "Volver a sentirme en casa conmigo",
+      "duracion": "4:12",
+      "descripcion": "[Una o dos frases que presentan este testimonio, sin detalles que identifiquen a la persona.]",
+      "variante": 0,
+      "destacado": true,
+      "cita": "[TESTIMONIO: dos o tres frases, en las palabras de ella, sobre cómo se sintió acompañada.]",
+      "nombre": "[NOMBRE O INICIAL]",
+      "youtubeId": "[ID_YOUTUBE]"
+    },
+    {
+      "slug": "aprendi-a-hablarme-con-carino",
+      "tema": "amor",
+      "titulo": "Aprendí a hablarme con cariño",
+      "duracion": "3:05",
+      "descripcion": "[Una o dos frases que presentan este testimonio, sin detalles que identifiquen a la persona.]",
+      "variante": 1,
+      "youtubeId": "[ID_YOUTUBE]"
+    },
+    {
+      "slug": "perdonarme-fue-el-primer-paso",
+      "tema": "perdon",
+      "titulo": "Perdonarme fue el primer paso",
+      "duracion": "5:20",
+      "descripcion": "[Una o dos frases que presentan este testimonio, sin detalles que identifiquen a la persona.]",
+      "variante": 2,
+      "youtubeId": "[ID_YOUTUBE]"
+    },
+    {
+      "slug": "no-era-la-unica",
+      "tema": "comunidad",
+      "titulo": "No era la única",
+      "duracion": "2:48",
+      "descripcion": "[Una o dos frases que presentan este testimonio, sin detalles que identifiquen a la persona.]",
+      "variante": 3,
+      "youtubeId": "[ID_YOUTUBE]"
+    },
+    {
+      "slug": "un-dia-a-la-vez",
+      "tema": "sanacion",
+      "titulo": "Un día a la vez",
+      "duracion": "3:36",
+      "descripcion": "[Una o dos frases que presentan este testimonio, sin detalles que identifiquen a la persona.]",
+      "variante": 4,
+      "youtubeId": "[ID_YOUTUBE]"
+    },
+    {
+      "slug": "lo-que-encontre-en-el-grupo",
+      "tema": "comunidad",
+      "titulo": "Lo que encontré en el grupo",
+      "duracion": "4:01",
+      "descripcion": "[Una o dos frases que presentan este testimonio, sin detalles que identifiquen a la persona.]",
+      "variante": 5,
+      "youtubeId": "[ID_YOUTUBE]"
+    }
+  ]
+}

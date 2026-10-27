@@ -1,56 +1,71 @@
 {
-  "nombre": "[Nombre y apellido]",
-  "profesion": "[Profesión o título]",
+  "nombre": "Sandra Eugenia Ramírez Moreno",
+  "profesion": "Coach Transpersonal Ejecutiva y de Inteligencia Emocional",
   "presentacion": [
     "[Párrafo 1, en primera persona: qué te llevó a crear Ser, Mujer y por qué este trabajo es importante para ti. Tres o cuatro frases.]",
     "[Párrafo 2: cómo es estar en un espacio contigo; qué puede esperar una mujer en su primer encuentro. Tres o cuatro frases.]"
   ],
-  "frase": "[Una frase tuya que resuma por qué haces esto.]",
+  "frase": "Una mujer que, al igual que tú, atravesó las sombras del abuso para encontrar la salida; hoy pongo mi historia y mis herramientas al servicio de tu propio renacer.",
   "trayectoria": [
     {
-      "periodo": "[AÑO – AÑO]",
-      "titulo": "[Título o grado académico]",
+      "periodo": "2004",
+      "titulo": "Profesional en Comercio Internacional",
       "detalle": "[Institución] · [Ciudad]"
     },
     {
-      "periodo": "[AÑO – AÑO]",
-      "titulo": "[Especialización o formación complementaria]",
+      "periodo": "2010",
+      "titulo": "Especialista en Finanzas y Negocios Internacionales",
       "detalle": "[Institución] · [Ciudad]"
     },
     {
-      "periodo": "[AÑO – AÑO]",
-      "titulo": "[Experiencia: cargo u ocupación]",
+      "periodo": "2024",
+      "titulo": "Mentor de Mujeres",
       "detalle": "[Organización] · [Una línea sobre lo que hacías.]"
     },
     {
-      "periodo": "[AÑO] – hoy",
-      "titulo": "Fundadora y acompañante",
+      "periodo": "2024",
+      "titulo": "Fundadora de Ser, Mujer",
+      "detalle": "[Organización] · [Una línea sobre lo que hacías.]"
+    },
+    {
+      "periodo": "2025",
+      "titulo": "Coach Transpersonal, Ejecutivo y de Inteligencia Emocional",
+      "detalle": "[Organización] · [Una línea sobre lo que hacías.]"
+    },
+    {
+      "periodo": "2025",
+      "titulo": "Consteladora Familiar y Facilitadora de Barras de Access",
+      "detalle": "[Organización] · [Una línea sobre lo que hacías.]"
+    },
+    {
+      "periodo": "2026",
+      "titulo": "CEO y Acompañante de Ser, Mujer",
       "detalle": "Ser, Mujer · [Una línea sobre tu trabajo actual.]"
     }
   ],
-  "enfoque": "[Dos o tres frases sobre los enfoques o metodologías en que se apoya tu trabajo, explicados en palabras sencillas.]",
+  "enfoque": "Integramos coaching transpersonal, inteligencia emocional y constelaciones familiares en un espacio seguro y sin juicios. Nuestro acompañamiento se vive a través de 4 pilares:",
   "certificaciones": [
     {
-      "nombre": "[Nombre de la certificación 1]",
-      "entidad": "[Entidad que la otorga]",
-      "anio": "[Año]"
+      "nombre": "Mentor de Mujeres",
+      "entidad": "Managing Partner",
+      "anio": "2024"
     },
     {
-      "nombre": "[Nombre de la certificación 2]",
-      "entidad": "[Entidad que la otorga]",
-      "anio": "[Año]"
+      "nombre": "Coach Profesional Transpersonal y Ejecutivo & Inteligencia Emocional",
+      "entidad": "Innerkey Escuela Transpersonal de Coaching",
+      "anio": "2025"
     },
     {
-      "nombre": "[Nombre de la certificación 3]",
-      "entidad": "[Entidad que la otorga]",
-      "anio": "[Año]"
+      "nombre": "Consteladora Familiar",
+      "entidad": "Julián Garibello",
+      "anio": "2025"
     },
     {
-      "nombre": "[Nombre de la certificación 4]",
-      "entidad": "[Entidad que la otorga]",
-      "anio": "[Año]"
+      "nombre": "Facilitadora de Barras de Access",
+      "entidad": "Access Consciousness",
+      "anio": "2025"
     }
   ],
   "registro": "[Registro o tarjeta profesional N.º, si aplica]",
-  "imagen": ""
+  "imagen": "/assets/sandra.png"
 }
